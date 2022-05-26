@@ -1,0 +1,139 @@
+<GlobalConfig CodeFontSize = "20"/>
+<BreakpointList/>
+<WatchList/>
+<ProjectUI>
+  <TreeState BaseX = "0" BaseY = "0" AlternativeItem = "LuaFolders#Assets#LuaScript#UI">
+    <SelectedList>
+      <Selected Path = "LuaFolders#Assets#LuaScript#Common#Common.lua"/>
+    </SelectedList>
+    <ExpandedList>
+      <Expanded Path = "LuaFolders"/>
+      <Expanded Path = "LuaFolders#Assets"/>
+      <Expanded Path = "LuaFolders#Assets#Editor#XLua#Examples#02_U3DScripting"/>
+      <Expanded Path = "LuaFolders#Assets#Editor#XLua#Examples#03_UIEvent"/>
+      <Expanded Path = "LuaFolders#Assets#LuaScript"/>
+      <Expanded Path = "LuaFolders#Assets#LuaScript#Common"/>
+      <Expanded Path = "LuaFolders#Assets#LuaScript#UI"/>
+      <Expanded Path = "LuaFolders#Assets#Script#Xlua"/>
+      <Expanded Path = "LuaFolders#Assets#Script#Xlua#Script"/>
+      <Expanded Path = "LuaFolders#Assets#Script#Xlua#Script#TemplateEngine"/>
+      <Expanded Path = "LuaFolders#Assets#Script#Xlua#Support"/>
+      <Expanded Path = "LuaFolders#Assets#ThirdParty"/>
+      <Expanded Path = "LuaFolders#Assets#ThirdParty#LuaPerfect"/>
+    </ExpandedList>
+  </TreeState>
+</ProjectUI>
+<FindAnReplaceUI
+  Pattern = ""
+  MatchCase = "false"
+  MatchWholeWord = "false"
+  UseRegEx = "false"
+  Target = ""
+  Replace = ""/>
+<MainWindow
+  X = "624"
+  Y = "195"
+  Width = "1568"
+  Height = "1131"
+  Maximized = "false"
+  LastCodeFilename = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/Common/Common.lua">
+  <DockingControl>
+    <DockingNode DockingDirection = "Horizontal">
+      <DockingNode DockingDirection = "None">
+        <DockingBlock Width = "260" Height = "1014" DocumentStyle = "false">
+          <DockingCard
+            Text = "Project"
+            Tag = ""
+            ActivePage = "true"
+            ActivateTime = "0"/>
+          <DockingCard
+            Text = "Outline"
+            Tag = ""
+            ActivePage = "false"
+            ActivateTime = "0"/>
+        </DockingBlock>
+      </DockingNode>
+      <DockingNode DockingDirection = "Vertical">
+        <DockingNode DockingDirection = "None">
+          <DockingBlock Width = "1289" Height = "698" DocumentStyle = "true">
+            <DockingCard
+              Text = "Common.lua"
+              Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/Common/Common.lua"
+              ActivePage = "true"
+              ActivateTime = "923168462"
+              CaretLineIndex = "15"
+              CaretCodeCharIndex = "14"
+              BaseX = "0"
+              BaseY = "0"/>
+            <DockingCard
+              Text = "GameMain.lua"
+              Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/GameMain.lua"
+              ActivePage = "false"
+              ActivateTime = "923068797"
+              CaretLineIndex = "9"
+              CaretCodeCharIndex = "7"
+              BaseX = "0"
+              BaseY = "-67"/>
+            <DockingCard
+              Text = "ToolsCommons.lua"
+              Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/Common/Tools/ToolsCommons.lua"
+              ActivePage = "false"
+              ActivateTime = "885717212"
+              CaretLineIndex = "13"
+              CaretCodeCharIndex = "1"
+              BaseX = "0"
+              BaseY = "-1"/>
+            <DockingCard
+              Text = "LoginUI.lua"
+              Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/UI/Login/LoginUI.lua"
+              ActivePage = "false"
+              ActivateTime = "887330485"
+              CaretLineIndex = "18"
+              CaretCodeCharIndex = "1"
+              BaseX = "0"
+              BaseY = "0"/>
+          </DockingBlock>
+        </DockingNode>
+        <DockingNode DockingDirection = "None">
+          <DockingBlock Width = "1289" Height = "309" DocumentStyle = "false">
+            <DockingCard
+              Text = "Output"
+              Tag = ""
+              ActivePage = "true"
+              ActivateTime = "0"/>
+            <DockingCard
+              Text = "Call Stack"
+              Tag = ""
+              ActivePage = "false"
+              ActivateTime = "0"/>
+            <DockingCard
+              Text = "Locals"
+              Tag = ""
+              ActivePage = "false"
+              ActivateTime = "0"/>
+            <DockingCard
+              Text = "Globals"
+              Tag = ""
+              ActivePage = "false"
+              ActivateTime = "0"/>
+            <DockingCard
+              Text = "Watches"
+              Tag = ""
+              ActivePage = "false"
+              ActivateTime = "0"/>
+            <DockingCard
+              Text = "Autos"
+              Tag = ""
+              ActivePage = "false"
+              ActivateTime = "0"/>
+            <DockingCard
+              Text = "Breakpoints"
+              Tag = ""
+              ActivePage = "false"
+              ActivateTime = "0"/>
+          </DockingBlock>
+        </DockingNode>
+      </DockingNode>
+    </DockingNode>
+  </DockingControl>
+</MainWindow>
