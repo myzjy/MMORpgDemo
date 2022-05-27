@@ -91,5 +91,16 @@ namespace GameTools.Singletons
         {
             return instance != null;
         }
+
+        public void DestroySelf()
+        {
+            Dispose();
+            instance = null;
+            Destroy(gameObject);
+        }
+        public virtual void Dispose()
+        {
+
+        }
     }
 }

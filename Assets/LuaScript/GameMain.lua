@@ -8,16 +8,22 @@
 -- To disable this template, check off menuitem: Options-Enable Template File
 
 
-require "Common.Common"
+
+require "Global.Global"
+
 ---@class GameMain
 GameMain = {};
 print("GameMin ing ....")
-local function OnInit()
+ function OnInit()
 	print("初始化所有")
    
 end
 
-local function Start()
+function Update(self)
+	print("Update...")
+end
+
+ function Start()
 	print("初始化所有 start")
 end
 GameMain.OnInit=OnInit

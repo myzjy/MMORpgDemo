@@ -5,12 +5,17 @@ namespace Framework.AssetBundles.Config
     public static class AssetBundleConfig
     {
         public const string AssetsFolderName = "AddressablePaker";
+        public const string AssetBundlesFolderName = "AssetBundles";
+        public const string AssetsPathMapFileName = "AssetsMap.bytes";
+
         //后缀名
         public const string AssetBundleSuffix = ".assetbundle";
         private static int mIsEditorMode = -1;
         private const string kIsEditorMode = "IsEditorMode";
         private static int mIsSimulateMode = -1;
         private const string kIsSimulateMode = "IsSimulateMode";
+        public const string CommonMapPattren = ",";
+
         public static bool IsEditorMode
         {
             get

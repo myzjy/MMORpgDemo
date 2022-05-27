@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System.Text;
+using Common.Utility;
 using Framework.AssetBundles.Config;
 using UnityEngine;
 using XLua;
@@ -76,6 +77,38 @@ namespace Framework.AssetBundles.Utilty
                 Debug.LogError("Asset path is not a package path!");
                 return assetPath;
             }
+        }
+        /// <summary>
+        /// 获取到对应路径
+        /// </summary>
+        /// <param name="assetPath">资源路径</param>
+        /// <returns></returns>
+        public static string GetPersistentDataPath(string assetPath = null)
+        {
+            //根据参数返回上一级目录
+            string outputPath = Path.Combine(Application.persistentDataPath, AssetBundleConfig.AssetBundlesFolderName);
+            if (!string.IsNullOrEmpty(assetPath))
+            {
+                //根据参数返回上一级目录
+                outputPath = Path.Combine(outputPath, assetPath);
+            }
+#if UNITY_EDITOR_WIN
+            // 路径替换
+            return GameUtility.FormatToSysFilePath(outputPath);
+#else
+            return outputPath;
+#endif
+        }
+        /// <summary>
+        /// 检查持久文件是否存在
+        /// </summary>
+        /// <param name="filePath">文件路径</param>
+        /// <returns></returns>
+        public static bool CheckPersistentFileExsits(string filePath)
+        {
+            //获取到对应路径 检查对应文件
+            var path = GetPersistentDataPath(filePath);
+            return File.Exists(path);
         }
     }
 }

@@ -1,0 +1,34 @@
+﻿
+
+<linker>
+
+	<assembly fullname="UnityEngine.CoreModule">
+	    <type fullname="UnityEngine.AsyncOperation" preserve="all"/>
+		<type fullname="UnityEngine.Object" preserve="all"/>
+		<type fullname="UnityEngine.Ray2D" preserve="all"/>
+		<type fullname="UnityEngine.GameObject" preserve="all"/>
+		<type fullname="UnityEngine.Component" preserve="all"/>
+		<type fullname="UnityEngine.Behaviour" preserve="all"/>
+		<type fullname="UnityEngine.Transform" preserve="all"/>
+		<type fullname="UnityEngine.Resources" preserve="all"/>
+		<type fullname="UnityEngine.WaitForSeconds" preserve="all"/>
+		
+	</assembly>
+
+	<assembly fullname="Assembly-CSharp">
+	    <type fullname="GameMain" preserve="all"/>
+		<type fullname="ToolsDebug" preserve="all"/>
+		<type fullname="LuaPerfect.ObjectRef" preserve="all"/>
+		<type fullname="LuaPerfect.ObjectItem" preserve="all"/>
+		<type fullname="LuaPerfect.ObjectFormater" preserve="all"/>
+		<type fullname="XLuaTest.BaseTest" preserve="all"/>
+		<type fullname="Framework.AssetBundles.Utilty.AssetBundleUtility" preserve="all"/>
+		
+	</assembly>
+
+	<assembly fullname="mscorlib">
+	    <type fullname="System.Object" preserve="all"/>
+		
+	</assembly>
+
+</linker>

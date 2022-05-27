@@ -10,17 +10,19 @@ public class GameMain : MonoBehaviour
 {
     void Start()
     {
-        Addressables.LoadAssetAsync<TextAsset>("GameMain.lua").Completed += (item) =>
+        Addressables.LoadAsset<TextAsset>("GameMain.lua").Completed += (item) =>
         {
             var luaStr = item.Result.text;
             Debug.Log(item.Result.text);
             Debug.Log(XluaManager.Instance.AssetbundleName);
             XluaManager.Instance.SafeDoString(item.Result.text);
-            // XluaManager.Instance.SafeDoString("GameMain.OnInit()");
+            XluaManager.Instance.OnInit();
+            XluaManager.Instance.SafeDoString("GameMain.OnInit()");
+            
             OnInit();
         };
     }
-    [Hotfix]
+    
     public void OnInit()
     {
         

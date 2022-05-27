@@ -628,6 +628,7 @@ namespace CSObjectWrapEditor
         private static void GenOne(Type type, Action<Type, LuaTable> type_info_getter, XLuaTemplate templateAsset,
             StreamWriter textWriter)
         {
+          
             if (isObsolete(type)) return;
             if (!templateCache.TryGetValue(templateAsset.name, out var template))
             {
@@ -635,8 +636,8 @@ namespace CSObjectWrapEditor
                 templateCache[templateAsset.name] = template;
             }
 
-            var type_info = luaenv.NewTable();
-            var meta = luaenv.NewTable();
+            LuaTable type_info = luaenv.NewTable();
+            LuaTable meta = luaenv.NewTable();
             meta.Set("__index", luaenv.Global);
             type_info.SetMetaTable(meta);
             meta.Dispose();
@@ -1745,6 +1746,7 @@ namespace CSObjectWrapEditor
             Debug.Log("finished! use " + (DateTime.Now - start).TotalMilliseconds + " ms");
             AssetDatabase.Refresh();
         }
+     
         
         [MenuItem("XLua/Clear Generated Code", false, 2)]
         public static void ClearAll()

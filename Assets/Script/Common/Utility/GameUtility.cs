@@ -96,7 +96,15 @@ namespace Common.Utility
                 return false;
             }
         }
-
+        /// <summary>
+        /// 路径替换
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
+        public static string FormatToSysFilePath(string path)
+        {
+            return path.Replace("/", "\\");
+        }
         private static string GetFileExtension(string path)
         {
             return Path.GetExtension(path).ToLower();
@@ -168,6 +176,48 @@ namespace Common.Utility
             catch (System.Exception ex)
             {
                 Debug.LogError($"SafeRenameFile failed! path = {sourceFileName} with err: {ex.Message}");
+                return false;
+            }
+        }
+        /// <summary>
+        /// 检查文件和创建Dir时需要
+        /// </summary>
+        /// <param name="filePath">文件路径</param>
+        private static void CheckFileAndCreateDirWhenNeeded(string filePath)
+        {
+            if (string.IsNullOrEmpty(filePath))
+            {
+                return;
+            }
+
+            FileInfo file_info = new FileInfo(filePath);
+            DirectoryInfo dir_info = file_info.Directory;
+            if (!dir_info.Exists)
+            {
+                Directory.CreateDirectory(dir_info.FullName);
+            }
+        }
+        public static bool SafeWriteAllBytes(string outFile, byte[] outBytes)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(outFile))
+                {
+                    return false;
+                }
+                //检查 之后路径不存在就会创建
+                CheckFileAndCreateDirWhenNeeded(outFile);
+                //路径是否存在
+                if (File.Exists(outFile))
+                {
+                    File.SetAttributes(outFile, FileAttributes.Normal);
+                }
+                File.WriteAllBytes(outFile, outBytes);
+                return true;
+            }
+            catch (System.Exception ex)
+            {
+                ToolsDebug.LogError($"SafeWriteAllBytes failed! path = {outFile} with err = {ex.Message}");
                 return false;
             }
         }
