@@ -3,7 +3,7 @@
 
 框架基于 xluaframerwork 制作
 
-lua代码 制作 UI模块 
+lua代码 制作 UI模块 lua代码需要根据需求修改制作
 
 战斗方面采用c#层调用lua层的ui显示
 
