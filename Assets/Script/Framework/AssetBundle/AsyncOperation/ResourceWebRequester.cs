@@ -58,11 +58,11 @@ namespace Framework.AssetBundle.AsyncOperation
             isOver = false;
         }
 
-        private int Sequence { get; set; }
+        public int Sequence { get; set; }
 
-        private bool noCache { get; set; }
+        public bool noCache { get; set; }
 
-        private string assetbundleName { get; set; }
+        public string assetbundleName { get; set; }
 
         private string url { get; set; }
 

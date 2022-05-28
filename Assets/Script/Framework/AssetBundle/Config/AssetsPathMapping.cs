@@ -61,13 +61,13 @@ namespace Framework.AssetBundle.Config
             AssetbundleName = AssetBundleUtility.AssetBundlePathToAssetBundleName(AssetName);
         }
 
-        private string AssetbundleName
+        public string AssetbundleName
         {
             get;
             set;
         }
 
-        private string AssetName
+        public string AssetName
         {
             get;
             set;

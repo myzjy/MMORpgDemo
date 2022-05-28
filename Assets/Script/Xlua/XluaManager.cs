@@ -6,13 +6,16 @@ using Common.Utility;
 using Framework.AssetBundles.Config;
 using Framework.AssetBundles.Utilty;
 using GameTools.Singletons;
+using Script.Framework.AssetBundle;
 using UnityEngine;
 using XLua;
 
 public class XluaManager : MMOSingletonDontDestroy<XluaManager>
 {
     public const string luaScriptsFolder = "LuaScript";
+
     public const string luaAssetbundleAssetName = "Lua";
+
     //热修复的lua逻辑脚步
     const string hotfixMainScriptName = "XLua.HotfixMain";
 
@@ -46,21 +49,21 @@ public class XluaManager : MMOSingletonDontDestroy<XluaManager>
         scriptPath = $"{luaAssetbundleAssetName}/{filepath}.bytes";
         string assetbundleName = null;
         string assetName = null;
-        bool status = false;
+        bool status = AssetBundleManager.Instance.MapAssetPath(scriptPath, out assetbundleName, out assetName);
         if (!status)
         {
-            Debug.LogError("MapAssetPath failed : " + scriptPath);
+            ToolsDebug.LogError($"MapAssetPath failed : {scriptPath}");
             return null;
         }
 
-        var asset = false;
+        var asset = AssetBundleManager.Instance.GetAssetCache(assetName) as TextAsset;
         if (asset != null)
         {
             //Logger.Log("Load lua script : " + scriptPath);
-            // return asset;
+            return asset.bytes;
         }
 
-        Debug.LogError("Load lua script failed : " + scriptPath + ", You should preload lua assetbundle first!!!");
+        ToolsDebug.LogError($"Load lua script failed : {scriptPath}, You should preload lua assetbundle first!!!");
         return null;
     }
 
@@ -103,9 +106,9 @@ public class XluaManager : MMOSingletonDontDestroy<XluaManager>
             //     luaUpdater = gameObject.AddComponent<LuaUpdater>();
             // }
             // luaUpdater.OnInit(luaEnv);
-          var  luaUpdate = luaEnv.Global.Get<Action<float, float>>("Update");
-         var   luaLateUpdate = luaEnv.Global.Get<Action>("LateUpdate");
-         var   luaFixedUpdate = luaEnv.Global.Get<Action<float>>("FixedUpdate");
+            var luaUpdate = luaEnv.Global.Get<Action<float, float>>("Update");
+            var luaLateUpdate = luaEnv.Global.Get<Action>("LateUpdate");
+            var luaFixedUpdate = luaEnv.Global.Get<Action<float>>("FixedUpdate");
         }
     }
 
@@ -120,12 +123,12 @@ public class XluaManager : MMOSingletonDontDestroy<XluaManager>
     /// 采用安全模式读取lua代码
     /// </summary>
     /// <param name="scriptContent"></param>
-    public void SafeDoString(string scriptContent, string chunkName="chunk")
+    public void SafeDoString(string scriptContent, string chunkName = "chunk")
     {
         if (luaEnv == null) return;
         try
         {
-            luaEnv.DoString(scriptContent,chunkName);
+            luaEnv.DoString(scriptContent, chunkName);
         }
         catch (System.Exception ex)
         {
@@ -138,6 +141,7 @@ public class XluaManager : MMOSingletonDontDestroy<XluaManager>
     {
         SafeDoString("HotfixMain.Stop()");
     }
+
     public void StartHotfix(bool restart = false)
     {
         if (luaEnv == null)
@@ -154,13 +158,16 @@ public class XluaManager : MMOSingletonDontDestroy<XluaManager>
         {
             LoadScript(hotfixMainScriptName);
         }
+
         SafeDoString("HotfixMain.Start()");
     }
+
     public void ReloadScript(string scriptName)
     {
         SafeDoString($"package.loaded['{scriptName}'] = nil");
         LoadScript(scriptName);
     }
+
     public void LoadScript(string scriptName)
     {
         SafeDoString($"require('{scriptName}')");
@@ -180,6 +187,7 @@ public class XluaManager : MMOSingletonDontDestroy<XluaManager>
             Debug.LogError(msg, null);
         }
     }
+
     public void Restart()
     {
         StopHotfix();
@@ -187,6 +195,7 @@ public class XluaManager : MMOSingletonDontDestroy<XluaManager>
         InitLuaEnv();
         OnInit();
     }
+
     public override void Dispose()
     {
         // if ( != null)
@@ -209,8 +218,7 @@ public class XluaManager : MMOSingletonDontDestroy<XluaManager>
 #if UNITY_EDITOR
 public static class LuaUpdaterExporter
 {
-    [CSharpCallLua]
-    public static List<Type> CSharpCallLua = new List<Type>()
+    [CSharpCallLua] public static List<Type> CSharpCallLua = new List<Type>()
     {
         typeof(Action),
         typeof(Action<float>),

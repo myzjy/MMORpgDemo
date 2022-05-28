@@ -29,12 +29,21 @@ namespace Framework.AssetBundle.AsyncOperation
         {
             pool.Enqueue(creater);
         }
-
+        
+        /// <summary>
+        /// 初始化构造函数
+        /// </summary>
+        /// <param name="sequence">计数</param>
         public AssetAsyncLoader(int sequence)
         {
             Sequence = sequence;
         }
 
+        /// <summary>
+        /// 初始化
+        /// </summary>
+        /// <param name="assetName">资源包名</param>
+        /// <param name="asset">资源</param>
         public void Init(string assetName, UnityEngine.Object asset)
         {
             AssetName = assetName;
@@ -42,13 +51,21 @@ namespace Framework.AssetBundle.AsyncOperation
             assetbundleLoader = null;
             isOver = true;
         }
-
+        
+        /// <summary>
+        /// 计数引用
+        /// </summary>
         public int Sequence
         {
             get;
             protected set;
         }
 
+        /// <summary>
+        /// 初始化
+        /// </summary>
+        /// <param name="assetName">资源包名</param>
+        /// <param name="loader">异步基础资产包加载器</param>
         public void Init(string assetName, BaseAssetBundleAsyncLoader loader)
         {
             AssetName = assetName;
@@ -56,18 +73,29 @@ namespace Framework.AssetBundle.AsyncOperation
             isOver = false;
             assetbundleLoader = loader;
         }
-
+        
+        /// <summary>
+        /// 资源名
+        /// </summary>
         public string AssetName
         {
             get;
             protected set;
         }
         
+        /// <summary>
+        /// 是否完成
+        /// </summary>
+        /// <returns></returns>
         public override bool IsDone()
         {
             return isOver;
         }
-
+        
+        /// <summary>
+        /// 进度
+        /// </summary>
+        /// <returns></returns>
         public override float Progress()
         {
             if (isDone)

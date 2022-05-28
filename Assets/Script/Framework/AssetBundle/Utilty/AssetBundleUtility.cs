@@ -110,5 +110,40 @@ namespace Framework.AssetBundles.Utilty
             var path = GetPersistentDataPath(filePath);
             return File.Exists(path);
         }
+        public static string GetPersistentFilePath(string assetPath = null)
+        {
+            return "file://" + GetPersistentDataPath(assetPath);
+        }
+        public static string GetStreamingAssetsFilePath(string assetPath = null)
+        {
+#if UNITY_EDITOR
+            string outputPath = Path.Combine("file://" + Application.streamingAssetsPath, AssetBundleConfig.AssetBundlesFolderName);
+#else
+#if UNITY_IPHONE || UNITY_IOS
+            string outputPath = Path.Combine("file://" + Application.streamingAssetsPath, AssetBundleConfig.AssetBundlesFolderName);
+#elif UNITY_ANDROID
+            string outputPath = Path.Combine(Application.streamingAssetsPath, AssetBundleConfig.AssetBundlesFolderName);
+#else
+            Logger.LogError("Unsupported platform!!!");
+#endif
+#endif
+            if (!string.IsNullOrEmpty(assetPath))
+            {
+                outputPath = Path.Combine(outputPath, assetPath);
+            }
+            return outputPath;
+        }
+        // 注意：这个路径是给WWW读文件使用的url，如果要直接磁盘写persistentDataPath，使用GetPlatformPersistentDataPath
+        public static string GetAssetBundleFileUrl(string filePath)
+        {
+            if (CheckPersistentFileExsits(filePath))
+            {
+                return GetPersistentFilePath(filePath);
+            }
+            else
+            {
+                return GetStreamingAssetsFilePath(filePath);
+            }
+        }
     }
 }
