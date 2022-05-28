@@ -46,7 +46,10 @@ namespace GameTools.Singletons
             OnAwake();
         }
 
-        public abstract void OnAwake();
+        public virtual void OnAwake()
+        {
+            
+        }
 
         private void Reset()
         {
@@ -76,7 +79,10 @@ namespace GameTools.Singletons
         }
 
 
-        public abstract void Disable();
+        public virtual void Disable()
+        {
+            
+        }
 
         private void OnDestroy()
         {

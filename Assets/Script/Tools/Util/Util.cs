@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using UniRx;
 using UnityEditor;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -111,7 +112,20 @@ namespace Tools.Util
         {
             _action?.Execute<T>(mT());
         }
+        /// <summary>
+        /// 执行一个线程
+        /// </summary>
+        /// <param name="onComplte"></param>
+        /// <param name="finish"></param>
+        public static void PerformOnBgThread(Action onComplte, Action finish)
+        {
+            Observable.Start(onComplte).ObserveOnMainThread().Subscribe(res => finish.Execute());
+        }
 
+        public static void PerformOnBgThread<T>(Action<T> finish, Func<T> onComplte)
+        {
+            Observable.Start(onComplte).ObserveOnMainThread().Subscribe(finish);
+        }
     
     }
 }

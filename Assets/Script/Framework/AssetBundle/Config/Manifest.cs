@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Security.Policy;
 using Common.Utility;
 using Framework.AssetBundles.Utilty;
 using Script.Framework.AssetBundle;

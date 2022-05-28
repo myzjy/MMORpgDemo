@@ -15,9 +15,12 @@ public class XluaManager : MMOSingletonDontDestroy<XluaManager>
     public const string luaScriptsFolder = "LuaScript";
 
     public const string luaAssetbundleAssetName = "Lua";
+    private const string commonMainScriptName = "Common.Main";
+
+    private const string gameMainScriptName = "GameMain";
 
     //热修复的lua逻辑脚步
-    const string hotfixMainScriptName = "XLua.HotfixMain";
+    private const string hotfixMainScriptName = "XLua.HotfixMain";
 
     /// <summary>
     /// 全局lua虚拟机
@@ -32,6 +35,17 @@ public class XluaManager : MMOSingletonDontDestroy<XluaManager>
     }
 
     public string AssetbundleName { get; protected set; }
+    public bool HasGameStart { get; protected set; }
+
+    public void StartGame()
+    {
+        if (luaEnv != null)
+        {
+            LoadScript(gameMainScriptName);
+            SafeDoString("GameMain.Start()");
+            HasGameStart = true;
+        }
+    }
 
     public static byte[] CustomLoader(ref string filepath)
     {

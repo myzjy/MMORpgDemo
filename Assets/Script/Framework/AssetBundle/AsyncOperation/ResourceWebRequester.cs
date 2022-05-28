@@ -64,7 +64,7 @@ namespace Framework.AssetBundle.AsyncOperation
 
         public string assetbundleName { get; set; }
 
-        private string url { get; set; }
+        public string url { get; set; }
 
         public UnityEngine.AssetBundle assetbundle
         {

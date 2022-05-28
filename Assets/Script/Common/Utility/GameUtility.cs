@@ -29,6 +29,7 @@ namespace Common.Utility
                 return null;
             }
         }
+
         /// <summary>
         /// 安全移除
         /// </summary>
@@ -47,6 +48,7 @@ namespace Common.Utility
                 {
                     DeleteDirectory(folderPath);
                 }
+
                 return true;
             }
             catch (System.Exception ex)
@@ -74,6 +76,7 @@ namespace Common.Utility
 
             Directory.Delete(dirPath, false);
         }
+
         public static bool SafeClearDir(string folderPath)
         {
             try
@@ -87,6 +90,7 @@ namespace Common.Utility
                 {
                     DeleteDirectory(folderPath);
                 }
+
                 Directory.CreateDirectory(folderPath);
                 return true;
             }
@@ -96,6 +100,7 @@ namespace Common.Utility
                 return false;
             }
         }
+
         /// <summary>
         /// 路径替换
         /// </summary>
@@ -105,10 +110,12 @@ namespace Common.Utility
         {
             return path.Replace("/", "\\");
         }
+
         private static string GetFileExtension(string path)
         {
             return Path.GetExtension(path).ToLower();
         }
+
         public static string[] GetSpecifyFilesInFolder(string path, string[] extensions = null, bool exclude = false)
         {
             if (string.IsNullOrEmpty(path))
@@ -131,6 +138,7 @@ namespace Common.Utility
                     .Where(f => extensions.Contains(GetFileExtension(f))).ToArray();
             }
         }
+
         public static bool LuaSafeDeleteFile(string filePath)
         {
             try
@@ -144,6 +152,7 @@ namespace Common.Utility
                 {
                     return true;
                 }
+
                 File.SetAttributes(filePath, FileAttributes.Normal);
                 File.Delete(filePath);
                 return true;
@@ -154,7 +163,7 @@ namespace Common.Utility
                 return false;
             }
         }
-        
+
         public static bool LuaRenameFile(string sourceFileName, string destFileName)
         {
             try
@@ -168,6 +177,7 @@ namespace Common.Utility
                 {
                     return true;
                 }
+
                 LuaSafeDeleteFile(destFileName);
                 File.SetAttributes(sourceFileName, FileAttributes.Normal);
                 File.Move(sourceFileName, destFileName);
@@ -179,6 +189,7 @@ namespace Common.Utility
                 return false;
             }
         }
+
         /// <summary>
         /// 检查文件和创建Dir时需要
         /// </summary>
@@ -197,6 +208,7 @@ namespace Common.Utility
                 Directory.CreateDirectory(dir_info.FullName);
             }
         }
+
         public static bool SafeWriteAllBytes(string outFile, byte[] outBytes)
         {
             try
@@ -205,6 +217,7 @@ namespace Common.Utility
                 {
                     return false;
                 }
+
                 //检查 之后路径不存在就会创建
                 CheckFileAndCreateDirWhenNeeded(outFile);
                 //路径是否存在
@@ -212,6 +225,7 @@ namespace Common.Utility
                 {
                     File.SetAttributes(outFile, FileAttributes.Normal);
                 }
+
                 File.WriteAllBytes(outFile, outBytes);
                 return true;
             }
@@ -221,6 +235,78 @@ namespace Common.Utility
                 return false;
             }
         }
+
+        public static string SafeReadAllText(string inFile)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(inFile))
+                {
+                    return null;
+                }
+
+                if (!File.Exists(inFile))
+                {
+                    return null;
+                }
+
+                File.SetAttributes(inFile, FileAttributes.Normal);
+                return File.ReadAllText(inFile);
+            }
+            catch (System.Exception ex)
+            {
+                ToolsDebug.LogError($"SafeReadAllText failed! path = {inFile} with err = {ex.Message}");
+                return null;
+            }
+        }
+
+        public static bool SafeDeleteDir(string folderPath)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(folderPath))
+                {
+                    return true;
+                }
+
+                if (Directory.Exists(folderPath))
+                {
+                    DeleteDirectory(folderPath);
+                }
+
+                return true;
+            }
+            catch (System.Exception ex)
+            {
+                ToolsDebug.LogError($"SafeDeleteDir failed! path = {folderPath} with err: {ex.Message}");
+                return false;
+            }
+        }
+
+        public static bool SafeWriteAllText(string outFile, string text)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(outFile))
+                {
+                    return false;
+                }
+
+                CheckFileAndCreateDirWhenNeeded(outFile);
+                if (File.Exists(outFile))
+                {
+                    File.SetAttributes(outFile, FileAttributes.Normal);
+                }
+
+                File.WriteAllText(outFile, text);
+                return true;
+            }
+            catch (System.Exception ex)
+            {
+                ToolsDebug.LogError(
+                    $"SafeWriteAllText failed! path = {outFile} with err = {ex.Message}");
+                return false;
+            }
+        }
     }
-    
 }

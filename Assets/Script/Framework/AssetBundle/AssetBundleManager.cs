@@ -301,7 +301,6 @@ namespace Script.Framework.AssetBundle
                 return;
             }
 #endif
-
             if (!IsAssetBundleLoaded(assetbundleName))
             {
                 ToolsDebug.LogError($"Try to add assets cache from unloaded assetbundle :  {assetbundleName}");
@@ -497,10 +496,12 @@ namespace Script.Framework.AssetBundle
         {
             return assetbundleResident.Contains(assebundleName);
         }
+
         public bool MapAssetPath(string assetPath, out string assetbundleName, out string assetName)
         {
             return assetsPathMapping.MapAssetPath(assetPath, out assetbundleName, out assetName);
         }
+
         public BaseAssetAsyncLoader LoadAssetAsync(string assetPath, System.Type assetType)
         {
 #if UNITY_EDITOR
@@ -650,6 +651,41 @@ namespace Script.Framework.AssetBundle
                 }
             }
         }
+
+        // 本地异步请求非Assetbundle资源，非AB（不计引用计数、不缓存），Creater使用后记得回收
+        public ResourceWebRequester RequestAssetFileAsync(string filePath, bool streamingAssetsOnly = true)
+        {
+            var creater = ResourceWebRequester.Get();
+            string url = null;
+            url = streamingAssetsOnly
+                ? AssetBundleUtility.GetStreamingAssetsFilePath(filePath)
+                : AssetBundleUtility.GetAssetBundleFileUrl(filePath);
+            // ReSharper disable once InvalidXmlDocComment
+            /**
+             * @ name : 文件路径
+             * @ url : 下载url
+             * @ noCache : 缓存
+             */
+            creater.Init(filePath, url, true);
+            webRequesting.Add(filePath, creater);
+            webRequesterQueue.Enqueue(creater);
+            return creater;
+        }
+        public void TestHotfix()
+        {
+#if UNITY_EDITOR || CLIENT_DEBUG
+            ToolsDebug.Log("********** AssetBundleManager : Call TestHotfix in cs...");
+#endif
+        }
+        public ResourceWebRequester DownloadWebResourceAsync(string url)
+        {
+            var creater = ResourceWebRequester.Get();
+            creater.Init(url, url, true);
+            webRequesting.Add(url, creater);
+            webRequesterQueue.Enqueue(creater);
+            return creater;
+        }
+        #region 编辑器黑名单
 
 #if UNITY_EDITOR
         [BlackList]
@@ -817,5 +853,7 @@ namespace Script.Framework.AssetBundle
             return refrences;
         }
 #endif
+
+        #endregion
     }
 }

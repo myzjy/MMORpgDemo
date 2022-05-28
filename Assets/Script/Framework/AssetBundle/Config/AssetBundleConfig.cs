@@ -15,6 +15,7 @@ namespace Framework.AssetBundles.Config
         private static int mIsSimulateMode = -1;
         private const string kIsSimulateMode = "IsSimulateMode";
         public const string CommonMapPattren = ",";
+        public const string AssetBundleServerUrlFileName = "AssetBundleServerUrl.txt";
 
         public static bool IsEditorMode
         {
