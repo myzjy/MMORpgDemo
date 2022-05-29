@@ -76,7 +76,6 @@ namespace Script.Framework.AssetBundle
 
         public override void OnAwake()
         {
-            throw new System.NotImplementedException();
         }
 
         void Update()
@@ -671,12 +670,14 @@ namespace Script.Framework.AssetBundle
             webRequesterQueue.Enqueue(creater);
             return creater;
         }
+
         public void TestHotfix()
         {
 #if UNITY_EDITOR || CLIENT_DEBUG
             ToolsDebug.Log("********** AssetBundleManager : Call TestHotfix in cs...");
 #endif
         }
+
         public ResourceWebRequester DownloadWebResourceAsync(string url)
         {
             var creater = ResourceWebRequester.Get();
@@ -685,6 +686,7 @@ namespace Script.Framework.AssetBundle
             webRequesterQueue.Enqueue(creater);
             return creater;
         }
+
         #region 编辑器黑名单
 
 #if UNITY_EDITOR

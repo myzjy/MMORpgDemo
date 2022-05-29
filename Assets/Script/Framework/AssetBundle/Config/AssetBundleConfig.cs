@@ -1,4 +1,7 @@
-﻿using UnityEditor;
+﻿using System.IO;
+using Common.Utility;
+using UnityEditor;
+using  UnityEngine;
 
 namespace Framework.AssetBundles.Config
 {
@@ -7,6 +10,9 @@ namespace Framework.AssetBundles.Config
         public const string AssetsFolderName = "AddressablePaker";
         public const string AssetBundlesFolderName = "AssetBundles";
         public const string AssetsPathMapFileName = "AssetsMap.bytes";
+        public const string VariantsMapFileName = "VariantsMap.bytes";
+        public const string ChannelFolderName = "Channel";
+        public const string localSvrAppPath = "Editor/AssetBundle/LocalServer/AssetBundleServer.exe";
 
         //后缀名
         public const string AssetBundleSuffix = ".assetbundle";
@@ -16,7 +22,25 @@ namespace Framework.AssetBundles.Config
         private const string kIsSimulateMode = "IsSimulateMode";
         public const string CommonMapPattren = ",";
         public const string AssetBundleServerUrlFileName = "AssetBundleServerUrl.txt";
-
+#if UNITY_EDITOR
+                
+        public static string LocalSvrAppWorkPath
+        {
+            get
+            {
+                return AssetBundlesBuildOutputPath;
+            }
+        }
+        
+        public static string AssetBundlesBuildOutputPath
+        {
+            get
+            {
+                string outputPath = Path.Combine(System.Environment.CurrentDirectory, AssetBundlesFolderName);
+                GameUtility.CheckDirAndCreateWhenNeeded(outputPath);
+                return outputPath;
+            }
+        }
         public static bool IsEditorMode
         {
             get
@@ -44,6 +68,13 @@ namespace Framework.AssetBundles.Config
                         IsSimulateMode = false;
                     }
                 }
+            }
+        }
+        public static string LocalSvrAppPath
+        {
+            get
+            {
+                return Path.Combine(Application.dataPath, localSvrAppPath);
             }
         }
         public static bool IsSimulateMode
@@ -76,5 +107,7 @@ namespace Framework.AssetBundles.Config
                 }
             }
         }
+#endif
+
     }
 }

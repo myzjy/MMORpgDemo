@@ -13,14 +13,30 @@
             string saveName = paramList[1] as string;
         }
 
+        public override string GetBundleID()
+        {
+            return "com.chivas.xluaframework";
+        }
+
         public override void InstallApk()
         {
-            throw new System.NotImplementedException();
         }
 
         public override string GetProductName()
         {
             return "xluaframework";
+        }
+
+        public override void Login()
+        {
+        }
+
+        public override void Logout()
+        {
+        }
+
+        public override void Pay(params object[] paramList)
+        {
         }
     }
 }

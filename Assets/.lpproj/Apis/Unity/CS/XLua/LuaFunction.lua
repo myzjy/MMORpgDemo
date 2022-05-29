@@ -25,3 +25,8 @@ end
 ---@return CS.System.String
 function CS.XLua.LuaFunction:ToString()
 end
+
+---@param delType : CS.System.Type
+---@return CS.System.Delegate
+function CS.XLua.LuaFunction:Cast(delType)
+end

@@ -14,7 +14,11 @@ public class ToolsDebug
     /// </summary>
     /// <param name="message">String or object to be converted to string representation for display.</param>
     /// <param name="context">Object to which the message applies.</param>
-    public static void Log(object message) => Debug.unityLogger.Log(LogType.Log, message);
+    public static void Log(object message)
+    {
+        
+        Debug.Log(message);
+    }
 
     /// <summary>
     ///   <para>Logs a message to the Unity Console.</para>

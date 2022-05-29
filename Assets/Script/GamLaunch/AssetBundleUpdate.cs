@@ -12,6 +12,7 @@ using GameData.Net;
 using Newtonsoft.Json;
 using Script.Config;
 using Script.Framework.AssetBundle;
+using Script.Framework.UI.Tip;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
@@ -100,8 +101,8 @@ public class AssetBundleUpdater : MonoBehaviour
         // 执行大版本更新、资源更新
         if (needDownloadGame)
         {
-            // UINoticeTip.Instance.ShowOneButtonTip("游戏下载", "需要下载新的游戏版本！", "确定", null);
-            // yield return UINoticeTip.Instance.WaitForResponse();
+            UINoticeTip.Instance.ShowOneButtonTip("游戏下载", "需要下载新的游戏版本！", "确定", null);
+            yield return UINoticeTip.Instance.WaitForResponse();
             yield return DownloadGame();
         }
         else if (needUpdateGame)
@@ -126,7 +127,7 @@ public class AssetBundleUpdater : MonoBehaviour
 
         XluaManager.Instance.StartGame();
         // CustomDataStruct.Helper.Startup();
-        // UINoticeTip.Instance.DestroySelf();
+        UINoticeTip.Instance.DestroySelf();
         Destroy(gameObject, 0.5f);
         yield break;
     }
@@ -140,8 +141,8 @@ public class AssetBundleUpdater : MonoBehaviour
 #if UNITY_ANDROID
         if (Application.internetReachability != NetworkReachability.ReachableViaLocalAreaNetwork)
         {
-            // UINoticeTip.Instance.ShowOneButtonTip("游戏下载", "当前为非Wifi网络环境，下载需要消耗手机流量，继续下载？", "确定", null);
-            // yield return UINoticeTip.Instance.WaitForResponse();
+            UINoticeTip.Instance.ShowOneButtonTip("游戏下载", "当前为非Wifi网络环境，下载需要消耗手机流量，继续下载？", "确定", null);
+            yield return UINoticeTip.Instance.WaitForResponse();
         }
 
         DownloadGameForAndroid();
@@ -169,18 +170,15 @@ public class AssetBundleUpdater : MonoBehaviour
 
     void DownloadGameSuccess()
     {
-        // UINoticeTip.Instance.ShowOneButtonTip("下载完毕", "游戏下载完毕，确认安装？", "安装", () =>
-        // {
-        //     ChannelManager.instance.InstallGame(DownloadGameSuccess, DownloadGameFail);
-        // });
+        UINoticeTip.Instance.ShowOneButtonTip("下载完毕", "游戏下载完毕，确认安装？", "安装", () =>
+        {
+            ChannelManager.Instance.InstallGame(DownloadGameSuccess, DownloadGameFail);
+        });
     }
 
     void DownloadGameFail()
     {
-        // UINoticeTip.Instance.ShowOneButtonTip("下载失败", "游戏下载失败！", "重试", () =>
-        // {
-        //     DownloadGameForAndroid();
-        // });
+        UINoticeTip.Instance.ShowOneButtonTip("下载失败", "游戏下载失败！", "重试", DownloadGameForAndroid);
     }
 #endif
 
@@ -327,8 +325,8 @@ public class AssetBundleUpdater : MonoBehaviour
         yield return request;
         if (request.error != null)
         {
-            // UINoticeTip.Instance.ShowOneButtonTip("网络错误", "检测更新失败，请确认网络已经连接！", "重试", null);
-            // yield return UINoticeTip.Instance.WaitForResponse();
+            UINoticeTip.Instance.ShowOneButtonTip("网络错误", "检测更新失败，请确认网络已经连接！", "重试", null);
+            yield return UINoticeTip.Instance.WaitForResponse();
             ToolsDebug.LogError("Download :  " + request.assetbundleName + "\n from url : " + request.url +
                                 "\n err : " + request.error);
             request.Dispose();
@@ -348,8 +346,8 @@ public class AssetBundleUpdater : MonoBehaviour
         yield return request;
         if (request.error != null)
         {
-            // UINoticeTip.Instance.ShowOneButtonTip("网络错误", "检测更新失败，请确认网络已经连接！", "重试", null);
-            // yield return UINoticeTip.Instance.WaitForResponse();
+            UINoticeTip.Instance.ShowOneButtonTip("网络错误", "检测更新失败，请确认网络已经连接！", "重试", null);
+            yield return UINoticeTip.Instance.WaitForResponse();
             ToolsDebug.LogError("Download :  " + request.assetbundleName + "\n from url : " + request.url +
                                 "\n err : " + request.error);
             request.Dispose();
@@ -502,9 +500,9 @@ public class AssetBundleUpdater : MonoBehaviour
         ToolsDebug.Log($"GetDownloadAssetBundlesSize : {KBSizeToString(downloadSize)}, use {(DateTime.Now - start).Milliseconds}ms");
         if (ShowUpdatePrompt(downloadSize) || isInternal)
         {
-            // UINoticeTip.Instance.ShowOneButtonTip("更新提示", string.Format("本次更新需要消耗{0}流量！", KBSizeToString(downloadSize)),
-            //     "确定", null);
-            // yield return UINoticeTip.Instance.WaitForResponse();
+            UINoticeTip.Instance.ShowOneButtonTip("更新提示", $"本次更新需要消耗{KBSizeToString(downloadSize)}流量！",
+                "确定", null);
+            yield return UINoticeTip.Instance.WaitForResponse();
         }
 
         statusText.text = "正在更新资源...";
@@ -571,8 +569,8 @@ public class AssetBundleUpdater : MonoBehaviour
         yield return request;
         if (!string.IsNullOrEmpty(request.error))
         {
-            // UINoticeTip.Instance.ShowOneButtonTip("网络错误", "检测更新失败，请确认网络已经连接！", "重试", null);
-            // yield return UINoticeTip.Instance.WaitForResponse();
+            UINoticeTip.Instance.ShowOneButtonTip("网络错误", "检测更新失败，请确认网络已经连接！", "重试", null);
+            yield return UINoticeTip.Instance.WaitForResponse();
             ToolsDebug.LogError("Download host manifest :  " + request.assetbundleName + "\n from url : " + request.url +
                             "\n err : " + request.error);
             request.Dispose();
@@ -599,8 +597,8 @@ public class AssetBundleUpdater : MonoBehaviour
         yield return request;
         if (request.error != null)
         {
-            // UINoticeTip.Instance.ShowOneButtonTip("网络错误", "检测更新失败，请确认网络已经连接！", "重试", null);
-            // yield return UINoticeTip.Instance.WaitForResponse();
+            UINoticeTip.Instance.ShowOneButtonTip("网络错误", "检测更新失败，请确认网络已经连接！", "重试", null);
+            yield return UINoticeTip.Instance.WaitForResponse();
             ToolsDebug.LogError("Download assetbundls_size :  " + request.assetbundleName + "\n from url : " + request.url +
                                 "\n err : " + request.error);
             request.Dispose();
@@ -658,8 +656,8 @@ public class AssetBundleUpdater : MonoBehaviour
         yield return new WaitUntil(() => { return isDownloading == false; });
         if (needDownloadList.Count > 0)
         {
-            // UINoticeTip.Instance.ShowOneButtonTip("网络错误", "游戏更新失败，请确认网络已经连接！", "重试", null);
-            // yield return UINoticeTip.Instance.WaitForResponse();
+            UINoticeTip.Instance.ShowOneButtonTip("网络错误", "游戏更新失败，请确认网络已经连接！", "重试", null);
+            yield return UINoticeTip.Instance.WaitForResponse();
             yield return StartUpdate();
         }
 

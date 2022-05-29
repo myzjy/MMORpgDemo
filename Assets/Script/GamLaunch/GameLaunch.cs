@@ -6,6 +6,7 @@ using Common.Utility;
 using Framework.AssetBundles.Config;
 using Framework.AssetBundles.Utilty;
 using Script.Framework.AssetBundle;
+using Script.Framework.UI.Tip;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using XLua;
@@ -13,7 +14,9 @@ using XLua;
 public class GameLaunch : MonoBehaviour
 {
     AssetBundleUpdater updater;
-
+    const string noticeTipPrefabPath = "UI/Prefab/UINoticeTip.prefab";
+    GameObject launchPrefab;
+    GameObject noticeTipPrefab;
     // Start is called before the first frame update
     IEnumerator Start()
     {
@@ -25,6 +28,24 @@ public class GameLaunch : MonoBehaviour
         var startTime = DateTime.Now;
         yield return InitAppVersion();
         ToolsDebug.Log($"InitAppVersion use {(DateTime.Now - startTime).Milliseconds}ms");
+        // 启动资源管理模块
+        startTime = DateTime.Now;
+        yield return AssetBundleManager.Instance.Initialize();
+        ToolsDebug.Log($"AssetBundleManager Initialize use {(DateTime.Now - startTime).Milliseconds}ms");
+        // 启动xlua热修复模块
+        startTime = DateTime.Now;
+        XluaManager.Instance.Startup();
+        string luaAssetbundleName = XluaManager.Instance.AssetbundleName;
+        AssetBundleManager.Instance.SetAssetBundleResident(luaAssetbundleName, true);
+        var abloader = AssetBundleManager.Instance.LoadAssetBundleAsync(luaAssetbundleName);
+        yield return abloader;
+        abloader.Dispose();
+        XluaManager.Instance.OnInit();
+        XluaManager.Instance.StartHotfix();
+        ToolsDebug.Log($"XLuaManager StartHotfix use {(DateTime.Now - startTime).Milliseconds}ms");
+        // yield return InitLaunchPrefab();
+        yield return InitNoticeTipPrefab();
+
         if (updater != null)
         {
             updater.StartCheckUpdate();
@@ -34,7 +55,7 @@ public class GameLaunch : MonoBehaviour
     private IEnumerator InitAppVersion()
     {
         var appVersionRequest = AssetBundleManager.Instance.RequestAssetFileAsync(BuildUtils.AppVersionFileName);
-        yield return appVersionRequest;
+        yield return new  WaitUntil(()=> appVersionRequest.isDone);
         var streamingAppVersion = appVersionRequest.text;
         appVersionRequest.Dispose();
 
@@ -51,6 +72,25 @@ public class GameLaunch : MonoBehaviour
         GameUtility.SafeWriteAllText(appVersionPath, streamingAppVersion);
         // ChannelManager.instance.appVersion = streamingAppVersion;
 
+    }
+    
+    IEnumerator InitNoticeTipPrefab()
+    {
+        
+        var start = DateTime.Now;
+        var loader = AssetBundleManager.Instance.LoadAssetAsync(noticeTipPrefabPath, typeof(GameObject));
+        yield return loader;
+        noticeTipPrefab = loader.asset as GameObject;
+        ToolsDebug.Log($"Load noticeTipPrefab use {(DateTime.Now - start).Milliseconds}ms");
+        loader.Dispose();
+        if (noticeTipPrefab == null)
+        {
+            ToolsDebug.LogError("LoadAssetAsync noticeTipPrefab err : " + noticeTipPrefabPath);
+            yield break;
+        }
+        var go = InstantiateGameObject(noticeTipPrefab);
+        UINoticeTip.Instance.UIGameObject = go;
+        yield break;
     }
     IEnumerator InitChannel()
     {

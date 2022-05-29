@@ -85,6 +85,11 @@ namespace Framework.AssetBundle.AsyncOperation
             get { return request.downloadHandler.text; }
         }
 
+        public bool getSendWebRequest
+        {
+            get { return request.isDone; }
+        }
+
         public string error
         {
             get
@@ -110,7 +115,16 @@ namespace Framework.AssetBundle.AsyncOperation
             }
             else
             {
-                //Logger.Log("Downloading : " + url);
+                request=UnityWebRequest.Get(url);
+
+                DownloadHandlerBuffer  Download  = new DownloadHandlerBuffer();
+                request.downloadHandler = Download;
+                ToolsDebug.Log("Downloading : " + url);
+                request.SendWebRequest();
+                while (!request.isDone)
+                {
+                    Debug.Log(request.downloadHandler.text);
+                }
             }
         }
 
@@ -120,6 +134,7 @@ namespace Framework.AssetBundle.AsyncOperation
             {
                 return 1.0f;
             }
+
             return request?.downloadProgress ?? 0f;
         }
 
@@ -131,6 +146,7 @@ namespace Framework.AssetBundle.AsyncOperation
             }
 
             isOver = request != null && (request.isDone || !string.IsNullOrEmpty(request.error));
+
             if (!isOver)
             {
                 return;
@@ -147,7 +163,7 @@ namespace Framework.AssetBundle.AsyncOperation
             if (request != null)
             {
                 request.Dispose();
-                request = null;
+                // request = null;
             }
 
             Recycle(this);

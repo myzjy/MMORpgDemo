@@ -82,5 +82,11 @@ namespace Common.GameChannel
         {
             return channel == null ? "xluaframework" : channel.GetProductName();
         }
+        public void InstallGame(Action succeed, Action fail)
+        {
+            onActionSucceed = succeed;
+            onActionFailed = fail;
+            channel.InstallApk();
+        }
     }
 }

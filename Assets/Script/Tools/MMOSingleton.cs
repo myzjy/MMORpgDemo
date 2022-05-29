@@ -71,7 +71,18 @@ namespace GameTools.Singletons
             Destroy();
         }
 
+        public void DestroySelf()
+        {
+            Dispose();
+            MMOSingleton<T>.instance = null;
+            UnityEngine.Object.Destroy(gameObject);
+        }
+
         public virtual void Destroy()
+        {
+        }
+
+        public virtual void Dispose()
         {
         }
 

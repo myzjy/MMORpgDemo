@@ -145,5 +145,19 @@ namespace Framework.AssetBundles.Utilty
                 return GetStreamingAssetsFilePath(filePath);
             }
         }
+        public static string GetStreamingAssetsDataPath(string assetPath = null)
+        {
+            string outputPath = Path.Combine(Application.streamingAssetsPath, AssetBundleConfig.AssetBundlesFolderName);
+            if (!string.IsNullOrEmpty(assetPath))
+            {
+                outputPath = Path.Combine(outputPath, assetPath);
+            }
+            return outputPath;
+        }
+        public static bool IsPackagePath(string assetPath)
+        {
+            string path = "Assets/" + AssetBundleConfig.AssetsFolderName + "/";
+            return assetPath.StartsWith(path);
+        }
     }
 }

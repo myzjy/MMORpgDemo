@@ -21,7 +21,13 @@ public class XluaManager : MMOSingletonDontDestroy<XluaManager>
 
     //热修复的lua逻辑脚步
     private const string hotfixMainScriptName = "XLua.HotfixMain";
+    /*
+       * 没有任何实现的函数，用于保证MonoSingleton在使用前已创建
+       */
+    public void Startup()
+    {
 
+    }
     /// <summary>
     /// 全局lua虚拟机
     /// </summary>

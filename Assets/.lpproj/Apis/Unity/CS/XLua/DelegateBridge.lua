@@ -17,5 +17,15 @@ end
 function CS.XLua.DelegateBridge:PCall(L, nArgs, nResults, errFunc)
 end
 
+function CS.XLua.DelegateBridge:InvokeSessionStart()
+end
+
+---@param nRet : CS.System.Int32
+function CS.XLua.DelegateBridge:Invoke(nRet)
+end
+
+function CS.XLua.DelegateBridge:InvokeSessionEnd()
+end
+
 function CS.XLua.DelegateBridge:Action()
 end

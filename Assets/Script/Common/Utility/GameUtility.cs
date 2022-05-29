@@ -6,6 +6,8 @@ namespace Common.Utility
 {
     public class GameUtility
     {
+        public const string AssetsFolderName = "Assets";
+
         public static byte[] SafeReadAllBytes(string inFile)
         {
             try
@@ -305,6 +307,103 @@ namespace Common.Utility
             {
                 ToolsDebug.LogError(
                     $"SafeWriteAllText failed! path = {outFile} with err = {ex.Message}");
+                return false;
+            }
+        }
+        public static bool SafeWriteAllLines(string outFile, string[] outLines)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(outFile))
+                {
+                    return false;
+                }
+
+                CheckFileAndCreateDirWhenNeeded(outFile);
+                if (File.Exists(outFile))
+                {
+                    File.SetAttributes(outFile, FileAttributes.Normal);
+                }
+                File.WriteAllLines(outFile, outLines);
+                return true;
+            }
+            catch (System.Exception ex)
+            {
+                ToolsDebug.LogError($"SafeWriteAllLines failed! path = {outFile} with err = {ex.Message}");
+                return false;
+            }
+        }
+     
+        public static string FormatToUnityPath(string path)
+        {
+            return path.Replace("\\", "/");
+        }
+        public static string FullPathToAssetPath(string full_path)
+        {
+            full_path = FormatToUnityPath(full_path);
+            if (!full_path.StartsWith(Application.dataPath))
+            {
+                return null;
+            }
+            string ret_path = full_path.Replace(Application.dataPath, "");
+            return AssetsFolderName + ret_path;
+        }
+        public static void CheckDirAndCreateWhenNeeded(string folderPath)
+        {
+            if (string.IsNullOrEmpty(folderPath))
+            {
+                return;
+            }
+
+            if (!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+            }
+        }
+        public static bool SafeDeleteFile(string filePath)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(filePath))
+                {
+                    return true;
+                }
+
+                if (!File.Exists(filePath))
+                {
+                    return true;
+                }
+                File.SetAttributes(filePath, FileAttributes.Normal);
+                File.Delete(filePath);
+                return true;
+            }
+            catch (System.Exception ex)
+            {
+                ToolsDebug.LogError($"SafeDeleteFile failed! path = {filePath} with err: {ex.Message}");
+                return false;
+            }
+        }
+        public static bool SafeRenameFile(string sourceFileName, string destFileName)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(sourceFileName))
+                {
+                    return false;
+                }
+
+                if (!File.Exists(sourceFileName))
+                {
+                    return true;
+                }
+                SafeDeleteFile(destFileName);
+                File.SetAttributes(sourceFileName, FileAttributes.Normal);
+                File.Move(sourceFileName, destFileName);
+                return true;
+            }
+            catch (System.Exception ex)
+            {
+                ToolsDebug.LogError($"SafeRenameFile failed! path = {sourceFileName} with err: {ex.Message}");
                 return false;
             }
         }
