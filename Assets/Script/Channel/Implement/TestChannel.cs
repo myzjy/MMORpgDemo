@@ -1,5 +1,8 @@
 ﻿namespace Common.GameChannel.Implement
 {
+    /// <summary>
+    /// 测试渠道
+    /// </summary>
     public class TestChannel: BaseChannel
     {
         public override void Init()
