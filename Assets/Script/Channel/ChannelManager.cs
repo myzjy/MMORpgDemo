@@ -1,4 +1,5 @@
 ﻿using System;
+using Common.GameChannel.Implement;
 using GameTools.Singletons;
 using XLua;
 
@@ -60,14 +61,14 @@ namespace Common.GameChannel
 
         public BaseChannel CreateChannel(string channelName)
         {
-            ChannelType platName = (ChannelType)Enum.Parse(typeof(ChannelType), channelName);
-            // switch ((platName))
-            // {
-            //     case ChannelType.Test:
-            //         return new TestChannel();
-            //     default:
-            //         return new TestChannel();
-            // }
+            var platName = (ChannelType)Enum.Parse(typeof(ChannelType), channelName);
+            switch ((platName))
+            {
+                case ChannelType.Test:
+                    return new TestChannel();
+                default:
+                    return new TestChannel();
+            }
             return null;
         }
         public void StartDownloadGame(string url, Action succeed = null, Action fail = null, Action<int> progress = null, string saveName = null)
@@ -76,6 +77,10 @@ namespace Common.GameChannel
             onActionFailed = fail;
             onActionProgressValueChange = progress;
             channel.DownloadGame(url, saveName);
+        }
+        public string GetProductName()
+        {
+            return channel == null ? "xluaframework" : channel.GetProductName();
         }
     }
 }

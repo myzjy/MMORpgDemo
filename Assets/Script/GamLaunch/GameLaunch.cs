@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Common.GameChannel;
 using Common.Utility;
+using Framework.AssetBundles.Config;
 using Framework.AssetBundles.Utilty;
 using Script.Framework.AssetBundle;
 using UnityEngine;
@@ -49,5 +51,37 @@ public class GameLaunch : MonoBehaviour
         GameUtility.SafeWriteAllText(appVersionPath, streamingAppVersion);
         // ChannelManager.instance.appVersion = streamingAppVersion;
 
+    }
+    IEnumerator InitChannel()
+    {
+#if UNITY_EDITOR
+        if (AssetBundleConfig.IsEditorMode)
+        {
+            yield break;
+        }
+#endif
+        var channelNameRequest = AssetBundleManager.Instance.RequestAssetFileAsync(BuildUtils.ChannelNameFileName);
+        yield return channelNameRequest;
+        var channelName = channelNameRequest.text;
+        channelNameRequest.Dispose();
+        ChannelManager.Instance.Init(channelName);
+        ToolsDebug.Log($"channelName = {channelName}");
+   
+    }
+    GameObject InstantiateGameObject(GameObject prefab)
+    {
+        var start = DateTime.Now;
+        GameObject go = GameObject.Instantiate(prefab);
+        ToolsDebug.Log($"Instantiate use {(DateTime.Now - start).Milliseconds}ms");
+
+        var luanchLayer = GameObject.Find("UIRoot/LuanchLayer");
+        go.transform.SetParent(luanchLayer.transform);
+        var rectTransform = go.GetComponent<RectTransform>();
+        rectTransform.offsetMax = Vector2.zero;
+        rectTransform.offsetMin = Vector2.zero;
+        rectTransform.localScale = Vector3.one;
+        rectTransform.localPosition = Vector3.zero;
+
+        return go;
     }
 }

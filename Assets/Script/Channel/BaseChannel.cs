@@ -12,6 +12,8 @@
         /// 不去做，有能力的可以去做 安卓 ios的原生代码
         /// </summary>
         public abstract void InstallApk();
+        public abstract string GetProductName();
+
         public virtual bool IsInternalChannel()
         {
             return false;

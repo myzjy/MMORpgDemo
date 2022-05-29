@@ -315,7 +315,7 @@ public class AssetBundleUpdater : MonoBehaviour
         sb.AppendFormat("noticeVersion = {0}\n", ChannelManager.instance.noticeVersion);
         sb.AppendFormat("serverAppVersion = {0}\n", serverAppVersion);
         sb.AppendFormat("serverResVersion = {0}\n", serverResVersion);
-        Logger.Log(sb.ToString());
+        ToolsDebug.Log(sb.ToString());
 #endif
 
         yield break;
@@ -340,7 +340,6 @@ public class AssetBundleUpdater : MonoBehaviour
         serverAppVersion = request.text.Trim().Replace("\r", "");
         request.Dispose();
 
-        yield break;
     }
 
     IEnumerator DownloadLocalServerResVersion()
@@ -361,8 +360,6 @@ public class AssetBundleUpdater : MonoBehaviour
 
         serverResVersion = request.text.Trim().Replace("\r", "");
         request.Dispose();
-
-        yield break;
     }
 
     IEnumerator InternalGetUrlList()
@@ -375,8 +372,8 @@ public class AssetBundleUpdater : MonoBehaviour
         // TODO：GooglePlay下载还有待探索
         // if (!ChannelManager.Instance.IsGooglePlay())
         // {
-        //     string apkName = ChannelManager.instance.GetProductName() + ".apk";
-        //     URLSetting.APP_DOWNLOAD_URL = localSerUrlRequest.text + apkName;
+        string apkName = ChannelManager.Instance.GetProductName() + ".apk";
+        URLSetting.APP_DOWNLOAD_URL = localSerUrlRequest.text + apkName;
         // }
 #elif UNITY_IPHONE
         // TODO：ios下载还有待探索
@@ -390,7 +387,6 @@ public class AssetBundleUpdater : MonoBehaviour
         // 从本地服务器拉一下资源版本号
         yield return DownloadLocalServerResVersion();
 
-        yield break;
     }
 
     IEnumerator OutnetGetUrlList()

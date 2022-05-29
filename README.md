@@ -11,7 +11,7 @@ lua代码 制作 UI模块 lua代码需要根据需求修改制作
 
 人物移动交互相关全部都要与服务器交互
 
-服务器方面 c++ drogon框架制作，预计分布式形式
+服务器方面 c++ drogon框架制作，预计分布式形式 在linux平台写
 (https://github.com/myzjy/GameAndServerProject)
 
 以上是目前计划
