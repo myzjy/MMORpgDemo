@@ -1,0 +1,15 @@
+lua.assetbundle,Channel/Lua.bytes
+lua.assetbundle,Lua/Common/Common.lua.bytes
+lua.assetbundle,Lua/Common/Tools/GameToolsObj.lua.bytes
+lua.assetbundle,Lua/Common/Tools/ToolsCommons.lua.bytes
+lua.assetbundle,Lua/Common/Tools/ToolsObj/SuperObjTools.lua.bytes
+lua.assetbundle,Lua/Common/UpdateManager.lua.bytes
+lua.assetbundle,Lua/GameMain.lua.bytes
+lua.assetbundle,Lua/Global/Global.lua.bytes
+lua.assetbundle,Lua/UI/Config/UIWindowsNames.lua.bytes
+lua.assetbundle,Lua/UI/Login/LoginUI.lua.bytes
+lua.assetbundle,Lua/XLua/Hotfix/HotfixTest.lua.bytes
+lua.assetbundle,Lua/XLua/HotfixMain.lua.bytes
+ui.assetbundle,Channel/UI.bytes
+ui.assetbundle,UI/Prefab/LoginPanel.prefab
+ui.assetbundle,UI/Prefab/UINoticeTip.prefab

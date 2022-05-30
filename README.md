@@ -21,3 +21,6 @@ lua代码 制作 UI模块 lua代码需要根据需求修改制作
 项目并未完善 计划比较大
 
 qq 2910553808
+
+流程在陆续完善
+[项目整体流程](https://www.processon.com/view/link/629385ac7d9c085adb740a1c)

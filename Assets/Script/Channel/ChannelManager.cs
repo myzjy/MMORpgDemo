@@ -88,5 +88,10 @@ namespace Common.GameChannel
             onActionFailed = fail;
             channel.InstallApk();
         }
+        public bool IsGooglePlay()
+        {
+            return channel != null && channel.IsGooglePlay();
+        }
+
     }
 }

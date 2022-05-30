@@ -230,13 +230,13 @@ public class AssetBundleUpdater : MonoBehaviour
         yield break;
 #else
         bool SDKInitComplete = false;
-        ChannelManager.instance.InitSDK(() =>
-        {
-            SDKInitComplete = true;
-        });
-        yield return new WaitUntil(()=> {
-            return SDKInitComplete;
-        });
+        // ChannelManager.instance.InitSDK(() =>
+        // {
+        //     SDKInitComplete = true;
+        // });
+        // yield return new WaitUntil(()=> {
+        //     return SDKInitComplete;
+        // });
         yield break;
 #endif
     }
@@ -266,7 +266,7 @@ public class AssetBundleUpdater : MonoBehaviour
         if (isInternalVersion)
         {
 #if UNITY_ANDROID
-            if (ChannelManager.instance.IsGooglePlay())
+            if (ChannelManager.Instance.IsGooglePlay())
             {
                 // TODO：这里还要探索下怎么下载
                 needDownloadGame = false;
