@@ -7,12 +7,14 @@ using XLua;
 
 namespace Script.Framework.UI.Tip
 {
-    public class UINoticeTip : MMOSingleton<UINoticeTip>
+    [Hotfix]
+    [LuaCallCSharp]
+    public class UINoticeTip : MMOSingletonDontDestroy<UINoticeTip>
     {
-        GameObject go;
-        Text titleText;
-        Text noticeText;
-        Text buttonOneText;
+        private GameObject go;
+        private Text titleText;
+        private Text noticeText;
+        private Text buttonOneText;
         Text buttonTwoText;
         Text buttonThreeText;
         Button buttonOne;

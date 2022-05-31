@@ -1,5 +1,7 @@
+assetsmap_bytes.assetbundle,AssetsMap.bytes
 lua.assetbundle,Channel/Lua.bytes
 lua.assetbundle,Lua/Common/Common.lua.bytes
+lua.assetbundle,Lua/Common/Main.lua.bytes
 lua.assetbundle,Lua/Common/Tools/GameToolsObj.lua.bytes
 lua.assetbundle,Lua/Common/Tools/ToolsCommons.lua.bytes
 lua.assetbundle,Lua/Common/Tools/ToolsObj/SuperObjTools.lua.bytes
@@ -8,8 +10,16 @@ lua.assetbundle,Lua/GameMain.lua.bytes
 lua.assetbundle,Lua/Global/Global.lua.bytes
 lua.assetbundle,Lua/UI/Config/UIWindowsNames.lua.bytes
 lua.assetbundle,Lua/UI/Login/LoginUI.lua.bytes
+lua.assetbundle,Lua/UI/UINoticeTip/UINoticeTip.lua.bytes
+lua.assetbundle,Lua/XLua/Common/util.lua.bytes
 lua.assetbundle,Lua/XLua/Hotfix/HotfixTest.lua.bytes
 lua.assetbundle,Lua/XLua/HotfixMain.lua.bytes
 ui.assetbundle,Channel/UI.bytes
-ui.assetbundle,UI/Prefab/LoginPanel.prefab
-ui.assetbundle,UI/Prefab/UINoticeTip.prefab
+ui/prefab/loginpanel_prefab.assetbundle,Channel/UI/Prefab/LoginPanel.prefab.bytes
+ui/prefab/loginpanel_prefab.assetbundle,UI/Prefab/LoginPanel.prefab
+ui/prefab/uilaunch_prefab.assetbundle,Channel/UI/Prefab/UILaunch.prefab.bytes
+ui/prefab/uilaunch_prefab.assetbundle,UI/Prefab/UILaunch.prefab
+ui/prefab/uinoticetip_prefab.assetbundle,Channel/UI/Prefab/UINoticeTip.prefab.bytes
+ui/prefab/uinoticetip_prefab.assetbundle,UI/Prefab/UINoticeTip.prefab
+ui/prefab/view.assetbundle,Channel/UI/Prefab/view.bytes
+variantsmap_bytes.assetbundle,VariantsMap.bytes

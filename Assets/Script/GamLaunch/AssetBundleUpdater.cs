@@ -65,10 +65,16 @@ public class AssetBundleUpdater : MonoBehaviour
     {
         StartCoroutine(CheckUpdateOrDownloadGame());
 #if UNITY_EDITOR || CLIENT_DEBUG
-        // TestHotfix();
+        TestHotfix();
 #endif
     }
-
+#if UNITY_EDITOR || CLIENT_DEBUG
+    // Hotfix测试---用于测试热更模块的热修复
+    public void TestHotfix()
+    {
+        ToolsDebug.Log("********** AssetbundleUpdater : Call TestHotfix in cs...");
+    }
+#endif
     IEnumerator CheckUpdateOrDownloadGame()
     {
         // 初始化本地版本信息
@@ -116,7 +122,7 @@ public class AssetBundleUpdater : MonoBehaviour
         }
     }
 
-    IEnumerator StartGame()
+    private IEnumerator StartGame()
     {
         // statusText.text = "正在准备资源...";
 #if UNITY_EDITOR || CLIENT_DEBUG

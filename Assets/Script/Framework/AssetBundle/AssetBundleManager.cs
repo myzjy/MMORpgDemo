@@ -199,7 +199,6 @@ namespace Script.Framework.AssetBundle
 
         public override void Disable()
         {
-            throw new System.NotImplementedException();
         }
 
         // 本地异步请求Assetbundle资源，不计引用计数、不缓存，Creater使用后记得回收

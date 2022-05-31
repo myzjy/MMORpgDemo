@@ -1,0 +1,31 @@
+ManifestFileVersion: 0
+CRC: 3565649188
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 30c886f8a41d443ad8271d6a53eb0c81
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 5ad585dd02dfb5016c0dad519eab8f49
+HashAppended: 0
+ClassTypes:
+- Class: 49
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/AddressablePaker/Lua/Common/Tools/ToolsObj/SuperObjTools.lua.bytes
+- Assets/AddressablePaker/Lua/GameMain.lua.bytes
+- Assets/AddressablePaker/Lua/Global/Global.lua.bytes
+- Assets/AddressablePaker/Lua/XLua/Common/util.lua.bytes
+- Assets/AddressablePaker/Lua/Common/Tools/GameToolsObj.lua.bytes
+- Assets/AddressablePaker/Channel/Lua.bytes
+- Assets/AddressablePaker/Lua/Common/Tools/ToolsCommons.lua.bytes
+- Assets/AddressablePaker/Lua/UI/Login/LoginUI.lua.bytes
+- Assets/AddressablePaker/Lua/UI/UINoticeTip/UINoticeTip.lua.bytes
+- Assets/AddressablePaker/Lua/UI/Config/UIWindowsNames.lua.bytes
+- Assets/AddressablePaker/Lua/Common/Main.lua.bytes
+- Assets/AddressablePaker/Lua/Common/Common.lua.bytes
+- Assets/AddressablePaker/Lua/XLua/Hotfix/HotfixTest.lua.bytes
+- Assets/AddressablePaker/Lua/XLua/HotfixMain.lua.bytes
+- Assets/AddressablePaker/Lua/Common/UpdateManager.lua.bytes
+Dependencies: []

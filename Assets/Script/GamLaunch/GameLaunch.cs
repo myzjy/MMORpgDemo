@@ -90,6 +90,8 @@ public class GameLaunch : MonoBehaviour
         }
         var go = InstantiateGameObject(noticeTipPrefab);
         UINoticeTip.Instance.UIGameObject = go;
+        updater = gameObject.AddComponent<AssetBundleUpdater>();
+
         yield break;
     }
     IEnumerator InitChannel()
@@ -110,11 +112,10 @@ public class GameLaunch : MonoBehaviour
     }
     GameObject InstantiateGameObject(GameObject prefab)
     {
+        var luanchLayer = GameObject.Find("UIRoot/LuanchLayer");
         var start = DateTime.Now;
         GameObject go = GameObject.Instantiate(prefab);
         ToolsDebug.Log($"Instantiate use {(DateTime.Now - start).Milliseconds}ms");
-
-        var luanchLayer = GameObject.Find("UIRoot/LuanchLayer");
         go.transform.SetParent(luanchLayer.transform);
         var rectTransform = go.GetComponent<RectTransform>();
         rectTransform.offsetMax = Vector2.zero;

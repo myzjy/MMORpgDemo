@@ -10,14 +10,16 @@
 -- [[
 -- 热修复模块
 -- ]]
+
+HotfixMain={}
+
 local modules={
 	"XLua.Hotfix.HotfixTest"
 } 
 print("加载")
-HotfixMain={}
 local function Start()
 	print("HotfixMain Start")
-	for i,v in ipairs(modules) do
+	for _,v in ipairs(modules) do
 		local hotfixMainModules=require(v)
 		hotfixMainModules.Register()
 	end
@@ -25,7 +27,7 @@ end
 
 local function Stop()
 	print("HotfixMain Stop")
-	for i,v in ipairs(modules) do
+	for _,v in ipairs(modules) do
 		local hotfixMainModules=require(v)
 		hotfixMainModules.Unregister()
 	end

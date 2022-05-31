@@ -2,9 +2,9 @@
 <BreakpointList/>
 <WatchList/>
 <ProjectUI>
-  <TreeState BaseX = "0" BaseY = "0" AlternativeItem = "LuaFolders#Assets#Plugins">
+  <TreeState BaseX = "0" BaseY = "0" AlternativeItem = "LuaFolders#Assets#LuaScript#XLua#HotfixMain.lua">
     <SelectedList>
-      <Selected Path = "LuaFolders#Assets#LuaScript#GameMain.lua"/>
+      <Selected Path = "LuaFolders#Assets#LuaScript#XLua#Hotfix#HotfixTest.lua"/>
     </SelectedList>
     <ExpandedList>
       <Expanded Path = "LuaFolders"/>
@@ -16,6 +16,7 @@
       <Expanded Path = "LuaFolders#Assets#LuaScript#UI#Config"/>
       <Expanded Path = "LuaFolders#Assets#LuaScript#UI#Login"/>
       <Expanded Path = "LuaFolders#Assets#LuaScript#XLua"/>
+      <Expanded Path = "LuaFolders#Assets#LuaScript#XLua#Common"/>
       <Expanded Path = "LuaFolders#Assets#LuaScript#XLua#Hotfix"/>
       <Expanded Path = "LuaFolders#Assets#Script#Xlua"/>
       <Expanded Path = "LuaFolders#Assets#Script#Xlua#Script"/>
@@ -33,12 +34,12 @@
   Target = ""
   Replace = ""/>
 <MainWindow
-  X = "878"
-  Y = "190"
+  X = "916"
+  Y = "270"
   Width = "1568"
   Height = "1131"
   Maximized = "false"
-  LastCodeFilename = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/GameMain.lua">
+  LastCodeFilename = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/XLua/Hotfix/HotfixTest.lua">
   <DockingControl>
     <DockingNode DockingDirection = "Horizontal">
       <DockingNode DockingDirection = "None">
@@ -59,12 +60,30 @@
         <DockingNode DockingDirection = "None">
           <DockingBlock Width = "1289" Height = "698" DocumentStyle = "true">
             <DockingCard
+              Text = "HostManager.lua"
+              Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/.lpproj/Apis/Unity/CS/GameSystem/ServiceDataPro/HostManager.lua"
+              ActivePage = "false"
+              ActivateTime = "1346707258"
+              CaretLineIndex = "6"
+              CaretCodeCharIndex = "0"
+              BaseX = "0"
+              BaseY = "0"/>
+            <DockingCard
+              Text = "util.lua"
+              Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/XLua/Common/util.lua"
+              ActivePage = "false"
+              ActivateTime = "1346555958"
+              CaretLineIndex = "90"
+              CaretCodeCharIndex = "4"
+              BaseX = "0"
+              BaseY = "-1405"/>
+            <DockingCard
               Text = "GameMain.lua"
               Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/GameMain.lua"
-              ActivePage = "true"
-              ActivateTime = "1095541718"
-              CaretLineIndex = "21"
-              CaretCodeCharIndex = "20"
+              ActivePage = "false"
+              ActivateTime = "1346398337"
+              CaretLineIndex = "17"
+              CaretCodeCharIndex = "15"
               BaseX = "0"
               BaseY = "-67"/>
             <DockingCard
@@ -97,12 +116,12 @@
             <DockingCard
               Text = "HotfixTest.lua"
               Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/XLua/Hotfix/HotfixTest.lua"
-              ActivePage = "false"
-              ActivateTime = "1057519203"
-              CaretLineIndex = "8"
-              CaretCodeCharIndex = "0"
+              ActivePage = "true"
+              ActivateTime = "1353122237"
+              CaretLineIndex = "21"
+              CaretCodeCharIndex = "22"
               BaseX = "0"
-              BaseY = "0"/>
+              BaseY = "-5"/>
             <DockingCard
               Text = "Common.lua"
               Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/Common/Common.lua"

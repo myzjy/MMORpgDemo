@@ -11,7 +11,7 @@ namespace Common.GameChannel
     /// </summary>
     [Hotfix]
     [LuaCallCSharp]
-    public class ChannelManager:MMOSingleton<ChannelManager>
+    public class ChannelManager:SingletonMMO<ChannelManager>
     {
         private BaseChannel channel = null;
         private Action onInitCompleted = null;
@@ -93,5 +93,9 @@ namespace Common.GameChannel
             return channel != null && channel.IsGooglePlay();
         }
 
+        public override void Dispose()
+        {
+            
+        }
     }
 }

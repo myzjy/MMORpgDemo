@@ -33,6 +33,8 @@ public class XluaManager : MMOSingletonDontDestroy<XluaManager>
     /// </summary>
     private LuaEnv luaEnv = null;
 
+    private LuaUpdater luaUpdater = null;
+
     public override void OnAwake()
     {
         string path = AssetBundleUtility.PackagePathToAssetsPath(luaAssetbundleAssetName);
@@ -45,12 +47,10 @@ public class XluaManager : MMOSingletonDontDestroy<XluaManager>
 
     public void StartGame()
     {
-        if (luaEnv != null)
-        {
-            LoadScript(gameMainScriptName);
-            SafeDoString("GameMain.Start()");
-            HasGameStart = true;
-        }
+        if (luaEnv == null) return;
+        LoadScript(gameMainScriptName);
+        SafeDoString("GameMain.Start()");
+        HasGameStart = true;
     }
 
     public static byte[] CustomLoader(ref string filepath)
@@ -119,16 +119,14 @@ public class XluaManager : MMOSingletonDontDestroy<XluaManager>
     {
         if (luaEnv != null)
         {
-            // LoadScript(commonMainScriptName);
-            // luaUpdater = gameObject.GetComponent<LuaUpdater>();
-            // if (luaUpdater == null)
-            // {
-            //     luaUpdater = gameObject.AddComponent<LuaUpdater>();
-            // }
-            // luaUpdater.OnInit(luaEnv);
-            var luaUpdate = luaEnv.Global.Get<Action<float, float>>("Update");
-            var luaLateUpdate = luaEnv.Global.Get<Action>("LateUpdate");
-            var luaFixedUpdate = luaEnv.Global.Get<Action<float>>("FixedUpdate");
+            LoadScript(commonMainScriptName);
+            luaUpdater = gameObject.GetComponent<LuaUpdater>();
+            if (luaUpdater == null)
+            {
+                luaUpdater = gameObject.AddComponent<LuaUpdater>();
+            }
+            luaUpdater.OnInit(luaEnv);
+         
         }
     }
 

@@ -1,0 +1,28 @@
+ManifestFileVersion: 0
+CRC: 1694982831
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: lua.assetbundle
+      Dependencies: {}
+    Info_1:
+      Name: ui/prefab/view.assetbundle
+      Dependencies: {}
+    Info_2:
+      Name: ui/prefab/loginpanel_prefab.assetbundle
+      Dependencies: {}
+    Info_3:
+      Name: ui/prefab/uilaunch_prefab.assetbundle
+      Dependencies: {}
+    Info_4:
+      Name: ui/prefab/uinoticetip_prefab.assetbundle
+      Dependencies: {}
+    Info_5:
+      Name: ui.assetbundle
+      Dependencies: {}
+    Info_6:
+      Name: assetsmap_bytes.assetbundle
+      Dependencies: {}
+    Info_7:
+      Name: variantsmap_bytes.assetbundle
+      Dependencies: {}
