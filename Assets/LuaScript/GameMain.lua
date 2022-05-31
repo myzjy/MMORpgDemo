@@ -25,6 +25,8 @@ end
 
  function Start()
 	print("初始化所有 start")
+	-- 模块启动
+	UpdateManager:GetInstance():Startup()
 end
 GameMain.OnInit=OnInit
 GameMain.Start=Start
