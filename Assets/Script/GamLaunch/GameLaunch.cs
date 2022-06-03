@@ -16,11 +16,12 @@ public class GameLaunch : MonoBehaviour
     AssetBundleUpdater updater;
     const string noticeTipPrefabPath = "UI/Prefab/UINoticeTip.prefab";
     GameObject launchPrefab;
+
     GameObject noticeTipPrefab;
+
     // Start is called before the first frame update
     IEnumerator Start()
     {
- 
         //初始化版本号
         /**
          * 此处的时间是向服务器请求的，不能用本机时间
@@ -50,12 +51,13 @@ public class GameLaunch : MonoBehaviour
         {
             updater.StartCheckUpdate();
         }
-        
     }
+
     private IEnumerator InitAppVersion()
     {
         var appVersionRequest = AssetBundleManager.Instance.RequestAssetFileAsync(BuildUtils.AppVersionFileName);
-        yield return new  WaitUntil(()=> appVersionRequest.isDone);
+        // ReSharper disable once AccessToDisposedClosure
+        yield return new WaitUntil(() => appVersionRequest.isDone);
         var streamingAppVersion = appVersionRequest.text;
         appVersionRequest.Dispose();
 
@@ -64,19 +66,20 @@ public class GameLaunch : MonoBehaviour
         ToolsDebug.Log($"streamingAppVersion = {streamingAppVersion}, persistentAppVersion = {persistentAppVersion}");
 
         // 如果persistent目录版本比streamingAssets目录app版本低，说明是大版本覆盖安装，清理过时的缓存
-        if (!string.IsNullOrEmpty(persistentAppVersion) && BuildUtils.CheckIsNewVersion(persistentAppVersion, streamingAppVersion))
+        if (!string.IsNullOrEmpty(persistentAppVersion) &&
+            BuildUtils.CheckIsNewVersion(persistentAppVersion, streamingAppVersion))
         {
             var path = AssetBundleUtility.GetPersistentDataPath();
             GameUtility.SafeDeleteDir(path);
         }
+
         GameUtility.SafeWriteAllText(appVersionPath, streamingAppVersion);
         // ChannelManager.instance.appVersion = streamingAppVersion;
-
     }
-    
+
+    //提示框
     IEnumerator InitNoticeTipPrefab()
     {
-        
         var start = DateTime.Now;
         var loader = AssetBundleManager.Instance.LoadAssetAsync(noticeTipPrefabPath, typeof(GameObject));
         yield return loader;
@@ -88,12 +91,14 @@ public class GameLaunch : MonoBehaviour
             ToolsDebug.LogError("LoadAssetAsync noticeTipPrefab err : " + noticeTipPrefabPath);
             yield break;
         }
+
         var go = InstantiateGameObject(noticeTipPrefab);
         UINoticeTip.Instance.UIGameObject = go;
-        updater = gameObject.AddComponent<AssetBundleUpdater>();
+        // updater = gameObject.AddComponent<AssetBundleUpdater>();
 
         yield break;
     }
+
     IEnumerator InitChannel()
     {
 #if UNITY_EDITOR
@@ -108,15 +113,14 @@ public class GameLaunch : MonoBehaviour
         channelNameRequest.Dispose();
         ChannelManager.Instance.Init(channelName);
         ToolsDebug.Log($"channelName = {channelName}");
-   
     }
+
     GameObject InstantiateGameObject(GameObject prefab)
     {
         var luanchLayer = GameObject.Find("UIRoot/LuanchLayer");
         var start = DateTime.Now;
         GameObject go = GameObject.Instantiate(prefab);
         ToolsDebug.Log($"Instantiate use {(DateTime.Now - start).Milliseconds}ms");
-        go.transform.SetParent(luanchLayer.transform);
         var rectTransform = go.GetComponent<RectTransform>();
         rectTransform.offsetMax = Vector2.zero;
         rectTransform.offsetMin = Vector2.zero;

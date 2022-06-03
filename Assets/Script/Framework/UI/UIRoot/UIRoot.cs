@@ -8,13 +8,11 @@ using XLua;
 [LuaCallCSharp]
 public class UIRoot : MonoBehaviour
 {
-    [Hotfix]
     public void Awake()
     {
         
     }
     
-    [Hotfix]
     private void Start()
     {
         

@@ -27,6 +27,7 @@ end
 
 -- Update回调
 local function UpdateHandle(self)
+	print("UpdateManager UpdateHandle .....")
 	self.ui_message_center:Broadcast(UpdateMsgName)
 end
 

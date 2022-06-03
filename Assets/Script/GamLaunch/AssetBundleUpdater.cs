@@ -133,6 +133,7 @@ public class AssetBundleUpdater : MonoBehaviour
 
         XluaManager.Instance.StartGame();
         // CustomDataStruct.Helper.Startup();
+        //移除
         UINoticeTip.Instance.DestroySelf();
         Destroy(gameObject, 0.5f);
         yield break;

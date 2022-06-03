@@ -35,7 +35,8 @@ public class SymbolWindows : EditorWindow
         new SymbolData("OUTPUT_VERBOSE_LOGS", "记录输出有效化"),
         new SymbolData("USE_BSET_HTTP", "用户基础Https"),
         new SymbolData("USE_DEBUG_TOOLS", "用户调试"),
-        new SymbolData("HOTFIX_ENABLE","xlua")
+        new SymbolData("HOTFIX_ENABLE","xlua"),
+        new SymbolData("LOGGER_ON","LOG"),
 
     };
 

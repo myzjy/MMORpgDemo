@@ -10,6 +10,7 @@ local Updatable = BaseClass("Updatable")
 
 -- 添加更新函数
 local function AddUpdate(self)
+	print("Updatable AddUpdate .....")
 	if self.Update ~= nil then
 		self.__update_handle = BindCallback(self, self.Update)
 		UpdateManager:GetInstance():AddUpdate(self.__update_handle)
@@ -26,6 +27,7 @@ end
 
 -- 注销更新函数
 local function RemoveUpdate(self)
+	print("Updatable RemoveUpdate .....")
 	if self.__update_handle ~= nil then
 		UpdateManager:GetInstance():RemoveUpdate(self.__update_handle)
 		self.__update_handle = nil

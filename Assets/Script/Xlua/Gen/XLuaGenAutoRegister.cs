@@ -27,8 +27,6 @@ namespace XLua.CSObjectWrap
 				
 				translator.DelayWrapLoader(typeof(AssetBundleUpdater), AssetBundleUpdaterWrap.__Register);
 				
-				translator.DelayWrapLoader(typeof(GameMain), GameMainWrap.__Register);
-				
 				translator.DelayWrapLoader(typeof(LuaPerfect.ObjectRef), LuaPerfectObjectRefWrap.__Register);
 				
 				translator.DelayWrapLoader(typeof(LuaPerfect.ObjectItem), LuaPerfectObjectItemWrap.__Register);
