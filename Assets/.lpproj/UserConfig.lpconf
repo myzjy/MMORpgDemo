@@ -33,16 +33,16 @@
   Target = ""
   Replace = ""/>
 <MainWindow
-  X = "477"
-  Y = "353"
+  X = "473"
+  Y = "371"
   Width = "1605"
   Height = "963"
   Maximized = "false"
-  LastCodeFilename = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/UI/UIRoot/Hotfix/UIRootHotfix.lua">
+  LastCodeFilename = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/UI/UIRoot/UIRoot.lua">
   <DockingControl>
     <DockingNode DockingDirection = "Horizontal">
       <DockingNode DockingDirection = "None">
-        <DockingBlock Width = "293" Height = "846" DocumentStyle = "false">
+        <DockingBlock Width = "292" Height = "846" DocumentStyle = "false">
           <DockingCard
             Text = "Project"
             Tag = ""
@@ -57,43 +57,43 @@
       </DockingNode>
       <DockingNode DockingDirection = "Vertical">
         <DockingNode DockingDirection = "None">
-          <DockingBlock Width = "1293" Height = "600" DocumentStyle = "true">
+          <DockingBlock Width = "1294" Height = "600" DocumentStyle = "true">
+            <DockingCard
+              Text = "util.lua"
+              Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/XLua/Common/util.lua"
+              ActivePage = "false"
+              ActivateTime = "1688070003"
+              CaretLineIndex = "41"
+              CaretCodeCharIndex = "6"
+              BaseX = "0"
+              BaseY = "-542"/>
             <DockingCard
               Text = "HotfixMain.lua"
               Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/XLua/HotfixMain.lua"
               ActivePage = "false"
-              ActivateTime = "1614643714"
-              CaretLineIndex = "17"
-              CaretCodeCharIndex = "32"
+              ActivateTime = "1688311192"
+              CaretLineIndex = "16"
+              CaretCodeCharIndex = "25"
               BaseX = "0"
               BaseY = "-240"/>
             <DockingCard
-              Text = "HotfixTest.lua"
-              Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/XLua/Hotfix/HotfixTest.lua"
-              ActivePage = "false"
-              ActivateTime = "1614662572"
-              CaretLineIndex = "13"
-              CaretCodeCharIndex = "33"
-              BaseX = "0"
-              BaseY = "-120"/>
-            <DockingCard
               Text = "UIRootHotfix.lua"
               Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/UI/UIRoot/Hotfix/UIRootHotfix.lua"
-              ActivePage = "true"
-              ActivateTime = "1614802198"
-              CaretLineIndex = "18"
-              CaretCodeCharIndex = "3"
+              ActivePage = "false"
+              ActivateTime = "1691144245"
+              CaretLineIndex = "9"
+              CaretCodeCharIndex = "5"
               BaseX = "0"
-              BaseY = "-63"/>
+              BaseY = "0"/>
             <DockingCard
               Text = "UIRoot.lua"
               Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/UI/UIRoot/UIRoot.lua"
-              ActivePage = "false"
-              ActivateTime = "1614750064"
-              CaretLineIndex = "30"
-              CaretCodeCharIndex = "14"
+              ActivePage = "true"
+              ActivateTime = "1693511332"
+              CaretLineIndex = "20"
+              CaretCodeCharIndex = "27"
               BaseX = "0"
-              BaseY = "-120"/>
+              BaseY = "-180"/>
             <DockingCard
               Text = "UnityEvent.lua"
               Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/.lpproj/Apis/Unity/CS/UnityEngine/Events/UnityEvent.lua"
@@ -158,15 +158,6 @@
               BaseX = "0"
               BaseY = "0"/>
             <DockingCard
-              Text = "util.lua"
-              Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/XLua/Common/util.lua"
-              ActivePage = "false"
-              ActivateTime = "1422094336"
-              CaretLineIndex = "0"
-              CaretCodeCharIndex = "0"
-              BaseX = "0"
-              BaseY = "0"/>
-            <DockingCard
               Text = "XluaManager.lua"
               Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/.lpproj/Apis/Unity/CS/XluaManager.lua"
               ActivePage = "false"
@@ -205,7 +196,7 @@
           </DockingBlock>
         </DockingNode>
         <DockingNode DockingDirection = "None">
-          <DockingBlock Width = "1293" Height = "239" DocumentStyle = "false">
+          <DockingBlock Width = "1294" Height = "239" DocumentStyle = "false">
             <DockingCard
               Text = "Output"
               Tag = ""

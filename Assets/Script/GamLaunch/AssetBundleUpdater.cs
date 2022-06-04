@@ -50,7 +50,18 @@ public class AssetBundleUpdater : MonoBehaviour
     private Manifest localManifest = null;
     private Manifest hostManifest = null;
     private Text statusText;
-    private Slider slider;
+    private Slider leftslider;
+    private Slider rightslider;
+
+    private void Awake()
+    {
+        statusText = transform.Find("Tips").GetComponent<Text>();
+        leftslider = transform.Find("leftSlider").GetComponent<Slider>();
+        rightslider = transform.Find("rightSlider").GetComponent<Slider>();
+        leftslider.gameObject.SetActive(false);
+        rightslider.gameObject.SetActive(false);
+
+    }
 
     private void Start()
     {
@@ -162,9 +173,11 @@ public class AssetBundleUpdater : MonoBehaviour
 #if UNITY_ANDROID
     void DownloadGameForAndroid()
     {
-        // slider.normalizedValue = 0;
-        // slider.gameObject.SetActive(true);
-        // statusText.text = "正在下载游戏...";
+        leftslider.normalizedValue = 0;
+        leftslider.gameObject.SetActive(true);
+        rightslider.normalizedValue = 0;
+        rightslider.gameObject.SetActive(true);
+        statusText.text = "正在下载游戏...";
 
         string saveName = string.Format(APK_FILE_PATH, ChannelManager.Instance.channelName, serverAppVersion);
         // Logger.Log(string.Format("Download game : {0}", saveName));
@@ -513,8 +526,10 @@ public class AssetBundleUpdater : MonoBehaviour
         }
 
         statusText.text = "正在更新资源...";
-        slider.normalizedValue = 0f;
-        slider.gameObject.SetActive(true);
+        rightslider.normalizedValue = 0f;
+        leftslider.normalizedValue = 0f;
+        leftslider.gameObject.SetActive(true);
+        rightslider.gameObject.SetActive(true);
         totalDownloadCount = needDownloadList.Count;
         finishedDownloadCount = 0;
         ToolsDebug.Log(totalDownloadCount + " resources to update...");
@@ -523,7 +538,8 @@ public class AssetBundleUpdater : MonoBehaviour
         yield return StartUpdate();
         ToolsDebug.Log($"Update use {(DateTime.Now - start).Milliseconds}ms");
 
-        slider.normalizedValue = 1.0f;
+        leftslider.normalizedValue = 1.0f;
+        rightslider.normalizedValue = 1.0f;
         start = DateTime.Now;
         yield return UpdateFinish();
         ToolsDebug.Log($"UpdateFinish use {(DateTime.Now - start).Milliseconds}ms");
@@ -752,7 +768,8 @@ public class AssetBundleUpdater : MonoBehaviour
             progressValue += (progressSlice * downloadingRequest[i].progress);
         }
 
-        slider.normalizedValue = progressValue;
+        rightslider.normalizedValue = progressValue;
+        leftslider.normalizedValue = progressValue;
     }
 
     private string KBSizeToString(int kbSize)

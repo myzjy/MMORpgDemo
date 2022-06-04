@@ -8,13 +8,13 @@ using Framework.AssetBundles.Utilty;
 using Script.Framework.AssetBundle;
 using Script.Framework.UI.Tip;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 using XLua;
 
 public class GameLaunch : MonoBehaviour
 {
     AssetBundleUpdater updater;
     const string noticeTipPrefabPath = "UI/Prefab/UINoticeTip.prefab";
+    const string launchPrefabPath = "UI/Prefab/view/LauncPanel.prefab";
     GameObject launchPrefab;
 
     GameObject noticeTipPrefab;
@@ -23,7 +23,7 @@ public class GameLaunch : MonoBehaviour
     IEnumerator Start()
     {
         //初始化版本号
-        /**
+        /*
          * 此处的时间是向服务器请求的，不能用本机时间
          */
         var startTime = DateTime.Now;
@@ -44,7 +44,7 @@ public class GameLaunch : MonoBehaviour
         XluaManager.Instance.OnInit();
         XluaManager.Instance.StartHotfix();
         ToolsDebug.Log($"XLuaManager StartHotfix use {(DateTime.Now - startTime).Milliseconds}ms");
-        // yield return InitLaunchPrefab();
+        yield return InitLaunchPrefab();
         yield return InitNoticeTipPrefab();
 
         if (updater != null)
@@ -76,7 +76,6 @@ public class GameLaunch : MonoBehaviour
         GameUtility.SafeWriteAllText(appVersionPath, streamingAppVersion);
         // ChannelManager.instance.appVersion = streamingAppVersion;
     }
-
     //提示框
     IEnumerator InitNoticeTipPrefab()
     {
@@ -94,11 +93,9 @@ public class GameLaunch : MonoBehaviour
 
         var go = InstantiateGameObject(noticeTipPrefab);
         UINoticeTip.Instance.UIGameObject = go;
-        // updater = gameObject.AddComponent<AssetBundleUpdater>();
 
         yield break;
     }
-
     IEnumerator InitChannel()
     {
 #if UNITY_EDITOR
@@ -114,13 +111,30 @@ public class GameLaunch : MonoBehaviour
         ChannelManager.Instance.Init(channelName);
         ToolsDebug.Log($"channelName = {channelName}");
     }
-
+    IEnumerator InitLaunchPrefab()
+    {
+        var start = DateTime.Now;
+        var loader = AssetBundleManager.Instance.LoadAssetAsync(launchPrefabPath, typeof(GameObject));
+        yield return loader;
+        launchPrefab= loader.asset as GameObject;
+        ToolsDebug.Log($"Load launchPrefab use {(DateTime.Now - start).Milliseconds}ms");
+        loader.Dispose();
+        if (launchPrefab == null)
+        {
+            ToolsDebug.LogError("LoadAssetAsync launchPrefab err : " + launchPrefabPath);
+            yield break;
+        }
+        var go = InstantiateGameObject(launchPrefab);
+        updater = go.AddComponent<AssetBundleUpdater>();
+        yield break;
+    }
     GameObject InstantiateGameObject(GameObject prefab)
     {
         var luanchLayer = GameObject.Find("UIRoot/LuanchLayer");
         var start = DateTime.Now;
         GameObject go = GameObject.Instantiate(prefab);
         ToolsDebug.Log($"Instantiate use {(DateTime.Now - start).Milliseconds}ms");
+        go.transform.parent = luanchLayer.transform;
         var rectTransform = go.GetComponent<RectTransform>();
         rectTransform.offsetMax = Vector2.zero;
         rectTransform.offsetMin = Vector2.zero;

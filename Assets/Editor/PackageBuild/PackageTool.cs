@@ -28,7 +28,7 @@ public class PackageTool : EditorWindow
     private static bool iosBuildABForPerChannel;
     private static bool buildABSForPerChannel;
 
-    [MenuItem("Tools/Package", false, 0)]
+    [MenuItem("Tool/AseetBundlePack/Package", false, 0)]
     static void Init() {
         EditorWindow.GetWindow(typeof(PackageTool));
     }

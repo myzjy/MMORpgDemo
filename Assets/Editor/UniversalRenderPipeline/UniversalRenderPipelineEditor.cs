@@ -1,6 +1,5 @@
 ﻿using UnityEditor;
 using UnityEditor.Rendering;
-using UnityEditor.Rendering.Universal;
 
 namespace UniversalRenderPipeline
 {

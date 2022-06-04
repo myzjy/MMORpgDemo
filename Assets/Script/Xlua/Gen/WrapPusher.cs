@@ -34,6 +34,9 @@ namespace XLua
 				translator.RegisterPushAndGetAndUpdate<UnityEngine.Ray>(translator.PushUnityEngineRay, translator.Get, translator.UpdateUnityEngineRay);
 				translator.RegisterPushAndGetAndUpdate<UnityEngine.Bounds>(translator.PushUnityEngineBounds, translator.Get, translator.UpdateUnityEngineBounds);
 				translator.RegisterPushAndGetAndUpdate<UnityEngine.Ray2D>(translator.PushUnityEngineRay2D, translator.Get, translator.UpdateUnityEngineRay2D);
+				translator.RegisterPushAndGetAndUpdate<UnityEngine.RenderMode>(translator.PushUnityEngineRenderMode, translator.Get, translator.UpdateUnityEngineRenderMode);
+				translator.RegisterPushAndGetAndUpdate<UnityEngine.UI.CanvasScaler.ScaleMode>(translator.PushUnityEngineUICanvasScalerScaleMode, translator.Get, translator.UpdateUnityEngineUICanvasScalerScaleMode);
+				translator.RegisterPushAndGetAndUpdate<UnityEngine.UI.CanvasScaler.ScreenMatchMode>(translator.PushUnityEngineUICanvasScalerScreenMatchMode, translator.Get, translator.UpdateUnityEngineUICanvasScalerScreenMatchMode);
 			
 			}
         }
@@ -570,6 +573,258 @@ namespace XLua
             }
         }
         
+        int UnityEngineRenderMode_TypeID = -1;
+		int UnityEngineRenderMode_EnumRef = -1;
+        
+        public void PushUnityEngineRenderMode(RealStatePtr L, UnityEngine.RenderMode val)
+        {
+            if (UnityEngineRenderMode_TypeID == -1)
+            {
+			    bool is_first;
+                UnityEngineRenderMode_TypeID = getTypeId(L, typeof(UnityEngine.RenderMode), out is_first);
+				
+				if (UnityEngineRenderMode_EnumRef == -1)
+				{
+				    Utils.LoadCSTable(L, typeof(UnityEngine.RenderMode));
+				    UnityEngineRenderMode_EnumRef = LuaAPI.luaL_ref(L, LuaIndexes.LUA_REGISTRYINDEX);
+				}
+				
+            }
+			
+			if (LuaAPI.xlua_tryget_cachedud(L, (int)val, UnityEngineRenderMode_EnumRef) == 1)
+            {
+			    return;
+			}
+			
+            IntPtr buff = LuaAPI.xlua_pushstruct(L, 4, UnityEngineRenderMode_TypeID);
+            if (!CopyByValue.Pack(buff, 0, (int)val))
+            {
+                throw new Exception("pack fail fail for UnityEngine.RenderMode ,value="+val);
+            }
+			
+			LuaAPI.lua_getref(L, UnityEngineRenderMode_EnumRef);
+			LuaAPI.lua_pushvalue(L, -2);
+			LuaAPI.xlua_rawseti(L, -2, (int)val);
+			LuaAPI.lua_pop(L, 1);
+			
+        }
+		
+        public void Get(RealStatePtr L, int index, out UnityEngine.RenderMode val)
+        {
+		    LuaTypes type = LuaAPI.lua_type(L, index);
+            if (type == LuaTypes.LUA_TUSERDATA )
+            {
+			    if (LuaAPI.xlua_gettypeid(L, index) != UnityEngineRenderMode_TypeID)
+				{
+				    throw new Exception("invalid userdata for UnityEngine.RenderMode");
+				}
+				
+                IntPtr buff = LuaAPI.lua_touserdata(L, index);
+				int e;
+                if (!CopyByValue.UnPack(buff, 0, out e))
+                {
+                    throw new Exception("unpack fail for UnityEngine.RenderMode");
+                }
+				val = (UnityEngine.RenderMode)e;
+                
+            }
+            else
+            {
+                val = (UnityEngine.RenderMode)objectCasters.GetCaster(typeof(UnityEngine.RenderMode))(L, index, null);
+            }
+        }
+		
+        public void UpdateUnityEngineRenderMode(RealStatePtr L, int index, UnityEngine.RenderMode val)
+        {
+		    
+            if (LuaAPI.lua_type(L, index) == LuaTypes.LUA_TUSERDATA)
+            {
+			    if (LuaAPI.xlua_gettypeid(L, index) != UnityEngineRenderMode_TypeID)
+				{
+				    throw new Exception("invalid userdata for UnityEngine.RenderMode");
+				}
+				
+                IntPtr buff = LuaAPI.lua_touserdata(L, index);
+                if (!CopyByValue.Pack(buff, 0,  (int)val))
+                {
+                    throw new Exception("pack fail for UnityEngine.RenderMode ,value="+val);
+                }
+            }
+			
+            else
+            {
+                throw new Exception("try to update a data with lua type:" + LuaAPI.lua_type(L, index));
+            }
+        }
+        
+        int UnityEngineUICanvasScalerScaleMode_TypeID = -1;
+		int UnityEngineUICanvasScalerScaleMode_EnumRef = -1;
+        
+        public void PushUnityEngineUICanvasScalerScaleMode(RealStatePtr L, UnityEngine.UI.CanvasScaler.ScaleMode val)
+        {
+            if (UnityEngineUICanvasScalerScaleMode_TypeID == -1)
+            {
+			    bool is_first;
+                UnityEngineUICanvasScalerScaleMode_TypeID = getTypeId(L, typeof(UnityEngine.UI.CanvasScaler.ScaleMode), out is_first);
+				
+				if (UnityEngineUICanvasScalerScaleMode_EnumRef == -1)
+				{
+				    Utils.LoadCSTable(L, typeof(UnityEngine.UI.CanvasScaler.ScaleMode));
+				    UnityEngineUICanvasScalerScaleMode_EnumRef = LuaAPI.luaL_ref(L, LuaIndexes.LUA_REGISTRYINDEX);
+				}
+				
+            }
+			
+			if (LuaAPI.xlua_tryget_cachedud(L, (int)val, UnityEngineUICanvasScalerScaleMode_EnumRef) == 1)
+            {
+			    return;
+			}
+			
+            IntPtr buff = LuaAPI.xlua_pushstruct(L, 4, UnityEngineUICanvasScalerScaleMode_TypeID);
+            if (!CopyByValue.Pack(buff, 0, (int)val))
+            {
+                throw new Exception("pack fail fail for UnityEngine.UI.CanvasScaler.ScaleMode ,value="+val);
+            }
+			
+			LuaAPI.lua_getref(L, UnityEngineUICanvasScalerScaleMode_EnumRef);
+			LuaAPI.lua_pushvalue(L, -2);
+			LuaAPI.xlua_rawseti(L, -2, (int)val);
+			LuaAPI.lua_pop(L, 1);
+			
+        }
+		
+        public void Get(RealStatePtr L, int index, out UnityEngine.UI.CanvasScaler.ScaleMode val)
+        {
+		    LuaTypes type = LuaAPI.lua_type(L, index);
+            if (type == LuaTypes.LUA_TUSERDATA )
+            {
+			    if (LuaAPI.xlua_gettypeid(L, index) != UnityEngineUICanvasScalerScaleMode_TypeID)
+				{
+				    throw new Exception("invalid userdata for UnityEngine.UI.CanvasScaler.ScaleMode");
+				}
+				
+                IntPtr buff = LuaAPI.lua_touserdata(L, index);
+				int e;
+                if (!CopyByValue.UnPack(buff, 0, out e))
+                {
+                    throw new Exception("unpack fail for UnityEngine.UI.CanvasScaler.ScaleMode");
+                }
+				val = (UnityEngine.UI.CanvasScaler.ScaleMode)e;
+                
+            }
+            else
+            {
+                val = (UnityEngine.UI.CanvasScaler.ScaleMode)objectCasters.GetCaster(typeof(UnityEngine.UI.CanvasScaler.ScaleMode))(L, index, null);
+            }
+        }
+		
+        public void UpdateUnityEngineUICanvasScalerScaleMode(RealStatePtr L, int index, UnityEngine.UI.CanvasScaler.ScaleMode val)
+        {
+		    
+            if (LuaAPI.lua_type(L, index) == LuaTypes.LUA_TUSERDATA)
+            {
+			    if (LuaAPI.xlua_gettypeid(L, index) != UnityEngineUICanvasScalerScaleMode_TypeID)
+				{
+				    throw new Exception("invalid userdata for UnityEngine.UI.CanvasScaler.ScaleMode");
+				}
+				
+                IntPtr buff = LuaAPI.lua_touserdata(L, index);
+                if (!CopyByValue.Pack(buff, 0,  (int)val))
+                {
+                    throw new Exception("pack fail for UnityEngine.UI.CanvasScaler.ScaleMode ,value="+val);
+                }
+            }
+			
+            else
+            {
+                throw new Exception("try to update a data with lua type:" + LuaAPI.lua_type(L, index));
+            }
+        }
+        
+        int UnityEngineUICanvasScalerScreenMatchMode_TypeID = -1;
+		int UnityEngineUICanvasScalerScreenMatchMode_EnumRef = -1;
+        
+        public void PushUnityEngineUICanvasScalerScreenMatchMode(RealStatePtr L, UnityEngine.UI.CanvasScaler.ScreenMatchMode val)
+        {
+            if (UnityEngineUICanvasScalerScreenMatchMode_TypeID == -1)
+            {
+			    bool is_first;
+                UnityEngineUICanvasScalerScreenMatchMode_TypeID = getTypeId(L, typeof(UnityEngine.UI.CanvasScaler.ScreenMatchMode), out is_first);
+				
+				if (UnityEngineUICanvasScalerScreenMatchMode_EnumRef == -1)
+				{
+				    Utils.LoadCSTable(L, typeof(UnityEngine.UI.CanvasScaler.ScreenMatchMode));
+				    UnityEngineUICanvasScalerScreenMatchMode_EnumRef = LuaAPI.luaL_ref(L, LuaIndexes.LUA_REGISTRYINDEX);
+				}
+				
+            }
+			
+			if (LuaAPI.xlua_tryget_cachedud(L, (int)val, UnityEngineUICanvasScalerScreenMatchMode_EnumRef) == 1)
+            {
+			    return;
+			}
+			
+            IntPtr buff = LuaAPI.xlua_pushstruct(L, 4, UnityEngineUICanvasScalerScreenMatchMode_TypeID);
+            if (!CopyByValue.Pack(buff, 0, (int)val))
+            {
+                throw new Exception("pack fail fail for UnityEngine.UI.CanvasScaler.ScreenMatchMode ,value="+val);
+            }
+			
+			LuaAPI.lua_getref(L, UnityEngineUICanvasScalerScreenMatchMode_EnumRef);
+			LuaAPI.lua_pushvalue(L, -2);
+			LuaAPI.xlua_rawseti(L, -2, (int)val);
+			LuaAPI.lua_pop(L, 1);
+			
+        }
+		
+        public void Get(RealStatePtr L, int index, out UnityEngine.UI.CanvasScaler.ScreenMatchMode val)
+        {
+		    LuaTypes type = LuaAPI.lua_type(L, index);
+            if (type == LuaTypes.LUA_TUSERDATA )
+            {
+			    if (LuaAPI.xlua_gettypeid(L, index) != UnityEngineUICanvasScalerScreenMatchMode_TypeID)
+				{
+				    throw new Exception("invalid userdata for UnityEngine.UI.CanvasScaler.ScreenMatchMode");
+				}
+				
+                IntPtr buff = LuaAPI.lua_touserdata(L, index);
+				int e;
+                if (!CopyByValue.UnPack(buff, 0, out e))
+                {
+                    throw new Exception("unpack fail for UnityEngine.UI.CanvasScaler.ScreenMatchMode");
+                }
+				val = (UnityEngine.UI.CanvasScaler.ScreenMatchMode)e;
+                
+            }
+            else
+            {
+                val = (UnityEngine.UI.CanvasScaler.ScreenMatchMode)objectCasters.GetCaster(typeof(UnityEngine.UI.CanvasScaler.ScreenMatchMode))(L, index, null);
+            }
+        }
+		
+        public void UpdateUnityEngineUICanvasScalerScreenMatchMode(RealStatePtr L, int index, UnityEngine.UI.CanvasScaler.ScreenMatchMode val)
+        {
+		    
+            if (LuaAPI.lua_type(L, index) == LuaTypes.LUA_TUSERDATA)
+            {
+			    if (LuaAPI.xlua_gettypeid(L, index) != UnityEngineUICanvasScalerScreenMatchMode_TypeID)
+				{
+				    throw new Exception("invalid userdata for UnityEngine.UI.CanvasScaler.ScreenMatchMode");
+				}
+				
+                IntPtr buff = LuaAPI.lua_touserdata(L, index);
+                if (!CopyByValue.Pack(buff, 0,  (int)val))
+                {
+                    throw new Exception("pack fail for UnityEngine.UI.CanvasScaler.ScreenMatchMode ,value="+val);
+                }
+            }
+			
+            else
+            {
+                throw new Exception("try to update a data with lua type:" + LuaAPI.lua_type(L, index));
+            }
+        }
+        
         
 		// table cast optimze
 		
@@ -629,6 +884,24 @@ namespace XLua
 				translator.PushUnityEngineRay2D(L, array[index]);
 				return true;
 			}
+			else if (type == typeof(UnityEngine.RenderMode[]))
+			{
+			    UnityEngine.RenderMode[] array = obj as UnityEngine.RenderMode[];
+				translator.PushUnityEngineRenderMode(L, array[index]);
+				return true;
+			}
+			else if (type == typeof(UnityEngine.UI.CanvasScaler.ScaleMode[]))
+			{
+			    UnityEngine.UI.CanvasScaler.ScaleMode[] array = obj as UnityEngine.UI.CanvasScaler.ScaleMode[];
+				translator.PushUnityEngineUICanvasScalerScaleMode(L, array[index]);
+				return true;
+			}
+			else if (type == typeof(UnityEngine.UI.CanvasScaler.ScreenMatchMode[]))
+			{
+			    UnityEngine.UI.CanvasScaler.ScreenMatchMode[] array = obj as UnityEngine.UI.CanvasScaler.ScreenMatchMode[];
+				translator.PushUnityEngineUICanvasScalerScreenMatchMode(L, array[index]);
+				return true;
+			}
             return false;
 		}
 		
@@ -680,6 +953,24 @@ namespace XLua
 			else if (type == typeof(UnityEngine.Ray2D[]))
 			{
 			    UnityEngine.Ray2D[] array = obj as UnityEngine.Ray2D[];
+				translator.Get(L, obj_idx, out array[array_idx]);
+				return true;
+			}
+			else if (type == typeof(UnityEngine.RenderMode[]))
+			{
+			    UnityEngine.RenderMode[] array = obj as UnityEngine.RenderMode[];
+				translator.Get(L, obj_idx, out array[array_idx]);
+				return true;
+			}
+			else if (type == typeof(UnityEngine.UI.CanvasScaler.ScaleMode[]))
+			{
+			    UnityEngine.UI.CanvasScaler.ScaleMode[] array = obj as UnityEngine.UI.CanvasScaler.ScaleMode[];
+				translator.Get(L, obj_idx, out array[array_idx]);
+				return true;
+			}
+			else if (type == typeof(UnityEngine.UI.CanvasScaler.ScreenMatchMode[]))
+			{
+			    UnityEngine.UI.CanvasScaler.ScreenMatchMode[] array = obj as UnityEngine.UI.CanvasScaler.ScreenMatchMode[];
 				translator.Get(L, obj_idx, out array[array_idx]);
 				return true;
 			}
