@@ -8,4 +8,9 @@
 -- To disable this template, check off menuitem: Options-Enable Template File
 
 ---@class UINoticeTip
-local UINoticeTip = {}
+UINoticeTip = {}
+
+
+
+
+

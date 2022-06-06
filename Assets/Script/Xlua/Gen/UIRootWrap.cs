@@ -23,7 +23,7 @@ namespace XLua.CSObjectWrap
 			System.Type type = typeof(UIRoot);
 			Utils.BeginObjectRegister(type, L, translator, 0, 1, 0, 0);
 			
-			Utils.RegisterFunc(L, Utils.METHOD_IDX, "Awake", _m_Awake);
+			Utils.RegisterFunc(L, Utils.METHOD_IDX, "StartRoot", _m_StartRoot);
 			
 			
 			
@@ -73,7 +73,7 @@ namespace XLua.CSObjectWrap
         
         
         [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-        static int _m_Awake(RealStatePtr L)
+        static int _m_StartRoot(RealStatePtr L)
         {
 		    try {
             
@@ -86,7 +86,7 @@ namespace XLua.CSObjectWrap
                 
                 {
                     
-                    __cl_gen_to_be_invoked.Awake(  );
+                    __cl_gen_to_be_invoked.StartRoot(  );
                     
                     
                     

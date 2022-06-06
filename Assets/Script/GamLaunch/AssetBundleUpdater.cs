@@ -120,6 +120,7 @@ public class AssetBundleUpdater : MonoBehaviour
         {
             UINoticeTip.Instance.ShowOneButtonTip("游戏下载", "需要下载新的游戏版本！", "确定", null);
             yield return UINoticeTip.Instance.WaitForResponse();
+            //启动下载
             yield return DownloadGame();
         }
         else if (needUpdateGame)

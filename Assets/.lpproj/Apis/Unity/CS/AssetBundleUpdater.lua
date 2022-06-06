@@ -7,3 +7,6 @@ end
 
 function CS.AssetBundleUpdater:StartCheckUpdate()
 end
+
+function CS.AssetBundleUpdater:TestHotfix()
+end

@@ -1,7 +1,7 @@
 ---@module CS.Script.Framework.UI.Tip
 CS.Script.Framework.UI.Tip = {}
 
----@class CS.Script.Framework.UI.Tip.UINoticeTip : CS.GameTools.Singletons.MMOSingleton
+---@class CS.Script.Framework.UI.Tip.UINoticeTip : CS.GameTools.Singletons.MMOSingletonDontDestroy
 CS.Script.Framework.UI.Tip.UINoticeTip = {}
 
 ---@property readwrite CS.Script.Framework.UI.Tip.UINoticeTip.IsShowing : CS.System.Boolean

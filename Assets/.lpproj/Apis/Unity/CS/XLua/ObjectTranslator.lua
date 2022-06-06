@@ -10,6 +10,193 @@ CS.XLua.ObjectTranslator.cacheRef = nil
 function CS.XLua.ObjectTranslator(luaenv, L)
 end
 
+---@param L : CS.System.IntPtr
+---@param val : CS.UnityEngine.Vector2
+function CS.XLua.ObjectTranslator:PushUnityEngineVector2(L, val)
+end
+
+---@param L : CS.System.IntPtr
+---@param index : CS.System.Int32
+---@param val : CS.UnityEngine.Vector2
+function CS.XLua.ObjectTranslator:Get(L, index, val)
+end
+
+---@param L : CS.System.IntPtr
+---@param index : CS.System.Int32
+---@param val : CS.UnityEngine.Vector2
+function CS.XLua.ObjectTranslator:UpdateUnityEngineVector2(L, index, val)
+end
+
+---@param L : CS.System.IntPtr
+---@param val : CS.UnityEngine.Vector3
+function CS.XLua.ObjectTranslator:PushUnityEngineVector3(L, val)
+end
+
+---@param L : CS.System.IntPtr
+---@param index : CS.System.Int32
+---@param val : CS.UnityEngine.Vector3
+function CS.XLua.ObjectTranslator:Get(L, index, val)
+end
+
+---@param L : CS.System.IntPtr
+---@param index : CS.System.Int32
+---@param val : CS.UnityEngine.Vector3
+function CS.XLua.ObjectTranslator:UpdateUnityEngineVector3(L, index, val)
+end
+
+---@param L : CS.System.IntPtr
+---@param val : CS.UnityEngine.Vector4
+function CS.XLua.ObjectTranslator:PushUnityEngineVector4(L, val)
+end
+
+---@param L : CS.System.IntPtr
+---@param index : CS.System.Int32
+---@param val : CS.UnityEngine.Vector4
+function CS.XLua.ObjectTranslator:Get(L, index, val)
+end
+
+---@param L : CS.System.IntPtr
+---@param index : CS.System.Int32
+---@param val : CS.UnityEngine.Vector4
+function CS.XLua.ObjectTranslator:UpdateUnityEngineVector4(L, index, val)
+end
+
+---@param L : CS.System.IntPtr
+---@param val : CS.UnityEngine.Color
+function CS.XLua.ObjectTranslator:PushUnityEngineColor(L, val)
+end
+
+---@param L : CS.System.IntPtr
+---@param index : CS.System.Int32
+---@param val : CS.UnityEngine.Color
+function CS.XLua.ObjectTranslator:Get(L, index, val)
+end
+
+---@param L : CS.System.IntPtr
+---@param index : CS.System.Int32
+---@param val : CS.UnityEngine.Color
+function CS.XLua.ObjectTranslator:UpdateUnityEngineColor(L, index, val)
+end
+
+---@param L : CS.System.IntPtr
+---@param val : CS.UnityEngine.Quaternion
+function CS.XLua.ObjectTranslator:PushUnityEngineQuaternion(L, val)
+end
+
+---@param L : CS.System.IntPtr
+---@param index : CS.System.Int32
+---@param val : CS.UnityEngine.Quaternion
+function CS.XLua.ObjectTranslator:Get(L, index, val)
+end
+
+---@param L : CS.System.IntPtr
+---@param index : CS.System.Int32
+---@param val : CS.UnityEngine.Quaternion
+function CS.XLua.ObjectTranslator:UpdateUnityEngineQuaternion(L, index, val)
+end
+
+---@param L : CS.System.IntPtr
+---@param val : CS.UnityEngine.Ray
+function CS.XLua.ObjectTranslator:PushUnityEngineRay(L, val)
+end
+
+---@param L : CS.System.IntPtr
+---@param index : CS.System.Int32
+---@param val : CS.UnityEngine.Ray
+function CS.XLua.ObjectTranslator:Get(L, index, val)
+end
+
+---@param L : CS.System.IntPtr
+---@param index : CS.System.Int32
+---@param val : CS.UnityEngine.Ray
+function CS.XLua.ObjectTranslator:UpdateUnityEngineRay(L, index, val)
+end
+
+---@param L : CS.System.IntPtr
+---@param val : CS.UnityEngine.Bounds
+function CS.XLua.ObjectTranslator:PushUnityEngineBounds(L, val)
+end
+
+---@param L : CS.System.IntPtr
+---@param index : CS.System.Int32
+---@param val : CS.UnityEngine.Bounds
+function CS.XLua.ObjectTranslator:Get(L, index, val)
+end
+
+---@param L : CS.System.IntPtr
+---@param index : CS.System.Int32
+---@param val : CS.UnityEngine.Bounds
+function CS.XLua.ObjectTranslator:UpdateUnityEngineBounds(L, index, val)
+end
+
+---@param L : CS.System.IntPtr
+---@param val : CS.UnityEngine.Ray2D
+function CS.XLua.ObjectTranslator:PushUnityEngineRay2D(L, val)
+end
+
+---@param L : CS.System.IntPtr
+---@param index : CS.System.Int32
+---@param val : CS.UnityEngine.Ray2D
+function CS.XLua.ObjectTranslator:Get(L, index, val)
+end
+
+---@param L : CS.System.IntPtr
+---@param index : CS.System.Int32
+---@param val : CS.UnityEngine.Ray2D
+function CS.XLua.ObjectTranslator:UpdateUnityEngineRay2D(L, index, val)
+end
+
+---@param L : CS.System.IntPtr
+---@param val : CS.UnityEngine.RenderMode
+function CS.XLua.ObjectTranslator:PushUnityEngineRenderMode(L, val)
+end
+
+---@param L : CS.System.IntPtr
+---@param index : CS.System.Int32
+---@param val : CS.UnityEngine.RenderMode
+function CS.XLua.ObjectTranslator:Get(L, index, val)
+end
+
+---@param L : CS.System.IntPtr
+---@param index : CS.System.Int32
+---@param val : CS.UnityEngine.RenderMode
+function CS.XLua.ObjectTranslator:UpdateUnityEngineRenderMode(L, index, val)
+end
+
+---@param L : CS.System.IntPtr
+---@param val : CS.UnityEngine.UI.ScaleMode
+function CS.XLua.ObjectTranslator:PushUnityEngineUICanvasScalerScaleMode(L, val)
+end
+
+---@param L : CS.System.IntPtr
+---@param index : CS.System.Int32
+---@param val : CS.UnityEngine.UI.ScaleMode
+function CS.XLua.ObjectTranslator:Get(L, index, val)
+end
+
+---@param L : CS.System.IntPtr
+---@param index : CS.System.Int32
+---@param val : CS.UnityEngine.UI.ScaleMode
+function CS.XLua.ObjectTranslator:UpdateUnityEngineUICanvasScalerScaleMode(L, index, val)
+end
+
+---@param L : CS.System.IntPtr
+---@param val : CS.UnityEngine.UI.ScreenMatchMode
+function CS.XLua.ObjectTranslator:PushUnityEngineUICanvasScalerScreenMatchMode(L, val)
+end
+
+---@param L : CS.System.IntPtr
+---@param index : CS.System.Int32
+---@param val : CS.UnityEngine.UI.ScreenMatchMode
+function CS.XLua.ObjectTranslator:Get(L, index, val)
+end
+
+---@param L : CS.System.IntPtr
+---@param index : CS.System.Int32
+---@param val : CS.UnityEngine.UI.ScreenMatchMode
+function CS.XLua.ObjectTranslator:UpdateUnityEngineUICanvasScalerScreenMatchMode(L, index, val)
+end
+
 ---@param type : CS.System.Type
 ---@param loader : CS.System.Action
 function CS.XLua.ObjectTranslator:DelayWrapLoader(type, loader)

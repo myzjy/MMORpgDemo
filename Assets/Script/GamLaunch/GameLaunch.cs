@@ -18,6 +18,8 @@ public class GameLaunch : MonoBehaviour
     GameObject launchPrefab;
 
     GameObject noticeTipPrefab;
+    [SerializeField] private UIRoot root;
+
 
     // Start is called before the first frame update
     IEnumerator Start()
@@ -51,6 +53,7 @@ public class GameLaunch : MonoBehaviour
         {
             updater.StartCheckUpdate();
         }
+        root.StartRoot();
     }
 
     private IEnumerator InitAppVersion()
@@ -76,6 +79,7 @@ public class GameLaunch : MonoBehaviour
         GameUtility.SafeWriteAllText(appVersionPath, streamingAppVersion);
         // ChannelManager.instance.appVersion = streamingAppVersion;
     }
+
     //提示框
     IEnumerator InitNoticeTipPrefab()
     {
@@ -96,6 +100,7 @@ public class GameLaunch : MonoBehaviour
 
         yield break;
     }
+
     IEnumerator InitChannel()
     {
 #if UNITY_EDITOR
@@ -111,12 +116,13 @@ public class GameLaunch : MonoBehaviour
         ChannelManager.Instance.Init(channelName);
         ToolsDebug.Log($"channelName = {channelName}");
     }
+
     IEnumerator InitLaunchPrefab()
     {
         var start = DateTime.Now;
         var loader = AssetBundleManager.Instance.LoadAssetAsync(launchPrefabPath, typeof(GameObject));
         yield return loader;
-        launchPrefab= loader.asset as GameObject;
+        launchPrefab = loader.asset as GameObject;
         ToolsDebug.Log($"Load launchPrefab use {(DateTime.Now - start).Milliseconds}ms");
         loader.Dispose();
         if (launchPrefab == null)
@@ -124,10 +130,12 @@ public class GameLaunch : MonoBehaviour
             ToolsDebug.LogError("LoadAssetAsync launchPrefab err : " + launchPrefabPath);
             yield break;
         }
+
         var go = InstantiateGameObject(launchPrefab);
         updater = go.AddComponent<AssetBundleUpdater>();
         yield break;
     }
+
     GameObject InstantiateGameObject(GameObject prefab)
     {
         var luanchLayer = GameObject.Find("UIRoot/LuanchLayer");

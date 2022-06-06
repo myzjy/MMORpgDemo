@@ -14,8 +14,8 @@
 HotfixMain={}
 
 local modules={
-	"XLua.Hotfix.HotfixTest"
-	--"UI.UIRoot.Hotfix.UIRootHotifx"
+	"XLua.Hotfix.HotfixTest",
+	"UI.UIRoot.Hotfix.UIRootHotfix"
 } 
 print("加载")
 local function Start()

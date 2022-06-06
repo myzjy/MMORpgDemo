@@ -1,4 +1,4 @@
----@class CS.Common.GameChannel.ChannelManager : CS.GameTools.Singletons.MMOSingleton
+---@class CS.Common.GameChannel.ChannelManager : CS.GameTools.Singletons.SingletonMMO
 CS.Common.GameChannel.ChannelManager = {}
 
 ---@property readwrite CS.Common.GameChannel.ChannelManager.channelName : CS.System.String
@@ -48,4 +48,11 @@ end
 ---@param succeed : CS.System.Action
 ---@param fail : CS.System.Action
 function CS.Common.GameChannel.ChannelManager:InstallGame(succeed, fail)
+end
+
+---@return CS.System.Boolean
+function CS.Common.GameChannel.ChannelManager:IsGooglePlay()
+end
+
+function CS.Common.GameChannel.ChannelManager:Dispose()
 end

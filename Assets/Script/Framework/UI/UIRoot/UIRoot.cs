@@ -8,13 +8,8 @@ using XLua;
 [LuaCallCSharp]
 public class UIRoot : MonoBehaviour
 {
-    public void Awake()
+    public void StartRoot()
     {
-        
-    }
-    
-    private void Start()
-    {
-        
+        ToolsDebug.Log("调用 startRoot");
     }
 }

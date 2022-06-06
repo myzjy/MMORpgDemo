@@ -10,16 +10,16 @@ local util=require "XLua.Common.util"
 local UIRoot=require "UI.UIRoot.UIRoot"
 
 local UIRootH = CS.UIRoot
----@class Hotfix
+---@class UIRootHotfix
 UIRootHotfix = {}
 
 xlua.private_accessible(UIRootH)
 local function Register()
-	xlua.hotfix(UIRootH, "Awake", UIRoot.Awake)
+	xlua.hotfix(UIRootH, "StartRoot", UIRoot.StartRoot)
 end
 
 local function Unregister()
-	xlua.hotfix(UIRootH, "Awake", nil)
+	xlua.hotfix(UIRootH, "StartRoot", nil)
 end
 
 return {

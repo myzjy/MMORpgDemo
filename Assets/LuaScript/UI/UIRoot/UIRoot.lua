@@ -13,19 +13,15 @@ local UIRootObjCS = CS.UIRoot
 
 debug=CS.ToolsDebug
 
-local function Awake(self)
+local function StartRoot(self)
 	-- Debug
-	debug.Log(" UIRoot Awake")
+	CS.ToolsDebug.Log(" UIRoot StartRoot")
 	
 	-- 不让物体被删除
 	CS.UnityEngine.GameObject.DontDestroyOnLoad(self.gameObject)
 	
 end
 
-local function Start()
-	
-end
-UIRootS.Awake=Awake;
 
-UIRootS.Start=Start;
+UIRootS.StartRoot=StartRoot;
 return UIRootS

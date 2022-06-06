@@ -12,6 +12,7 @@ require "Framework.Common.BaseClass"
 require "Framework.Common.DataClass"
 require "Framework.Common.ConstClass"
 require "Common.Main"
+require "Framework.Updater.Corutine"
 
 UIWindowsNames=require "UI.Config.UIWindowsNames"
 Singleton = require "Framework.Common.Singleton"

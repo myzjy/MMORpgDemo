@@ -22,6 +22,9 @@ CS.Framework.AssetBundle.AsyncOperation.ResourceWebRequester.bytes = nil
 ---@property readonly CS.Framework.AssetBundle.AsyncOperation.ResourceWebRequester.text : CS.System.String
 CS.Framework.AssetBundle.AsyncOperation.ResourceWebRequester.text = nil
 
+---@property readonly CS.Framework.AssetBundle.AsyncOperation.ResourceWebRequester.getSendWebRequest : CS.System.Boolean
+CS.Framework.AssetBundle.AsyncOperation.ResourceWebRequester.getSendWebRequest = nil
+
 ---@property readonly CS.Framework.AssetBundle.AsyncOperation.ResourceWebRequester.error : CS.System.String
 CS.Framework.AssetBundle.AsyncOperation.ResourceWebRequester.error = nil
 

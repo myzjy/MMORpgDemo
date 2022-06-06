@@ -1,8 +1,173 @@
----@module CS.XLua
-CS.XLua = {}
-
 ---@class CS.XLua.CopyByValue : CS.System.Object
 CS.XLua.CopyByValue = {}
+
+---@param translator : CS.XLua.ObjectTranslator
+---@param L : CS.System.IntPtr
+---@param idx : CS.System.Int32
+---@param val : CS.UnityEngine.Vector2
+function CS.XLua.CopyByValue.UnPack(translator, L, idx, val)
+end
+
+---@param buff : CS.System.IntPtr
+---@param offset : CS.System.Int32
+---@param field : CS.UnityEngine.Vector2
+---@return CS.System.Boolean
+function CS.XLua.CopyByValue.Pack(buff, offset, field)
+end
+
+---@param buff : CS.System.IntPtr
+---@param offset : CS.System.Int32
+---@param field : CS.UnityEngine.Vector2
+---@return CS.System.Boolean
+function CS.XLua.CopyByValue.UnPack(buff, offset, field)
+end
+
+---@param translator : CS.XLua.ObjectTranslator
+---@param L : CS.System.IntPtr
+---@param idx : CS.System.Int32
+---@param val : CS.UnityEngine.Vector3
+function CS.XLua.CopyByValue.UnPack(translator, L, idx, val)
+end
+
+---@param buff : CS.System.IntPtr
+---@param offset : CS.System.Int32
+---@param field : CS.UnityEngine.Vector3
+---@return CS.System.Boolean
+function CS.XLua.CopyByValue.Pack(buff, offset, field)
+end
+
+---@param buff : CS.System.IntPtr
+---@param offset : CS.System.Int32
+---@param field : CS.UnityEngine.Vector3
+---@return CS.System.Boolean
+function CS.XLua.CopyByValue.UnPack(buff, offset, field)
+end
+
+---@param translator : CS.XLua.ObjectTranslator
+---@param L : CS.System.IntPtr
+---@param idx : CS.System.Int32
+---@param val : CS.UnityEngine.Vector4
+function CS.XLua.CopyByValue.UnPack(translator, L, idx, val)
+end
+
+---@param buff : CS.System.IntPtr
+---@param offset : CS.System.Int32
+---@param field : CS.UnityEngine.Vector4
+---@return CS.System.Boolean
+function CS.XLua.CopyByValue.Pack(buff, offset, field)
+end
+
+---@param buff : CS.System.IntPtr
+---@param offset : CS.System.Int32
+---@param field : CS.UnityEngine.Vector4
+---@return CS.System.Boolean
+function CS.XLua.CopyByValue.UnPack(buff, offset, field)
+end
+
+---@param translator : CS.XLua.ObjectTranslator
+---@param L : CS.System.IntPtr
+---@param idx : CS.System.Int32
+---@param val : CS.UnityEngine.Color
+function CS.XLua.CopyByValue.UnPack(translator, L, idx, val)
+end
+
+---@param buff : CS.System.IntPtr
+---@param offset : CS.System.Int32
+---@param field : CS.UnityEngine.Color
+---@return CS.System.Boolean
+function CS.XLua.CopyByValue.Pack(buff, offset, field)
+end
+
+---@param buff : CS.System.IntPtr
+---@param offset : CS.System.Int32
+---@param field : CS.UnityEngine.Color
+---@return CS.System.Boolean
+function CS.XLua.CopyByValue.UnPack(buff, offset, field)
+end
+
+---@param translator : CS.XLua.ObjectTranslator
+---@param L : CS.System.IntPtr
+---@param idx : CS.System.Int32
+---@param val : CS.UnityEngine.Quaternion
+function CS.XLua.CopyByValue.UnPack(translator, L, idx, val)
+end
+
+---@param buff : CS.System.IntPtr
+---@param offset : CS.System.Int32
+---@param field : CS.UnityEngine.Quaternion
+---@return CS.System.Boolean
+function CS.XLua.CopyByValue.Pack(buff, offset, field)
+end
+
+---@param buff : CS.System.IntPtr
+---@param offset : CS.System.Int32
+---@param field : CS.UnityEngine.Quaternion
+---@return CS.System.Boolean
+function CS.XLua.CopyByValue.UnPack(buff, offset, field)
+end
+
+---@param translator : CS.XLua.ObjectTranslator
+---@param L : CS.System.IntPtr
+---@param idx : CS.System.Int32
+---@param val : CS.UnityEngine.Ray
+function CS.XLua.CopyByValue.UnPack(translator, L, idx, val)
+end
+
+---@param buff : CS.System.IntPtr
+---@param offset : CS.System.Int32
+---@param field : CS.UnityEngine.Ray
+---@return CS.System.Boolean
+function CS.XLua.CopyByValue.Pack(buff, offset, field)
+end
+
+---@param buff : CS.System.IntPtr
+---@param offset : CS.System.Int32
+---@param field : CS.UnityEngine.Ray
+---@return CS.System.Boolean
+function CS.XLua.CopyByValue.UnPack(buff, offset, field)
+end
+
+---@param translator : CS.XLua.ObjectTranslator
+---@param L : CS.System.IntPtr
+---@param idx : CS.System.Int32
+---@param val : CS.UnityEngine.Bounds
+function CS.XLua.CopyByValue.UnPack(translator, L, idx, val)
+end
+
+---@param buff : CS.System.IntPtr
+---@param offset : CS.System.Int32
+---@param field : CS.UnityEngine.Bounds
+---@return CS.System.Boolean
+function CS.XLua.CopyByValue.Pack(buff, offset, field)
+end
+
+---@param buff : CS.System.IntPtr
+---@param offset : CS.System.Int32
+---@param field : CS.UnityEngine.Bounds
+---@return CS.System.Boolean
+function CS.XLua.CopyByValue.UnPack(buff, offset, field)
+end
+
+---@param translator : CS.XLua.ObjectTranslator
+---@param L : CS.System.IntPtr
+---@param idx : CS.System.Int32
+---@param val : CS.UnityEngine.Ray2D
+function CS.XLua.CopyByValue.UnPack(translator, L, idx, val)
+end
+
+---@param buff : CS.System.IntPtr
+---@param offset : CS.System.Int32
+---@param field : CS.UnityEngine.Ray2D
+---@return CS.System.Boolean
+function CS.XLua.CopyByValue.Pack(buff, offset, field)
+end
+
+---@param buff : CS.System.IntPtr
+---@param offset : CS.System.Int32
+---@param field : CS.UnityEngine.Ray2D
+---@return CS.System.Boolean
+function CS.XLua.CopyByValue.UnPack(buff, offset, field)
+end
 
 ---@param buff : CS.System.IntPtr
 ---@param offset : CS.System.Int32
