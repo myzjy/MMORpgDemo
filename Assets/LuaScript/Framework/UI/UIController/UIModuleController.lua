@@ -17,14 +17,19 @@ local UIModuleController = {}
 
 -- 控制器合集
 local modules={}
-
 local function __init()
-	modules
+	local index=1
+	modules[index]=nil
+	index=index+1
+	modules[index]=nil
+
 end
 
 
 --注册消息
 local function registerModule()
 	-- body
-	
+	for i,v in ipairs(modules) do
+		print(i,v)
+	end
 end
