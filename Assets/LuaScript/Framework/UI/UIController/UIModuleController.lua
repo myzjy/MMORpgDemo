@@ -11,6 +11,20 @@
 --]]
 
 
-
+require "Common.Tools.list"
 ---@class UIModuleController
 local UIModuleController = {}
+
+-- 控制器合集
+local modules={}
+
+local function __init()
+	modules
+end
+
+
+--注册消息
+local function registerModule()
+	-- body
+	
+end

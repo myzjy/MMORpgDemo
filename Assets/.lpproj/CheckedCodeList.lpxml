@@ -1610,16 +1610,16 @@
   <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/AddressablePaker/Lua/Framework/Common/Updatable.lua.bytes" ModifyTime = "1654008745393"/>
   <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/AddressablePaker/Lua/Framework/Common/UpdatableSingleton.lua.bytes" ModifyTime = "1654008710715"/>
   <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/AddressablePaker/Lua/Framework/Updater/UpdateManager.lua.bytes" ModifyTime = "1654008758802"/>
-  <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/AddressablePaker/Lua/GameMain.lua.bytes" ModifyTime = "1653993015385"/>
-  <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/AddressablePaker/Lua/Global/Global.lua.bytes" ModifyTime = "1654001507666"/>
+  <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/AddressablePaker/Lua/GameMain.lua.bytes" ModifyTime = "1654530898809"/>
+  <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/AddressablePaker/Lua/Global/Global.lua.bytes" ModifyTime = "1654530992414"/>
   <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/AddressablePaker/Lua/UI/Config/UIWindowsNames.lua.bytes" ModifyTime = "1653584415468"/>
   <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/AddressablePaker/Lua/UI/Login/LoginUI.lua.bytes" ModifyTime = "1653627727390"/>
   <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/AddressablePaker/Lua/UI/UINoticeTip/UINoticeTip.lua.bytes" ModifyTime = "1653976646987"/>
-  <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/AddressablePaker/Lua/UI/UIRoot/Hotfix/UIRootHotfix.lua.bytes" ModifyTime = "1654266732968"/>
-  <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/AddressablePaker/Lua/UI/UIRoot/UIRoot.lua.bytes" ModifyTime = "1654193261843"/>
+  <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/AddressablePaker/Lua/UI/UIRoot/Hotfix/UIRootHotfix.lua.bytes" ModifyTime = "1654531237256"/>
+  <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/AddressablePaker/Lua/UI/UIRoot/UIRoot.lua.bytes" ModifyTime = "1654530512548"/>
   <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/AddressablePaker/Lua/XLua/Common/util.lua.bytes" ModifyTime = "1653925062270"/>
   <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/AddressablePaker/Lua/XLua/Hotfix/HotfixTest.lua.bytes" ModifyTime = "1653978232266"/>
-  <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/AddressablePaker/Lua/XLua/HotfixMain.lua.bytes" ModifyTime = "1654266785743"/>
+  <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/AddressablePaker/Lua/XLua/HotfixMain.lua.bytes" ModifyTime = "1654530919712"/>
   <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/AddressablePaker/VariantsMap.bytes" ModifyTime = "1653984018178"/>
   <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/Editor/XLua/Template/TemplateCommon.lua.txt" ModifyTime = "1650348895530"/>
   <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/Common/Common.lua" ModifyTime = "1653389081712"/>
@@ -1666,20 +1666,24 @@
   <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/Framework/Common/Singleton.lua" ModifyTime = "1650348895571"/>
   <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/Framework/Common/Updatable.lua" ModifyTime = "1654008745393"/>
   <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/Framework/Common/UpdatableSingleton.lua" ModifyTime = "1654008710715"/>
-  <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/Framework/UI/UIController/UIModuleController.lua" ModifyTime = "1654356623155"/>
-  <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/Framework/UI/UISystem/UIModuleSystem.lua" ModifyTime = "1654356530281"/>
-  <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/Framework/Updater/Corutine.lua" ModifyTime = "1654348848934"/>
-  <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/Framework/Updater/UpdateManager.lua" ModifyTime = "1654008758802"/>
-  <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/GameMain.lua" ModifyTime = "1654348522400"/>
-  <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/Global/Global.lua" ModifyTime = "1654348728044"/>
+  <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/Framework/UI/UIController/UIModuleController.lua" ModifyTime = "1654580258837"/>
+  <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/Framework/UI/UISystem/UIModuleSystem.lua" ModifyTime = "1654580056643"/>
+  <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/Framework/Updater/Corutine.lua" ModifyTime = "1654531037095"/>
+  <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/Framework/Updater/UpdateManager.lua" ModifyTime = "1654532825205"/>
+  <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/GameMain.lua" ModifyTime = "1654530898809"/>
+  <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/Global/Global.lua" ModifyTime = "1654530992414"/>
   <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/UI/Config/UIWindowsNames.lua" ModifyTime = "1653584415468"/>
   <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/UI/Login/LoginUI.lua" ModifyTime = "1653627727390"/>
-  <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/UI/UINoticeTip/UINotceTipModel/UINotceTipsModel.lua" ModifyTime = "1654445457934"/>
+  <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/UI/UINoticeTip/UINotceTipModel/UINotceTipsModel.lua" ModifyTime = "1654529630949"/>
   <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/UI/UINoticeTip/UINoticeTip.lua" ModifyTime = "1654445085698"/>
-  <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/UI/UIRoot/Hotfix/UIRootHotfix.lua" ModifyTime = "1654266732968"/>
-  <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/UI/UIRoot/UIRoot.lua" ModifyTime = "1654193261843"/>
+  <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/UI/UIRoot/Hotfix/UIRootHotfix.lua" ModifyTime = "1654531459078"/>
+  <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/UI/UIRoot/UIRoot.lua" ModifyTime = "1654531336367"/>
   <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/XLua/Common/util.lua" ModifyTime = "1653925062270"/>
   <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/XLua/Hotfix/HotfixTest.lua" ModifyTime = "1653978232266"/>
-  <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/XLua/HotfixMain.lua" ModifyTime = "1654266820663"/>
-  <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/Script/Xlua/Gen/Resources/hotfix_id_map.lua.txt" ModifyTime = "1654336802981"/>
+  <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/XLua/HotfixMain.lua" ModifyTime = "1654531294622"/>
+  <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/Script/Xlua/Gen/Resources/hotfix_id_map.lua.txt" ModifyTime = "1654531570701"/>
+  <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/AddressablePaker/Lua/Framework/UI/UIController/UIModuleController.lua.bytes" ModifyTime = "1654356623155"/>
+  <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/AddressablePaker/Lua/Framework/UI/UISystem/UIModuleSystem.lua.bytes" ModifyTime = "1654356530281"/>
+  <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/AddressablePaker/Lua/UI/UINoticeTip/UINotceTipModel/UINotceTipsModel.lua.bytes" ModifyTime = "1654529630949"/>
+  <CheckedCodeItem Filename = "D:/xiangmu/Unity/MMORpgDemo/Assets/AddressablePaker/Lua/Framework/Updater/Corutine.lua.bytes" ModifyTime = "1654531037095"/>
 </CheckedCodeList>
