@@ -2,9 +2,9 @@
 <BreakpointList/>
 <WatchList/>
 <ProjectUI>
-  <TreeState BaseX = "0" BaseY = "0" AlternativeItem = "LuaFolders#Assets#LuaScript#Framework#UI#UISystem">
+  <TreeState BaseX = "0" BaseY = "-69" AlternativeItem = "LuaFolders#Assets#LuaScript#Framework#Resource#ResouceManager.lua">
     <SelectedList>
-      <Selected Path = "LuaFolders#Assets#LuaScript#Framework#UI#UIController#UIModuleController.lua"/>
+      <Selected Path = "LuaFolders#Assets#LuaScript#Framework#Resource#GameObjectPoolUI.lua"/>
     </SelectedList>
     <ExpandedList>
       <Expanded Path = "LuaFolders"/>
@@ -22,9 +22,9 @@
       <Expanded Path = "LuaFolders#Assets#Editor#AssetBundle#Database#AddressablePaker"/>
       <Expanded Path = "LuaFolders#Assets#LuaScript"/>
       <Expanded Path = "LuaFolders#Assets#LuaScript#Framework"/>
+      <Expanded Path = "LuaFolders#Assets#LuaScript#Framework#Resource"/>
       <Expanded Path = "LuaFolders#Assets#LuaScript#Framework#UI"/>
       <Expanded Path = "LuaFolders#Assets#LuaScript#Framework#UI#UIController"/>
-      <Expanded Path = "LuaFolders#Assets#LuaScript#Framework#UI#UISystem"/>
       <Expanded Path = "LuaFolders#Assets#LuaScript#Framework#Updater"/>
       <Expanded Path = "LuaFolders#Assets#LuaScript#Global"/>
       <Expanded Path = "LuaFolders#Assets#LuaScript#UI"/>
@@ -53,16 +53,16 @@
   Target = "<CurrentProject>"
   Replace = ""/>
 <MainWindow
-  X = "557"
-  Y = "216"
-  Width = "1605"
+  X = "510"
+  Y = "298"
+  Width = "1601"
   Height = "971"
   Maximized = "false"
-  LastCodeFilename = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/Framework/UI/UIController/UIModuleController.lua">
+  LastCodeFilename = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/Framework/Resource/GameObjectPoolUI.lua">
   <DockingControl>
     <DockingNode DockingDirection = "Horizontal">
       <DockingNode DockingDirection = "None">
-        <DockingBlock Width = "350" Height = "854" DocumentStyle = "false">
+        <DockingBlock Width = "349" Height = "854" DocumentStyle = "false">
           <DockingCard
             Text = "Project"
             Tag = ""
@@ -77,7 +77,79 @@
       </DockingNode>
       <DockingNode DockingDirection = "Vertical">
         <DockingNode DockingDirection = "None">
-          <DockingBlock Width = "1236" Height = "608" DocumentStyle = "true">
+          <DockingBlock Width = "1233" Height = "608" DocumentStyle = "true">
+            <DockingCard
+              Text = "GameObjectPoolUI.lua"
+              Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/Framework/Resource/GameObjectPoolUI.lua"
+              ActivePage = "true"
+              ActivateTime = "2125644911"
+              CaretLineIndex = "28"
+              CaretCodeCharIndex = "0"
+              BaseX = "0"
+              BaseY = "-240"/>
+            <DockingCard
+              Text = "ResouceManager.lua"
+              Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/Framework/Resource/ResouceManager.lua"
+              ActivePage = "false"
+              ActivateTime = "2124312003"
+              CaretLineIndex = "76"
+              CaretCodeCharIndex = "0"
+              BaseX = "0"
+              BaseY = "0"/>
+            <DockingCard
+              Text = "LuaUtil.lua"
+              Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/Common/LuaUtil.lua"
+              ActivePage = "false"
+              ActivateTime = "2124083859"
+              CaretLineIndex = "17"
+              CaretCodeCharIndex = "9"
+              BaseX = "0"
+              BaseY = "0"/>
+            <DockingCard
+              Text = "Global.lua"
+              Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/Global/Global.lua"
+              ActivePage = "false"
+              ActivateTime = "2124078088"
+              CaretLineIndex = "13"
+              CaretCodeCharIndex = "21"
+              BaseX = "0"
+              BaseY = "0"/>
+            <DockingCard
+              Text = "AssetBundleManager.lua"
+              Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/.lpproj/Apis/Unity/CS/Script/Framework/AssetBundle/AssetBundleManager.lua"
+              ActivePage = "false"
+              ActivateTime = "2122770229"
+              CaretLineIndex = "96"
+              CaretCodeCharIndex = "60"
+              BaseX = "0"
+              BaseY = "-1638"/>
+            <DockingCard
+              Text = "UISystemBase.lua"
+              Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/Framework/UI/UISystemBase.lua"
+              ActivePage = "false"
+              ActivateTime = "2124646666"
+              CaretLineIndex = "7"
+              CaretCodeCharIndex = "0"
+              BaseX = "0"
+              BaseY = "0"/>
+            <DockingCard
+              Text = "HotfixTest.lua"
+              Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/XLua/Hotfix/HotfixTest.lua"
+              ActivePage = "false"
+              ActivateTime = "2091270386"
+              CaretLineIndex = "9"
+              CaretCodeCharIndex = "0"
+              BaseX = "0"
+              BaseY = "-120"/>
+            <DockingCard
+              Text = "HotfixMain.lua"
+              Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/XLua/HotfixMain.lua"
+              ActivePage = "false"
+              ActivateTime = "2091271257"
+              CaretLineIndex = "17"
+              CaretCodeCharIndex = "28"
+              BaseX = "0"
+              BaseY = "-300"/>
             <DockingCard
               Text = "list.lua"
               Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/Common/Tools/list.lua"
@@ -90,10 +162,10 @@
             <DockingCard
               Text = "UIModuleController.lua"
               Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/Framework/UI/UIController/UIModuleController.lua"
-              ActivePage = "true"
-              ActivateTime = "2001896989"
+              ActivePage = "false"
+              ActivateTime = "2089472006"
               CaretLineIndex = "22"
-              CaretCodeCharIndex = "12"
+              CaretCodeCharIndex = "1"
               BaseX = "0"
               BaseY = "0"/>
             <DockingCard
@@ -151,48 +223,12 @@
               BaseX = "0"
               BaseY = "0"/>
             <DockingCard
-              Text = "HotfixTest.lua"
-              Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/XLua/Hotfix/HotfixTest.lua"
-              ActivePage = "false"
-              ActivateTime = "1952774256"
-              CaretLineIndex = "13"
-              CaretCodeCharIndex = "43"
-              BaseX = "0"
-              BaseY = "-120"/>
-            <DockingCard
-              Text = "HotfixMain.lua"
-              Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/XLua/HotfixMain.lua"
-              ActivePage = "false"
-              ActivateTime = "1952800796"
-              CaretLineIndex = "17"
-              CaretCodeCharIndex = "28"
-              BaseX = "0"
-              BaseY = "-300"/>
-            <DockingCard
               Text = "AssetBundleConfig.lua"
               Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/.lpproj/Apis/Unity/CS/Framework/AssetBundles/Config/AssetBundleConfig.lua"
               ActivePage = "false"
               ActivateTime = "1952521015"
               CaretLineIndex = "0"
               CaretCodeCharIndex = "0"
-              BaseX = "0"
-              BaseY = "0"/>
-            <DockingCard
-              Text = "Corutine.lua"
-              Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/Framework/Updater/Corutine.lua"
-              ActivePage = "false"
-              ActivateTime = "1952582160"
-              CaretLineIndex = "38"
-              CaretCodeCharIndex = "5"
-              BaseX = "0"
-              BaseY = "-478"/>
-            <DockingCard
-              Text = "Global.lua"
-              Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/Global/Global.lua"
-              ActivePage = "false"
-              ActivateTime = "1952577241"
-              CaretLineIndex = "17"
-              CaretCodeCharIndex = "48"
               BaseX = "0"
               BaseY = "0"/>
             <DockingCard
@@ -288,7 +324,7 @@
           </DockingBlock>
         </DockingNode>
         <DockingNode DockingDirection = "None">
-          <DockingBlock Width = "1236" Height = "239" DocumentStyle = "false">
+          <DockingBlock Width = "1233" Height = "239" DocumentStyle = "false">
             <DockingCard
               Text = "Output"
               Tag = ""
