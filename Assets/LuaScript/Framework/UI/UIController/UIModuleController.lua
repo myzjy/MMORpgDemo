@@ -16,11 +16,10 @@ require "Common.Tools.list"
 local UIModuleController = {}
 
 -- 控制器合集
-local modules={
-	""
-}
+list _list;
 local function __init()
-	
+	_list.New()
+	_list:push()
 
 end
 
@@ -28,5 +27,9 @@ end
 --注册消息
 local function registerModule()
 	-- body
-
+	for k,v in pairs(modules) do
+		for ks,vs in pairs(v.Notification) do
+			print(k,v)
+		end
+	end
 end

@@ -2,9 +2,9 @@
 <BreakpointList/>
 <WatchList/>
 <ProjectUI>
-  <TreeState BaseX = "0" BaseY = "-69" AlternativeItem = "LuaFolders#Assets#LuaScript#Framework#Resource#ResouceManager.lua">
+  <TreeState BaseX = "0" BaseY = "-69" AlternativeItem = "LuaFolders#Assets#LuaScript#Framework#UI#UIManager">
     <SelectedList>
-      <Selected Path = "LuaFolders#Assets#LuaScript#Framework#Resource#GameObjectPoolUI.lua"/>
+      <Selected Path = "LuaFolders#Assets#LuaScript#Framework#UI#UIController#UIModuleController.lua"/>
     </SelectedList>
     <ExpandedList>
       <Expanded Path = "LuaFolders"/>
@@ -54,15 +54,15 @@
   Replace = ""/>
 <MainWindow
   X = "510"
-  Y = "298"
+  Y = "303"
   Width = "1601"
-  Height = "971"
+  Height = "966"
   Maximized = "false"
-  LastCodeFilename = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/Framework/Resource/GameObjectPoolUI.lua">
+  LastCodeFilename = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/Framework/UI/UIController/UIModuleController.lua">
   <DockingControl>
     <DockingNode DockingDirection = "Horizontal">
       <DockingNode DockingDirection = "None">
-        <DockingBlock Width = "349" Height = "854" DocumentStyle = "false">
+        <DockingBlock Width = "349" Height = "849" DocumentStyle = "false">
           <DockingCard
             Text = "Project"
             Tag = ""
@@ -77,16 +77,43 @@
       </DockingNode>
       <DockingNode DockingDirection = "Vertical">
         <DockingNode DockingDirection = "None">
-          <DockingBlock Width = "1233" Height = "608" DocumentStyle = "true">
+          <DockingBlock Width = "1233" Height = "606" DocumentStyle = "true">
+            <DockingCard
+              Text = "UIModuleController.lua"
+              Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/Framework/UI/UIController/UIModuleController.lua"
+              ActivePage = "true"
+              ActivateTime = "2212449998"
+              CaretLineIndex = "15"
+              CaretCodeCharIndex = "15"
+              BaseX = "0"
+              BaseY = "0"/>
+            <DockingCard
+              Text = "Messenger.lua"
+              Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/Framework/Common/Messenger.lua"
+              ActivePage = "false"
+              ActivateTime = "2209574129"
+              CaretLineIndex = "75"
+              CaretCodeCharIndex = "10"
+              BaseX = "0"
+              BaseY = "-1218"/>
+            <DockingCard
+              Text = "BaseClass.lua"
+              Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/Framework/Common/BaseClass.lua"
+              ActivePage = "false"
+              ActivateTime = "2203257733"
+              CaretLineIndex = "27"
+              CaretCodeCharIndex = "14"
+              BaseX = "0"
+              BaseY = "-318"/>
             <DockingCard
               Text = "GameObjectPoolUI.lua"
               Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/Framework/Resource/GameObjectPoolUI.lua"
-              ActivePage = "true"
-              ActivateTime = "2125644911"
-              CaretLineIndex = "28"
-              CaretCodeCharIndex = "0"
+              ActivePage = "false"
+              ActivateTime = "2191122537"
+              CaretLineIndex = "13"
+              CaretCodeCharIndex = "27"
               BaseX = "0"
-              BaseY = "-240"/>
+              BaseY = "-120"/>
             <DockingCard
               Text = "ResouceManager.lua"
               Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/Framework/Resource/ResouceManager.lua"
@@ -160,15 +187,6 @@
               BaseX = "0"
               BaseY = "0"/>
             <DockingCard
-              Text = "UIModuleController.lua"
-              Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/Framework/UI/UIController/UIModuleController.lua"
-              ActivePage = "false"
-              ActivateTime = "2089472006"
-              CaretLineIndex = "22"
-              CaretCodeCharIndex = "1"
-              BaseX = "0"
-              BaseY = "0"/>
-            <DockingCard
               Text = "UIModuleSystem.lua"
               Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/Framework/UI/UISystem/UIModuleSystem.lua"
               ActivePage = "false"
@@ -186,24 +204,6 @@
               CaretCodeCharIndex = "21"
               BaseX = "0"
               BaseY = "-180"/>
-            <DockingCard
-              Text = "BaseClass.lua"
-              Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/Framework/Common/BaseClass.lua"
-              ActivePage = "false"
-              ActivateTime = "1954310729"
-              CaretLineIndex = "15"
-              CaretCodeCharIndex = "9"
-              BaseX = "0"
-              BaseY = "-1440"/>
-            <DockingCard
-              Text = "Messenger.lua"
-              Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/LuaScript/Framework/Common/Messenger.lua"
-              ActivePage = "false"
-              ActivateTime = "1954285208"
-              CaretLineIndex = "17"
-              CaretCodeCharIndex = "21"
-              BaseX = "0"
-              BaseY = "0"/>
             <DockingCard
               Text = "ToolsDebug.lua"
               Tag = "D:/xiangmu/Unity/MMORpgDemo/Assets/.lpproj/Apis/Unity/CS/ToolsDebug.lua"
@@ -324,7 +324,7 @@
           </DockingBlock>
         </DockingNode>
         <DockingNode DockingDirection = "None">
-          <DockingBlock Width = "1233" Height = "239" DocumentStyle = "false">
+          <DockingBlock Width = "1233" Height = "237" DocumentStyle = "false">
             <DockingCard
               Text = "Output"
               Tag = ""
