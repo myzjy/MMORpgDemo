@@ -5,7 +5,7 @@ namespace Script.Framework.UI.SystemModel
 {
     public class UIModelSystem
     {
-        public Dictionary<string, Action<string>> models = new Dictionary<string, Action<string>>();
+        public Dictionary<string, Action<UIBaseModule>> models = new Dictionary<string, Action<UIBaseModule>>();
         //注册
         public void RegisterEvent(string view)
         {
