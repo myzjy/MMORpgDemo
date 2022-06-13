@@ -1,5 +1,8 @@
 ﻿namespace Script.Framework.UI
 {
+    /// <summary>
+    /// 通知器
+    /// </summary>
     public class UINotification
     {
         public UINotification(string name, object body)

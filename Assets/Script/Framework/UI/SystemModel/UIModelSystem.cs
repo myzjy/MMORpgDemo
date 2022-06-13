@@ -11,7 +11,9 @@ namespace Script.Framework.UI.SystemModel
         {
             
         }
-
+        /// <summary>
+        /// 调度事件
+        /// </summary>
         public void DispatchEvent()
         {
             

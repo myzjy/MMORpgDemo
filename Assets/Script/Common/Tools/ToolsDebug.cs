@@ -15,6 +15,7 @@ public class ToolsDebug
     /// </summary>
     /// <param name="message">String or object to be converted to string representation for display.</param>
     /// <param name="context">Object to which the message applies.</param>
+     [Conditional("UNITY_EDITOR")]
     public static void Log(object message)
     {
         

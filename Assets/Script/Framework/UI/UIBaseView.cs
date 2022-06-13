@@ -1,7 +1,10 @@
-﻿namespace Script.Framework.UI
+﻿using Framework.UI.FrameworkUI;
+
+namespace Script.Framework.UI
 {
     public class UIBaseView
     {
+        private UIView UIV_View;
         /// <summary>
         /// 初始化
         /// </summary>
@@ -22,9 +25,11 @@
         //移除物体
         public virtual void OnDestroy()
         {
-            
         }
 
+        /// <summary>
+        /// 复用
+        /// </summary>
         public void Reuse()
         {
             OnShow();
