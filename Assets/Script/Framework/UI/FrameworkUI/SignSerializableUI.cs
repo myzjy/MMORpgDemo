@@ -81,7 +81,7 @@ public class SignSerializableUI : MonoBehaviour
         return GetPath(com.gameObject) + "_" + com.GetType().Name;
     }
 
-    private static string GetPath(GameObject go)
+    public static string GetPath(GameObject go)
     {
         var sko = go.GetComponent<SerializableKeyObject>();
         var parent = go.transform.parent;

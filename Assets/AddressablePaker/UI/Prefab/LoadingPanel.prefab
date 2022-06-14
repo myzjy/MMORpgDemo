@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4568215368333742844}
   - component: {fileID: 1086268496659637562}
+  - component: {fileID: 3016521139012419721}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: leftSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,6 +89,22 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3016521139012419721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22526853081186600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faba72a6944a415e963769f3e4cd9052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coms:
+  - key: leftSlider
+    obj: {fileID: 1086268496659637562}
+  maskindex: 2
 --- !u!1 &64215433347401949
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,6 +193,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8473401666583621899}
   - component: {fileID: 9129306194796203560}
+  - component: {fileID: 2392657225631673727}
   m_Layer: 5
   m_Name: LoadingPanel
   m_TagString: Untagged
@@ -225,6 +243,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 311449566765586597}
   m_CullTransparentMesh: 0
+--- !u!114 &2392657225631673727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311449566765586597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d093ba5ff5ca48d0b2ba2a249db57a85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data:
+  - key: leftSlider
+    obj: {fileID: 1086268496659637562}
+  - key: rightSlider
+    obj: {fileID: 6547094760595709683}
+  mGO: {fileID: 311449566765586597}
+  mTF: {fileID: 8473401666583621899}
 --- !u!1 &569762302966353954
 GameObject:
   m_ObjectHideFlags: 0
@@ -688,8 +725,9 @@ GameObject:
   m_Component:
   - component: {fileID: 498353396919090629}
   - component: {fileID: 6547094760595709683}
+  - component: {fileID: 7710584995943106646}
   m_Layer: 5
-  m_Name: Slider (1)
+  m_Name: rightSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -766,6 +804,22 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7710584995943106646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3934168451879422972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faba72a6944a415e963769f3e4cd9052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coms:
+  - key: rightSlider
+    obj: {fileID: 6547094760595709683}
+  maskindex: 2
 --- !u!1 &3997452561996701717
 GameObject:
   m_ObjectHideFlags: 0
