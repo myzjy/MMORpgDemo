@@ -1,10 +1,22 @@
 ﻿using Framework.UI.FrameworkUI;
+using Script.Framework.UI.FrameworkUI;
 
 namespace Script.Framework.UI
 {
     public class UIBaseView
     {
-        private UIView UIV_View;
+        protected UIView UIV_View;
+
+        protected  void OnInitScript(UIInitView _viewInit)
+        {
+            viewInit = _viewInit;
+        }
+
+        protected virtual void OnInitView(UIView uiView)
+        {
+            
+        }
+
         /// <summary>
         /// 初始化
         /// </summary>
@@ -27,6 +39,26 @@ namespace Script.Framework.UI
         {
         }
 
+        /// <summary>
+        /// 判断显示
+        /// </summary>
+        public virtual bool IsActive => (UIV_View != null ? UIV_View.mGO : null) != null && UIV_View.mGO.activeSelf;
+
+        public void SetUIView(UIView _view)
+        {
+            UIV_View = _view;
+            OnInitView(UIV_View);
+        }
+        //Panel View保存
+        public  UIInitView viewInit;
+
+        public virtual UIInitView GetView()
+        {
+            return viewInit;
+        }
+        public UIView GetUIView => UIV_View;
+        
+        
         /// <summary>
         /// 复用
         /// </summary>

@@ -2,8 +2,11 @@
 
 namespace Script.Framework.UI.FrameworkUI
 {
-    public interface UIInitView
+    public class UIInitView
     {
-        void Init(UIView selfUIView);
+        public virtual void Init(UIView selfUIView)
+        {
+            
+        }
     }
 }

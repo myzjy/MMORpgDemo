@@ -1,6 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using Framework.UI.FrameworkUI;
 using Script.Framework.AssetBundle;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace Script.Framework.UI
 {
@@ -38,9 +41,23 @@ namespace Script.Framework.UI
 
         public IEnumerator LoadAsset()
         {
+            var start = DateTime.Now;
             var load = AssetBundleManager.Instance.LoadAssetAsync(PrefabName(), typeof(GameObject));
             yield return load;
+            var assetObj = load.asset as GameObject;
+            //读到
+            ToolsDebug.Log($"Load Prefab use {(DateTime.Now - start).Milliseconds}ms");
+            var item = GameObject.Find("UIRoot/LuanchLayer");
+            var instance = Object.Instantiate(assetObj, item.transform, true);
+            if (instance != null)
+            {
+                var rf = instance.GetComponent<RectTransform>();
+                rf.offsetMin=Vector2.zero;
+                rf.offsetMax=Vector2.zero;
+            }
 
+            var uiview = instance.GetComponent<UIView>();
+            
         }
     }
 }
