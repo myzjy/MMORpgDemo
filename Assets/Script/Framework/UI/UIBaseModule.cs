@@ -57,7 +57,8 @@ namespace Script.Framework.UI
             }
 
             var uiview = instance.GetComponent<UIView>();
-            
+            selfBaseView.SetUIView(uiview);
+            selfBaseView.OnInit();
         }
     }
 }

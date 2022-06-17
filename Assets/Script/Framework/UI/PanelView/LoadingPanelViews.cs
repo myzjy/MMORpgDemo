@@ -24,15 +24,21 @@ namespace Script.Framework.UI.PanelView
         {
             base.OnDestroy();
         }
-
+        /// <summary>
+        /// 找到panel view
+        /// </summary>
+        /// <returns></returns>
         private LoadingPanelView GetSelfView()
         {
             return GetView() as LoadingPanelView;
         }
-
+        
+        /// <summary>
+        /// 初始化 UIView
+        /// </summary>
+        /// <param name="uiView">生成</param>
         protected override void OnInitView(UIView uiView)
         {
-            var sli = GetSelfView().leftSlider;
             var views = new LoadingPanelView();
             views.Init(uiView);
             OnInitScript(views);
