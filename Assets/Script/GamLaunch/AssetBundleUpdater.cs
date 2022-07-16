@@ -55,11 +55,11 @@ public class AssetBundleUpdater : MonoBehaviour
 
     private void Awake()
     {
-        statusText = transform.Find("Tips").GetComponent<Text>();
-        leftslider = transform.Find("leftSlider").GetComponent<Slider>();
-        rightslider = transform.Find("rightSlider").GetComponent<Slider>();
-        leftslider.gameObject.SetActive(false);
-        rightslider.gameObject.SetActive(false);
+        // statusText = transform.Find("Tips").GetComponent<Text>();
+        // leftslider = transform.Find("leftSlider").GetComponent<Slider>();
+        // rightslider = transform.Find("rightSlider").GetComponent<Slider>();
+        // leftslider.gameObject.SetActive(false);
+        // rightslider.gameObject.SetActive(false);
 
     }
 
@@ -79,13 +79,13 @@ public class AssetBundleUpdater : MonoBehaviour
         TestHotfix();
 #endif
     }
-#if UNITY_EDITOR || CLIENT_DEBUG
+// #if UNITY_EDITOR || CLIENT_DEBUG
     // Hotfix测试---用于测试热更模块的热修复
     public void TestHotfix()
     {
         ToolsDebug.Log("********** AssetbundleUpdater : Call TestHotfix in cs...");
     }
-#endif
+// #endif
     IEnumerator CheckUpdateOrDownloadGame()
     {
         // 初始化本地版本信息

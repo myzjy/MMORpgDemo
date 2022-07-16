@@ -9,7 +9,7 @@ namespace Framework.AssetBundles.Config
     {
         public const string AssetsFolderName = "AddressablePaker";
         public const string AssetBundlesFolderName = "AssetBundles";
-        public const string AssetsPathMapFileName = "AssetsMap.bytes";
+        public const string AssetsPathMapFileName = "AssetsMap";//"AssetsMap.bytes";
         public const string VariantsMapFileName = "VariantsMap.bytes";
         public const string ChannelFolderName = "Channel";
         public const string localSvrAppPath = "Editor/AssetBundle/LocalServer/AssetBundleServer.exe";

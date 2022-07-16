@@ -10,7 +10,10 @@
 
 
 require "Global.Global"
+require "Global.Timer"
 
+local Times1=Timer:new("222",4)
+print(Times1.TimerName,Times1.Duration)
 ---@class GameMain
 GameMain = {};
 print("GameMin ing ....")

@@ -35,7 +35,11 @@ namespace XLua.CSObjectWrap
 				
 				translator.DelayWrapLoader(typeof(AssetBundles.Config.Manifest), AssetBundlesConfigManifestWrap.__Register);
 				
-				translator.DelayWrapLoader(typeof(Framework.UI.FrameworkUI.UIView), FrameworkUIFrameworkUIUIViewWrap.__Register);
+				translator.DelayWrapLoader(typeof(Script.Framework.UI.Tip.UINoticeTip), ScriptFrameworkUITipUINoticeTipWrap.__Register);
+				
+				translator.DelayWrapLoader(typeof(Script.Framework.UI.FrameworkUI.SerializableKeyObject), ScriptFrameworkUIFrameworkUISerializableKeyObjectWrap.__Register);
+				
+				translator.DelayWrapLoader(typeof(Script.Framework.AssetBundle.AssetBundleManager), ScriptFrameworkAssetBundleAssetBundleManagerWrap.__Register);
 				
 				translator.DelayWrapLoader(typeof(Framework.AssetBundles.Utilty.AssetBundleUtility), FrameworkAssetBundlesUtiltyAssetBundleUtilityWrap.__Register);
 				
@@ -47,11 +51,7 @@ namespace XLua.CSObjectWrap
 				
 				translator.DelayWrapLoader(typeof(Framework.AssetBundle.AsyncOperation.ResourceWebRequester), FrameworkAssetBundleAsyncOperationResourceWebRequesterWrap.__Register);
 				
-				translator.DelayWrapLoader(typeof(Script.Framework.UI.Tip.UINoticeTip), ScriptFrameworkUITipUINoticeTipWrap.__Register);
-				
-				translator.DelayWrapLoader(typeof(Script.Framework.UI.FrameworkUI.SerializableKeyObject), ScriptFrameworkUIFrameworkUISerializableKeyObjectWrap.__Register);
-				
-				translator.DelayWrapLoader(typeof(Script.Framework.AssetBundle.AssetBundleManager), ScriptFrameworkAssetBundleAssetBundleManagerWrap.__Register);
+				translator.DelayWrapLoader(typeof(Framework.UI.FrameworkUI.UIView), FrameworkUIFrameworkUIUIViewWrap.__Register);
 				
 				translator.DelayWrapLoader(typeof(Common.GameChannel.ChannelManager), CommonGameChannelChannelManagerWrap.__Register);
 				

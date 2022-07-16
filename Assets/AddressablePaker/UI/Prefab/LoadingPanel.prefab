@@ -260,6 +260,9 @@ MonoBehaviour:
     obj: {fileID: 1086268496659637562}
   - key: rightSlider
     obj: {fileID: 6547094760595709683}
+  _canvs: {fileID: 0}
+  _canvasGroup: {fileID: 0}
+  _graphicRaycaster: {fileID: 0}
   mGO: {fileID: 311449566765586597}
   mTF: {fileID: 8473401666583621899}
 --- !u!1 &569762302966353954

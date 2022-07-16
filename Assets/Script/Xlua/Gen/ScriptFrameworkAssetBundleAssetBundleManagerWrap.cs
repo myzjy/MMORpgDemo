@@ -640,10 +640,11 @@ namespace XLua.CSObjectWrap
                 
                 {
                     string assetPath = LuaAPI.lua_tostring(L, 2);
+                    string assetBundleName = LuaAPI.lua_tostring(L, 3);
                     string assetbundleName;
                     string assetName;
                     
-                        bool __cl_gen_ret = __cl_gen_to_be_invoked.MapAssetPath( assetPath, out assetbundleName, out assetName );
+                        bool __cl_gen_ret = __cl_gen_to_be_invoked.MapAssetPath( assetPath, assetBundleName, out assetbundleName, out assetName );
                         LuaAPI.lua_pushboolean(L, __cl_gen_ret);
                     LuaAPI.lua_pushstring(L, assetbundleName);
                         

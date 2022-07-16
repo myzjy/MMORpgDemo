@@ -1,6 +1,5 @@
 assetsmap.assetbundle,AssetsMap.bytes
 launcpanel.assetbundle,UI/Prefab/view/LauncPanel.prefab
-loadingpanel.assetbundle,UI/Prefab/LoadingPanel.prefab
 loginpanel.assetbundle,UI/Prefab/LoginPanel.prefab
 lua.assetbundle,Channel/Lua.bytes
 lua.assetbundle,Lua/Common/Common.lua.bytes
@@ -72,6 +71,7 @@ lua.assetbundle,Lua/XLua/Hotfix/HotfixTest.lua.bytes
 lua.assetbundle,Lua/XLua/HotfixMain.lua.bytes
 ui.assetbundle,Channel/UI.bytes
 ui/prefab/loadingpanel_prefab.assetbundle,Channel/UI/Prefab/LoadingPanel.prefab.bytes
+ui/prefab/loadingpanel_prefab.assetbundle,UI/Prefab/LoadingPanel.prefab
 ui/prefab/loginpanel_prefab.assetbundle,Channel/UI/Prefab/LoginPanel.prefab.bytes
 ui/prefab/uilaunch_prefab.assetbundle,Channel/UI/Prefab/UILaunch.prefab.bytes
 ui/prefab/uinoticetip_prefab.assetbundle,Channel/UI/Prefab/UINoticeTip.prefab.bytes

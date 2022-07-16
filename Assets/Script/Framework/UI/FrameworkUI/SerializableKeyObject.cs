@@ -64,7 +64,6 @@ namespace Script.Framework.UI.FrameworkUI
             return !dict.TryGetValue(key, out var dictGo) ? null : dictGo;
         }
 
-#if UNITY_EDITOR
 
         public void FlushData()
         {
@@ -121,6 +120,5 @@ namespace Script.Framework.UI.FrameworkUI
                 }
             }
         }
-#endif
     }
 }

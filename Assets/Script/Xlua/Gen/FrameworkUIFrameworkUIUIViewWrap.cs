@@ -21,15 +21,23 @@ namespace XLua.CSObjectWrap
         {
 			ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
 			System.Type type = typeof(Framework.UI.FrameworkUI.UIView);
-			Utils.BeginObjectRegister(type, L, translator, 0, 1, 2, 2);
+			Utils.BeginObjectRegister(type, L, translator, 0, 3, 5, 5);
 			
 			Utils.RegisterFunc(L, Utils.METHOD_IDX, "InstanceID", _m_InstanceID);
+			Utils.RegisterFunc(L, Utils.METHOD_IDX, "OnClose", _m_OnClose);
+			Utils.RegisterFunc(L, Utils.METHOD_IDX, "OnOpen", _m_OnOpen);
 			
 			
-			Utils.RegisterFunc(L, Utils.GETTER_IDX, "mGO", _g_get_mGO);
+			Utils.RegisterFunc(L, Utils.GETTER_IDX, "_canvs", _g_get__canvs);
+            Utils.RegisterFunc(L, Utils.GETTER_IDX, "_canvasGroup", _g_get__canvasGroup);
+            Utils.RegisterFunc(L, Utils.GETTER_IDX, "_graphicRaycaster", _g_get__graphicRaycaster);
+            Utils.RegisterFunc(L, Utils.GETTER_IDX, "mGO", _g_get_mGO);
             Utils.RegisterFunc(L, Utils.GETTER_IDX, "mTF", _g_get_mTF);
             
-			Utils.RegisterFunc(L, Utils.SETTER_IDX, "mGO", _s_set_mGO);
+			Utils.RegisterFunc(L, Utils.SETTER_IDX, "_canvs", _s_set__canvs);
+            Utils.RegisterFunc(L, Utils.SETTER_IDX, "_canvasGroup", _s_set__canvasGroup);
+            Utils.RegisterFunc(L, Utils.SETTER_IDX, "_graphicRaycaster", _s_set__graphicRaycaster);
+            Utils.RegisterFunc(L, Utils.SETTER_IDX, "mGO", _s_set_mGO);
             Utils.RegisterFunc(L, Utils.SETTER_IDX, "mTF", _s_set_mTF);
             
 			
@@ -104,8 +112,104 @@ namespace XLua.CSObjectWrap
             
         }
         
+        [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+        static int _m_OnClose(RealStatePtr L)
+        {
+		    try {
+            
+                ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
+            
+            
+                Framework.UI.FrameworkUI.UIView __cl_gen_to_be_invoked = (Framework.UI.FrameworkUI.UIView)translator.FastGetCSObj(L, 1);
+            
+            
+                
+                {
+                    
+                    __cl_gen_to_be_invoked.OnClose(  );
+                    
+                    
+                    
+                    return 0;
+                }
+                
+            } catch(System.Exception __gen_e) {
+                return LuaAPI.luaL_error(L, "c# exception:" + __gen_e);
+            }
+            
+        }
+        
+        [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+        static int _m_OnOpen(RealStatePtr L)
+        {
+		    try {
+            
+                ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
+            
+            
+                Framework.UI.FrameworkUI.UIView __cl_gen_to_be_invoked = (Framework.UI.FrameworkUI.UIView)translator.FastGetCSObj(L, 1);
+            
+            
+                
+                {
+                    
+                    __cl_gen_to_be_invoked.OnOpen(  );
+                    
+                    
+                    
+                    return 0;
+                }
+                
+            } catch(System.Exception __gen_e) {
+                return LuaAPI.luaL_error(L, "c# exception:" + __gen_e);
+            }
+            
+        }
         
         
+        
+        
+        [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+        static int _g_get__canvs(RealStatePtr L)
+        {
+		    try {
+                ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
+			
+                Framework.UI.FrameworkUI.UIView __cl_gen_to_be_invoked = (Framework.UI.FrameworkUI.UIView)translator.FastGetCSObj(L, 1);
+                translator.Push(L, __cl_gen_to_be_invoked._canvs);
+            } catch(System.Exception __gen_e) {
+                return LuaAPI.luaL_error(L, "c# exception:" + __gen_e);
+            }
+            return 1;
+        }
+        
+        [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+        static int _g_get__canvasGroup(RealStatePtr L)
+        {
+		    try {
+                ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
+			
+                Framework.UI.FrameworkUI.UIView __cl_gen_to_be_invoked = (Framework.UI.FrameworkUI.UIView)translator.FastGetCSObj(L, 1);
+                translator.Push(L, __cl_gen_to_be_invoked._canvasGroup);
+            } catch(System.Exception __gen_e) {
+                return LuaAPI.luaL_error(L, "c# exception:" + __gen_e);
+            }
+            return 1;
+        }
+        
+        [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+        static int _g_get__graphicRaycaster(RealStatePtr L)
+        {
+		    try {
+                ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
+			
+                Framework.UI.FrameworkUI.UIView __cl_gen_to_be_invoked = (Framework.UI.FrameworkUI.UIView)translator.FastGetCSObj(L, 1);
+                translator.Push(L, __cl_gen_to_be_invoked._graphicRaycaster);
+            } catch(System.Exception __gen_e) {
+                return LuaAPI.luaL_error(L, "c# exception:" + __gen_e);
+            }
+            return 1;
+        }
         
         [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
         static int _g_get_mGO(RealStatePtr L)
@@ -136,6 +240,51 @@ namespace XLua.CSObjectWrap
         }
         
         
+        
+        [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+        static int _s_set__canvs(RealStatePtr L)
+        {
+		    try {
+                ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
+			
+                Framework.UI.FrameworkUI.UIView __cl_gen_to_be_invoked = (Framework.UI.FrameworkUI.UIView)translator.FastGetCSObj(L, 1);
+                __cl_gen_to_be_invoked._canvs = (UnityEngine.Canvas)translator.GetObject(L, 2, typeof(UnityEngine.Canvas));
+            
+            } catch(System.Exception __gen_e) {
+                return LuaAPI.luaL_error(L, "c# exception:" + __gen_e);
+            }
+            return 0;
+        }
+        
+        [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+        static int _s_set__canvasGroup(RealStatePtr L)
+        {
+		    try {
+                ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
+			
+                Framework.UI.FrameworkUI.UIView __cl_gen_to_be_invoked = (Framework.UI.FrameworkUI.UIView)translator.FastGetCSObj(L, 1);
+                __cl_gen_to_be_invoked._canvasGroup = (UnityEngine.CanvasGroup)translator.GetObject(L, 2, typeof(UnityEngine.CanvasGroup));
+            
+            } catch(System.Exception __gen_e) {
+                return LuaAPI.luaL_error(L, "c# exception:" + __gen_e);
+            }
+            return 0;
+        }
+        
+        [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+        static int _s_set__graphicRaycaster(RealStatePtr L)
+        {
+		    try {
+                ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
+			
+                Framework.UI.FrameworkUI.UIView __cl_gen_to_be_invoked = (Framework.UI.FrameworkUI.UIView)translator.FastGetCSObj(L, 1);
+                __cl_gen_to_be_invoked._graphicRaycaster = (UnityEngine.UI.GraphicRaycaster)translator.GetObject(L, 2, typeof(UnityEngine.UI.GraphicRaycaster));
+            
+            } catch(System.Exception __gen_e) {
+                return LuaAPI.luaL_error(L, "c# exception:" + __gen_e);
+            }
+            return 0;
+        }
         
         [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
         static int _s_set_mGO(RealStatePtr L)

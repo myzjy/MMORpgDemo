@@ -21,6 +21,13 @@ Updatable = require "Framework.Common.Updatable"
 
 -- 时间 update
 UpdateManager = require "Framework.Updater.UpdateManager"
+-- update & time
+Timer = require "Framework.Updater.Timer"
+-- 时间管理lua类
+TimerManager = require "Framework.Updater.TimerManager"
+
+--ResourcesManager
+ResourcesManager=require "Framework.Resource.ResourcesManager"
 
 
 

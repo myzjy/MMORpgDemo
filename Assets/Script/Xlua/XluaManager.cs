@@ -39,10 +39,12 @@ public class XluaManager : MMOSingletonDontDestroy<XluaManager>
     {
         string path = AssetBundleUtility.PackagePathToAssetsPath(luaAssetbundleAssetName);
         AssetbundleName = AssetBundleUtility.AssetBundlePathToAssetBundleName(path);
+        GetAssetbundleName = AssetbundleName;
         InitLuaEnv();
     }
 
-    public string AssetbundleName { get; protected set; }
+    public  string AssetbundleName { get; protected set; }
+    public static  string GetAssetbundleName { get; protected set; }
     public bool HasGameStart { get; protected set; }
 
     public void StartGame()
@@ -69,7 +71,9 @@ public class XluaManager : MMOSingletonDontDestroy<XluaManager>
         scriptPath = $"{luaAssetbundleAssetName}/{filepath}.bytes";
         string assetbundleName = null;
         string assetName = null;
-        bool status = AssetBundleManager.Instance.MapAssetPath(scriptPath, out assetbundleName, out assetName);
+        Debug.Log(GetAssetbundleName);
+        Debug.Log(scriptPath);
+        bool status = AssetBundleManager.Instance.MapAssetPath(GetAssetbundleName,scriptPath, out assetbundleName, out assetName);
         if (!status)
         {
             ToolsDebug.LogError($"MapAssetPath failed : {scriptPath}");

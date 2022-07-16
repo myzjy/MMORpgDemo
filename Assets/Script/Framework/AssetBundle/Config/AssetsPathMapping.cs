@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Framework.AssetBundles.Config;
 using Framework.AssetBundles.Utilty;
 using UnityEngine;
@@ -37,10 +38,11 @@ namespace Framework.AssetBundle.Config
     /// <summary>
     /// Resources Map Item  资源依赖
     /// </summary>
-   public class ResourcesMapItem
+    public class ResourcesMapItem
     {
         //资源包名
         public string assetbundleName;
+
         //资源名
         public string assetName;
     }
@@ -51,6 +53,10 @@ namespace Framework.AssetBundle.Config
     {
         private const string PATTREN = AssetBundleConfig.CommonMapPattren;
         private Dictionary<string, ResourcesMapItem> pathLookup = new Dictionary<string, ResourcesMapItem>();
+
+        private Dictionary<string, Dictionary<string, ResourcesMapItem>> pathLookupDict =
+            new Dictionary<string, Dictionary<string, ResourcesMapItem>>();
+
         private Dictionary<string, List<string>> assetsLookup = new Dictionary<string, List<string>>();
         private Dictionary<string, string> assetbundleLookup = new Dictionary<string, string>();
         private List<string> emptyList = new List<string>();
@@ -61,17 +67,9 @@ namespace Framework.AssetBundle.Config
             AssetbundleName = AssetBundleUtility.AssetBundlePathToAssetBundleName(AssetName);
         }
 
-        public string AssetbundleName
-        {
-            get;
-            set;
-        }
+        public string AssetbundleName { get; set; }
 
-        public string AssetName
-        {
-            get;
-            set;
-        }
+        public string AssetName { get; set; }
 
         public void Initialize(string content)
         {
@@ -107,30 +105,62 @@ namespace Framework.AssetBundle.Config
 
                 var assetPath = item.assetName;
                 pathLookup.Add(assetPath, item);
+                if (pathLookupDict.ContainsKey(item.assetbundleName))
+                {
+                    var dict = pathLookupDict[item.assetbundleName];
+                    pathLookupDict[item.assetbundleName].Add(assetPath, item);
+                }
+                else
+                {
+                    pathLookupDict.Add(item.assetbundleName, new Dictionary<string, ResourcesMapItem>()
+                    {
+                        { assetPath, item }
+                    });
+                }
+
                 assetsLookup.TryGetValue(item.assetbundleName, out var assetsList);
                 if (assetsList == null)
                 {
                     assetsList = new List<string>();
                 }
+
                 if (!assetsList.Contains(item.assetName))
                 {
                     assetsList.Add(item.assetName);
                 }
+
                 assetsLookup[item.assetbundleName] = assetsList;
-                assetbundleLookup.Add(item.assetName, item.assetbundleName);
+                // Debug.Log(item.assetbundleName);
+                // assetbundleLookup.Add(item.assetbundleName, item.assetName);
             }
         }
-        
-        public bool MapAssetPath(string assetPath, out string assetbundleName, out string assetName)
+
+        public bool MapAssetPath(string assetPath, string assetBundleName, out string assetbundleName,
+            out string assetName)
         {
             assetbundleName = null;
             assetName = null;
-            if (!pathLookup.TryGetValue(assetPath, out var item)) return false;
-            assetbundleName = item.assetbundleName;
-            assetName = item.assetName;
+            // Dictionary<string, ResourcesMapItem> item;
+            if (!pathLookupDict.TryGetValue(assetPath, out var item)) return false;
+            if (!string.IsNullOrEmpty(assetBundleName))
+            {
+                if (!item.TryGetValue(assetBundleName, out var data)) return false;
+                // if (!pathLookup.TryGetValue(assetPath, out var item)) return false;
+                assetbundleName = data.assetbundleName;
+                assetName = data.assetName;
+            }
+            else
+            {
+                var data = item.Values.FirstOrDefault();
+                // if (!pathLookup.TryGetValue(assetPath, out var item)) return false;
+                assetbundleName = data.assetbundleName;
+                assetName = data.assetName;
+            }
+
+          
             return true;
         }
-        
+
         public List<string> GetAllAssetNames(string assetbundleName)
         {
             assetsLookup.TryGetValue(assetbundleName, out var allAssets);

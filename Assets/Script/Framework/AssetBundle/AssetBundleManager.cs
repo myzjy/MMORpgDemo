@@ -100,6 +100,7 @@ namespace Script.Framework.AssetBundle
             // 说明：同时请求资源可以提高加载速度
             var manifestRequest = RequestAssetBundleAsync(manifest.AssetbundleName);
             var pathMapRequest = RequestAssetBundleAsync(assetsPathMapping.AssetbundleName);
+            Debug.Log(assetsPathMapping.AssetbundleName);
 
             yield return manifestRequest;
             var assetbundle = manifestRequest.assetbundle;
@@ -109,7 +110,8 @@ namespace Script.Framework.AssetBundle
 
             yield return pathMapRequest;
             assetbundle = pathMapRequest.assetbundle;
-            var mapContent = assetbundle.LoadAsset<TextAsset>(assetsPathMapping.AssetName);
+            var s = assetbundle.LoadAllAssets();
+            var mapContent = s[0] as TextAsset;// assetbundle.LoadAsset<TextAsset>(assetsPathMapping.AssetName);
             if (mapContent != null)
             {
                 assetsPathMapping.Initialize(mapContent.text);
@@ -495,9 +497,9 @@ namespace Script.Framework.AssetBundle
             return assetbundleResident.Contains(assebundleName);
         }
 
-        public bool MapAssetPath(string assetPath, out string assetbundleName, out string assetName)
+        public bool MapAssetPath(string assetPath,string assetBundleName, out string assetbundleName, out string assetName)
         {
-            return assetsPathMapping.MapAssetPath(assetPath, out assetbundleName, out assetName);
+            return assetsPathMapping.MapAssetPath(assetPath,assetBundleName, out assetbundleName, out assetName);
         }
 
         public BaseAssetAsyncLoader LoadAssetAsync(string assetPath, System.Type assetType)
@@ -510,13 +512,13 @@ namespace Script.Framework.AssetBundle
                 return new EditorAssetAsyncLoader(target);
             }
 #endif
-
+            var newAssetPath = $"{assetPath}{AssetBundleConfig.AssetBundleSuffix}";
             string assetbundleName = null;
             string assetName = null;
-            bool status = MapAssetPath(assetPath, out assetbundleName, out assetName);
+            bool status = MapAssetPath(newAssetPath, "",out assetbundleName, out assetName);
             if (!status)
             {
-                ToolsDebug.LogError("No assetbundle at asset path :" + assetPath);
+                ToolsDebug.LogError("No assetbundle at asset path :" + newAssetPath);
                 return null;
             }
 

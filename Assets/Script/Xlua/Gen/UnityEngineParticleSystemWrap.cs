@@ -139,7 +139,6 @@ namespace XLua.CSObjectWrap
             
                 if(__gen_param_count == 1) 
                 {
-                    
                     UnityEngine.ParticleSystem.Particle[] particles = new ParticleSystem.Particle[] { };
                     
                     __cl_gen_to_be_invoked.SetParticles( particles );
@@ -262,6 +261,7 @@ namespace XLua.CSObjectWrap
                 }
                 if(__gen_param_count == 2&& LuaTypes.LUA_TNUMBER == LuaAPI.lua_type(L, 2)) 
                 {
+                    
                     Unity.Collections.NativeArray<UnityEngine.ParticleSystem.Particle> particles = default;
                     int size = LuaAPI.xlua_tointeger(L, 2);
                     

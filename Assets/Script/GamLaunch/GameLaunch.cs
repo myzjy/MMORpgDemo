@@ -14,7 +14,7 @@ public class GameLaunch : MonoBehaviour
 {
     AssetBundleUpdater updater;
     const string noticeTipPrefabPath = "UI/Prefab/UINoticeTip.prefab";
-    const string launchPrefabPath = "UI/Prefab/view/LauncPanel.prefab";
+    const string launchPrefabPath = "uilaunch";//"UI/Prefab/view/LauncPanel.prefab";
     GameObject launchPrefab;
 
     GameObject noticeTipPrefab;
@@ -37,7 +37,7 @@ public class GameLaunch : MonoBehaviour
         ToolsDebug.Log($"AssetBundleManager Initialize use {(DateTime.Now - startTime).Milliseconds}ms");
         // 启动xlua热修复模块
         startTime = DateTime.Now;
-        XluaManager.Instance.Startup();
+        // XluaManager.Instance.Startup();
         string luaAssetbundleName = XluaManager.Instance.AssetbundleName;
         AssetBundleManager.Instance.SetAssetBundleResident(luaAssetbundleName, true);
         var abloader = AssetBundleManager.Instance.LoadAssetBundleAsync(luaAssetbundleName);
