@@ -37,7 +37,7 @@ namespace GameDataEditor.Common
             //100-->best
             compressionQuality = 100,
             androidETC2FallbackOverride = AndroidETC2FallbackOverride.UseBuildSettings,
-            format = TextureImporterFormat.ASTC_RGBA_4x4,
+            format = TextureImporterFormat.ASTC_4x4,
             
 
         };
@@ -85,7 +85,7 @@ namespace GameDataEditor.Common
             //50--> normal
             //100-->best
             compressionQuality = 100,
-            format = TextureImporterFormat.ASTC_RGBA_4x4,
+            format = TextureImporterFormat.ASTC_4x4,
         };
 
         #endregion

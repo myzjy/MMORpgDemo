@@ -7,6 +7,7 @@ using Framework.AssetBundles.Config;
 using Framework.AssetBundles.Utilty;
 using Script.Framework.AssetBundle;
 using Script.Framework.UI.Tip;
+using UnityEditor;
 using UnityEngine;
 using XLua;
 
@@ -14,7 +15,10 @@ public class GameLaunch : MonoBehaviour
 {
     AssetBundleUpdater updater;
     const string noticeTipPrefabPath = "UI/Prefab/UINoticeTip.prefab";
-    const string launchPrefabPath = "uilaunch";//"UI/Prefab/view/LauncPanel.prefab";
+
+    private const string launchPrefabPath = "uilaunch"; //"loginpanel";//"UI/Prefab/view/LauncPanel.prefab";
+
+    // const string launchPrefabPath = "uilaunch";//"UI/Prefab/view/LauncPanel.prefab";
     GameObject launchPrefab;
 
     GameObject noticeTipPrefab;
@@ -35,17 +39,11 @@ public class GameLaunch : MonoBehaviour
         startTime = DateTime.Now;
         yield return AssetBundleManager.Instance.Initialize();
         ToolsDebug.Log($"AssetBundleManager Initialize use {(DateTime.Now - startTime).Milliseconds}ms");
-        // 启动xlua热修复模块
+      
         startTime = DateTime.Now;
-        // XluaManager.Instance.Startup();
-        string luaAssetbundleName = XluaManager.Instance.AssetbundleName;
-        AssetBundleManager.Instance.SetAssetBundleResident(luaAssetbundleName, true);
-        var abloader = AssetBundleManager.Instance.LoadAssetBundleAsync(luaAssetbundleName);
-        yield return abloader;
-        abloader.Dispose();
-        XluaManager.Instance.OnInit();
-        XluaManager.Instance.StartHotfix();
         ToolsDebug.Log($"XLuaManager StartHotfix use {(DateTime.Now - startTime).Milliseconds}ms");
+
+        // var data = AssetDatabase.GetAssetPathsFromAssetBundle(launchPrefabPath + AssetBundleConfig.AssetBundleSuffix);
         yield return InitLaunchPrefab();
         yield return InitNoticeTipPrefab();
 
@@ -53,6 +51,7 @@ public class GameLaunch : MonoBehaviour
         {
             updater.StartCheckUpdate();
         }
+
         root.StartRoot();
     }
 

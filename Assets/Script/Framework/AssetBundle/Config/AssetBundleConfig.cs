@@ -8,6 +8,7 @@ namespace Framework.AssetBundles.Config
     public static class AssetBundleConfig
     {
         public const string AssetsFolderName = "AddressablePaker";
+        public const string AssetsFolderNameS = "Game/AddressablePaker";
         public const string AssetBundlesFolderName = "AssetBundles";
         public const string AssetsPathMapFileName = "AssetsMap";//"AssetsMap.bytes";
         public const string VariantsMapFileName = "VariantsMap.bytes";

@@ -555,8 +555,8 @@ public class PackageTool : EditorWindow
     public static void GenXLuaCode(BuildTarget buildTarget)
     {
         PackageUtils.CheckAndAddSymbolIfNeeded(buildTarget, "HOTFIX_ENABLE");
-        CSObjectWrapEditor.Generator.ClearAll();
-        CSObjectWrapEditor.Generator.GenAll();
+        // CSObjectWrapEditor.Generator.ClearAll();
+        // CSObjectWrapEditor.Generator.GenAll();
     }
 
     public static bool CheckSymbolsToCancelBuild()

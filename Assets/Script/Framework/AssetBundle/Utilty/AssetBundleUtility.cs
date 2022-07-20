@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Text;
 using Common.Utility;
 using Framework.AssetBundles.Config;
@@ -67,10 +68,11 @@ namespace Framework.AssetBundles.Utilty
         /// <returns></returns>
         public static string AssetsPathToPackagePath(string assetPath)
         {
-            string path = $"Assets/{AssetBundleConfig.AssetsFolderName}/";
-            if (assetPath.StartsWith(path))
+            string path = $"{AssetBundleConfig.AssetsFolderName}/";
+            if (assetPath.Contains(path))
             {
-                return assetPath.Substring(path.Length);
+                int idnex = assetPath.IndexOf(path, StringComparison.Ordinal)+path.Length;
+                return assetPath.Substring(idnex);
             }
             else
             {

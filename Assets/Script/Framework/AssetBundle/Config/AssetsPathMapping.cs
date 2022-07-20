@@ -131,7 +131,7 @@ namespace Framework.AssetBundle.Config
 
                 assetsLookup[item.assetbundleName] = assetsList;
                 // Debug.Log(item.assetbundleName);
-                // assetbundleLookup.Add(item.assetbundleName, item.assetName);
+                assetbundleLookup.Add(item.assetbundleName, item.assetName);
             }
         }
 
