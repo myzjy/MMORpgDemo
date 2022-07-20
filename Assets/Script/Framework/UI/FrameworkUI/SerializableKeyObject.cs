@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using XLua;
 using Object = UnityEngine.Object;
 
 namespace Script.Framework.UI.FrameworkUI
@@ -14,8 +13,6 @@ namespace Script.Framework.UI.FrameworkUI
         public Object obj;
     }
 
-    [Hotfix]
-    [LuaCallCSharp]
     public class SerializableKeyObject : MonoBehaviour, ISerializationCallbackReceiver
     {
         [HideInInspector] public List<KeyObjectData> data = new List<KeyObjectData>();
@@ -59,7 +56,6 @@ namespace Script.Framework.UI.FrameworkUI
             return dictGo as T;
         }
 
-        [LuaCallCSharp]
         public Object GetObject(string key)
         {
             return !dict.TryGetValue(key, out var dictGo) ? null : dictGo;

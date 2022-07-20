@@ -1,12 +1,9 @@
 ﻿using Script.Framework.UI.FrameworkUI;
 using UnityEngine;
 using UnityEngine.UI;
-using XLua;
 
 namespace Framework.UI.FrameworkUI
 {
-    [Hotfix]
-    [LuaCallCSharp]
     public class UIView : SerializableKeyObject
     {
         private int instanceID;

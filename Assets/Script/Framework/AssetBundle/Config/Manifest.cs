@@ -3,12 +3,9 @@ using Common.Utility;
 using Framework.AssetBundles.Utilty;
 using Script.Framework.AssetBundle;
 using UnityEngine;
-using XLua;
 
 namespace AssetBundles.Config
 {
-    [Hotfix]
-    [LuaCallCSharp]
     public class Manifest
     {
         /// <summary>

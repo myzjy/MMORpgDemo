@@ -3,7 +3,6 @@ using System.Linq;
 using Framework.AssetBundles.Config;
 using Framework.AssetBundles.Utilty;
 using UnityEngine;
-using XLua;
 
 // ReSharper disable once InvalidXmlDocComment
 /// <summary>
@@ -47,8 +46,6 @@ namespace Framework.AssetBundle.Config
         public string assetName;
     }
 
-    [Hotfix]
-    [LuaCallCSharp]
     public class AssetsPathMapping
     {
         private const string PATTREN = AssetBundleConfig.CommonMapPattren;

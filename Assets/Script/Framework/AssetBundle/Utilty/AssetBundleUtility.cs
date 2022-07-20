@@ -4,12 +4,9 @@ using System.Text;
 using Common.Utility;
 using Framework.AssetBundles.Config;
 using UnityEngine;
-using XLua;
 
 namespace Framework.AssetBundles.Utilty
 {
-    [Hotfix]
-    [LuaCallCSharp]
     public class AssetBundleUtility
     {
         private static string GetPlatformName(RuntimePlatform platform)

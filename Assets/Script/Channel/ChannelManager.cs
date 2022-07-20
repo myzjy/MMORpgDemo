@@ -1,7 +1,6 @@
 ﻿using System;
 using Common.GameChannel.Implement;
 using GameTools.Singletons;
-using XLua;
 
 namespace Common.GameChannel
 {
@@ -9,8 +8,6 @@ namespace Common.GameChannel
     /// <summary>
     /// 通道管理程序
     /// </summary>
-    [Hotfix]
-    [LuaCallCSharp]
     public class ChannelManager:SingletonMMO<ChannelManager>
     {
         private BaseChannel channel = null;

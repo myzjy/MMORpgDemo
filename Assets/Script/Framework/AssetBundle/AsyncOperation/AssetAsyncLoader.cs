@@ -7,12 +7,9 @@
 
 using System.Collections.Generic;
 using Script.Framework.AssetBundle;
-using XLua;
 
 namespace Framework.AssetBundle.AsyncOperation
 {
-    [Hotfix]
-    [LuaCallCSharp]
     public class AssetAsyncLoader : BaseAssetAsyncLoader
     {
         private static Queue<AssetAsyncLoader> pool = new Queue<AssetAsyncLoader>();

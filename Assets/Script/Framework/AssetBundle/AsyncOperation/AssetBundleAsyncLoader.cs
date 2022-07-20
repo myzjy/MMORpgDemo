@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using Script.Framework.AssetBundle;
-using XLua;
 // ReSharper disable once InvalidXmlDocComment
 /// <summary>
 /// added by wsh @ 2017.12.22 xluaframework
@@ -11,8 +10,6 @@ using XLua;
 /// </summary>
 namespace Framework.AssetBundle.AsyncOperation
 {
-    [Hotfix]
-    [LuaCallCSharp]
     public class AssetBundleAsyncLoader: BaseAssetBundleAsyncLoader
     {
         private static Queue<AssetBundleAsyncLoader> pool = new Queue<AssetBundleAsyncLoader>();

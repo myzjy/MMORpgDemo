@@ -16,13 +16,10 @@ using Script.Framework.UI.Tip;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
-using XLua;
 
 /// <summary>
 /// AssetBundleUpdater 更新
 /// </summary>
-[LuaCallCSharp]
-[Hotfix]
 public class AssetBundleUpdater : MonoBehaviour
 {
     private static int MAX_DOWNLOAD_NUM = 5;
@@ -143,7 +140,6 @@ public class AssetBundleUpdater : MonoBehaviour
         // Logger.clientVerstion = clientAppVersion;
         ChannelManager.Instance.resVersion = serverResVersion;
 
-        XluaManager.Instance.StartGame();
         // CustomDataStruct.Helper.Startup();
         //移除
         UINoticeTip.Instance.DestroySelf();
@@ -702,13 +698,11 @@ public class AssetBundleUpdater : MonoBehaviour
         yield return AssetBundleManager.Instance.Initialize();
 
         // 重启Lua虚拟机
-        string luaAssetbundleName = XluaManager.Instance.AssetbundleName;
-        AssetBundleManager.Instance.SetAssetBundleResident(luaAssetbundleName, true);
-        var abloader = AssetBundleManager.Instance.LoadAssetBundleAsync(luaAssetbundleName);
-        yield return abloader;
-        abloader.Dispose();
-        XluaManager.Instance.Restart();
-        XluaManager.Instance.StartHotfix();
+        // string luaAssetbundleName = XluaManager.Instance.AssetbundleName;
+        // AssetBundleManager.Instance.SetAssetBundleResident(luaAssetbundleName, true);
+        // var abloader = AssetBundleManager.Instance.LoadAssetBundleAsync(luaAssetbundleName);
+        // yield return abloader;
+        // abloader.Dispose();
         yield break;
     }
 

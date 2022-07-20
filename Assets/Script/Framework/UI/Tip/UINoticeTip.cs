@@ -3,12 +3,10 @@ using System.Collections;
 using GameTools.Singletons;
 using UnityEngine;
 using UnityEngine.UI;
-using XLua;
 
 namespace Script.Framework.UI.Tip
 {
-    [Hotfix]
-    [LuaCallCSharp]
+   
     public class UINoticeTip : MMOSingletonDontDestroy<UINoticeTip>
     {
         private GameObject go;
@@ -170,7 +168,6 @@ namespace Script.Framework.UI.Tip
             }
         }
 
-        [BlackList]
         public IEnumerator WaitForResponse()
         {
             yield return new WaitUntil(() => LastClickIndex != -1);

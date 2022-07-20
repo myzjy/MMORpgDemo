@@ -21,12 +21,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
-using XLua;
 
 namespace Framework.AssetBundle.AsyncOperation
 {
-    [Hotfix]
-    [LuaCallCSharp]
     public class ResourceWebRequester : ResourceAsyncOperation
     {
         private static Queue<ResourceWebRequester> pool = new Queue<ResourceWebRequester>();

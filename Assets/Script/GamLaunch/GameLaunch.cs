@@ -9,7 +9,6 @@ using Script.Framework.AssetBundle;
 using Script.Framework.UI.Tip;
 using UnityEditor;
 using UnityEngine;
-using XLua;
 
 public class GameLaunch : MonoBehaviour
 {
